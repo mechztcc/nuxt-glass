@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Lora', serif;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out; /* Ajuste a duração conforme necessário */
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Inicialmente, o elemento é totalmente transparente */
+  }
+  to {
+    opacity: 1; /* No final da animação, o elemento é totalmente opaco */
+  }
+}
+
