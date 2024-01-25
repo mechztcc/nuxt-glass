@@ -1,6 +1,7 @@
 <template>
   <Header />
   <Informative />
+  <Footer />
 </template>
 
 <script setup></script>

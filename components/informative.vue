@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-zinc-100 py-3 px-10">
+  <div class="bg-zinc-100 py-3 px-2 md:px-10">
     <div class="flex flex-col items-center my-10">
       <h1 class="text-6xl">O que oferecemos?</h1>
       <span class="text-2xl mt-3 text-zinc-700">
@@ -37,6 +37,9 @@
         </HomeAdvantages>
       </div>
     </div>
+
+
+    <div style="height: 20px;"></div>
 
     <div class="flex flex-col mt-20 mb-10 px-10">
       <h1 class="text-3xl text-start">Quero comprar meus óculos</h1>
