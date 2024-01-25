@@ -1,7 +1,7 @@
 <template>
   <button
     :class="{ 'bg-yellow-500 text-white': fill }"
-    class="px-3 py-2 hover:text-white hover:bg-yellow-500 rounded-xl text-zinc-700 relative"
+    class="px-3 py-2 hover:text-white hover:bg-yellow-500  text-zinc-700 relative"
   >
     <slot></slot>
     <span class="text-lg"> {{ label }}</span>

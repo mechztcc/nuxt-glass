@@ -7,7 +7,7 @@
             Compre seus Óculos de sol ou de gráu sem sair de casa.
           </h1>
           <div class="flex flex-col mb-5">
-            <span class="text-zinc-700 text-lg mt-3">
+            <span class="text-zinc-700 text-2xl mt-3">
               Precisando de óculos de gráu? Informe sua receita médica e espere
               as lojas entrarem em contato com você. Você recebe os óculos no
               conforto da sua casa.
@@ -25,7 +25,7 @@
             Monte sua loja e receba demandas de clientes sem sair de casa
           </h1>
           <div class="flex flex-col mb-5">
-            <span class="text-zinc-700 text-lg mt-3">
+            <span class="text-zinc-700 text-2xl mt-3">
               Crie seu catalogo, receba os pedidos de seus clientes, dê seu
               orçamento e arremate a venda.
             </span>

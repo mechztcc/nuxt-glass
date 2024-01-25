@@ -1,5 +1,6 @@
 <template>
   <Header />
+  <Informative />
 </template>
 
 <script setup></script>
