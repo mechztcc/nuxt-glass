@@ -1,9 +1,12 @@
 <template>
-  <Header />
-  <Informative />
-  <Footer />
+  <NuxtLayout :name="'default'">
+    <Header />
+    <Informative />
+    <Footer />
+  </NuxtLayout>
 </template>
 
-<script setup></script>
+<script setup>
+</script>
 
 <style lang="scss" scoped></style>

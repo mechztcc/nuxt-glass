@@ -19,11 +19,12 @@ export default defineNuxtConfig({
       charset: "utf-8",
       title: "VALKYRIE",
       bodyAttrs: {
-        class: "bg-zinc-50 relative min-h-screen",
+        class: "bg-zinc-100 relative min-h-screen",
       },
     },
   },
   modules: [
+    "@vee-validate/nuxt",
     [
       "@nuxtjs/google-fonts",
       {

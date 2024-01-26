@@ -24,6 +24,8 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "@fortawesome/free-brands-svg-icons": "^6.5.1"
+    "@fortawesome/free-brands-svg-icons": "^6.5.1",
+    "@vee-validate/nuxt": "^4.12.4",
+    "@vee-validate/zod": "^4.12.4"
   }
 }

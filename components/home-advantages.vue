@@ -7,9 +7,11 @@
     <span class="text-zinc-700 text-lg">
       {{ subtitle }}
     </span>
-    <div class="flex items-center justify-end w-full text-zinc-700 mt-2 hover:text-yellow-500">
-      <font-awesome-icon :icon="['fas', 'circle-arrow-right']" />
-      <span class="mx-2 cursor-pointer">saber mais</span>
+    <div class="flex items-center justify-end w-full mt-2">
+      <div class="flex w-fit items-center hover:bg-zinc-900 hover:text-white text-zinc-700 px-2 py-1">
+        <font-awesome-icon :icon="['fas', 'circle-arrow-right']" />
+        <span class="mx-2 cursor-pointer">saber mais</span>
+      </div>
     </div>
   </div>
 </template>

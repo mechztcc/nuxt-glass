@@ -3,12 +3,20 @@
     <div class="flex flex-col mt-20 mb-10 px-10">
       <div class="flex justify-between items-center">
         <h1 class="text-3xl text-start">Possuo uma loja de óculos</h1>
-        <button>
+        <div class="flex items-center">
+          <font-awesome-icon :icon="['fas', 'circle']" class="text-zinc-900" />
           <font-awesome-icon
-            :icon="['fas', 'circle-chevron-right']"
-            :size="'2x'"
+            :icon="['far', 'circle']"
+            class="mx-2 text-zinc-900"
           />
-        </button>
+          <button>
+            <font-awesome-icon
+              :icon="['fas', 'circle-chevron-right']"
+              :size="'2x'"
+              class="text-zinc-900"
+            />
+          </button>
+        </div>
       </div>
       <div class="flex flex-col mt-2">
         <span class="text-zinc-700">
@@ -33,7 +41,7 @@
         <HomeAdvantages :title="item.title" :subtitle="item.subtitle">
           <font-awesome-icon
             :icon="item.icon"
-            class="p-2 bg-black text-white rounded mb-3"
+            class="p-2 bg-zinc-900 text-white rounded mb-3"
           />
         </HomeAdvantages>
       </div>
@@ -44,12 +52,20 @@
     <div class="flex flex-col mt-20 mb-10 px-10">
       <div class="flex justify-between items-center">
         <h1 class="text-3xl text-start">Quero comprar meus óculos</h1>
-        <button>
+        <div class="flex items-center">
+          <font-awesome-icon :icon="['far', 'circle']" class="text-zinc-900" />
           <font-awesome-icon
-            :icon="['fas', 'circle-chevron-right']"
-            :size="'2x'"
+            :icon="['fas', 'circle']"
+            class="mx-2 text-zinc-900"
           />
-        </button>
+          <button>
+            <font-awesome-icon
+              :icon="['fas', 'circle-chevron-right']"
+              :size="'2x'"
+              class="text-zinc-900"
+            />
+          </button>
+        </div>
       </div>
       <div class="flex flex-col">
         <span class="text-zinc-700 mt-2">
@@ -73,7 +89,7 @@
         <HomeAdvantages :title="item.title" :subtitle="item.subtitle">
           <font-awesome-icon
             :icon="item.icon"
-            class="p-2 bg-black text-white rounded mb-3"
+            class="p-2 bg-zinc-900 text-white rounded mb-3"
           />
         </HomeAdvantages>
       </div>
