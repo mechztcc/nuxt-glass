@@ -32,16 +32,15 @@
       <span class="text-zinc-700 text-end mt-2 cursor-pointer">
         Esqueceu a senha?
       </span>
-      <DefaultButton :label="'ENTRAR'" :fill="true" class="mt-5" />
-      <div class="flex items-center justify-center border py-2 border-zinc-300 mt-5 cursor-not-allowed">
-        <font-awesome-icon :icon="['fab', 'google']" class="text-red-400"/>
-        <span class="mx-2">ENTRAR USANDO GOOGLE</span>
-      </div>
+      <DefaultButton :label="'ENTRAR'" :fill="true" class="mt-5" :to="'/'" />
+      <ButtonGoogle />
     </div>
-    <span class="text-zinc-700 mb-5 text-center">
-      Não possui uma conta?
-      <b class="cursor-pointer">Registrar</b>
-    </span>
+    <NuxtLink :to="'/create-account'" class="text-zinc-700 mb-5 text-center">
+      <span>
+        Não possui uma conta?
+        <b class="cursor-pointer">Registrar</b>
+      </span>
+    </NuxtLink>
   </Form>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout :name="'no-navbar'">
     <div class="grid grid-cols-1 md:grid-cols-3">
-      <div class="col-span-1 px-10 md:px-20">
+      <div class="col-span-1 px-10 md:px-20 min-h-screen">
         <LoginForm></LoginForm>
       </div>
       <div class="col-span-2">
