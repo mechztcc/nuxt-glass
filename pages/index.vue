@@ -2,6 +2,8 @@
   <NuxtLayout :name="'default'">
     <Header />
     <Informative />
+    <Collaborates />
+    <PopularProducts />
     <Footer />
   </NuxtLayout>
 </template>

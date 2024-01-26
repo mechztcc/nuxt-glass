@@ -115,6 +115,11 @@ const shop = [
     subtitle: "Controle os pagamentos recebidos por sua loja",
     icon: ["fas", "receipt"],
   },
+  {
+    title: "Suporte 24hrs",
+    subtitle: "Conte com nosso suporte 24hrs para tirar suas dúvidas",
+    icon: ["fas", "headset"],
+  },
 ];
 
 const client = [

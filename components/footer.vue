@@ -20,7 +20,7 @@
         <font-awesome-icon :icon="['fab', 'instagram']" :size="'2x'"/>
       </div>
     </div>
-    <div class="col-span-3 md:col-span-2 bg-zinc-900"></div>
+    <div class="col-span-3 md:col-span-2 bg-zinc-400"></div>
   </div>
 </template>
 
