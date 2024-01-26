@@ -4,9 +4,9 @@
       <div class="flex justify-between items-center">
         <h1 class="text-3xl text-start">Possuo uma loja de óculos</h1>
         <div class="flex items-center">
-          <font-awesome-icon :icon="['fas', 'circle']" class="text-zinc-900" />
+          <font-awesome-icon :icon="['fas', 'square']" class="text-zinc-900" />
           <font-awesome-icon
-            :icon="['far', 'circle']"
+            :icon="['far', 'square']"
             class="mx-2 text-zinc-900"
           />
           <button>
@@ -53,9 +53,9 @@
       <div class="flex justify-between items-center">
         <h1 class="text-3xl text-start">Quero comprar meus óculos</h1>
         <div class="flex items-center">
-          <font-awesome-icon :icon="['far', 'circle']" class="text-zinc-900" />
+          <font-awesome-icon :icon="['far', 'square']" class="text-zinc-900" />
           <font-awesome-icon
-            :icon="['fas', 'circle']"
+            :icon="['fas', 'square']"
             class="mx-2 text-zinc-900"
           />
           <button>

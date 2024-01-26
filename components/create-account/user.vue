@@ -1,6 +1,10 @@
 <template>
   <Form class="h-full flex justify-center">
-    <div class=" w-full md:w-1/2 h-full justify-center flex flex-col">
+    <div class="w-full md:w-1/2 h-full justify-center flex flex-col">
+      <div class="flex justify-end mt-3 mb-20">
+        <font-awesome-icon :icon="['fas', 'square']" />
+        <font-awesome-icon :icon="['far', 'square']" class="ml-1 text-zinc-500" />
+      </div>
       <h1 class="text-3xl text-center">Bem vindo!</h1>
       <span class="text-lg text-zinc-700 text-center">
         Preencha o formulário abaixo para criar seu acesso.
@@ -47,12 +51,7 @@
       </div>
       <DefaultButton :label="'AVANÇAR'" :fill="true" class="mt-5" :to="'/'" />
       <ButtonGoogle />
-      <NuxtLink :to="'/login'" class="text-zinc-700 mb-5 text-center mt-10 self-end">
-        <span>
-          Já é registrado?
-          <b class="cursor-pointer">Login</b>
-        </span>
-      </NuxtLink>
+
     </div>
   </Form>
 </template>

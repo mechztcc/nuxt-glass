@@ -32,7 +32,7 @@
         class="flex items-center justify-end mt-10 cursor-pointer "
       >
         <div class="flex items-center w-fit hover:bg-zinc-900 px-2 py-1 hover:text-white">
-          <font-awesome-icon :icon="['fas', 'circle-chevron-left']" />
+          <font-awesome-icon :icon="['fas', 'square-arrow-up-right']" />
           <span class="mx-2">VOLTAR</span>
         </div>
       </NuxtLink>

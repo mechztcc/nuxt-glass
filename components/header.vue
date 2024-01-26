@@ -62,7 +62,7 @@
           <font-awesome-icon
             v-for="(item, i) in banners"
             :key="index"
-            :icon="index == i ? ['fas', 'circle'] : ['far', 'circle']"
+            :icon="index == i ? ['fas', 'square'] : ['far', 'square']"
             class="mr-1"
           />
         </div>
