@@ -2,8 +2,16 @@
   <Form class="h-full flex justify-center">
     <div class="w-full md:w-1/2 h-full justify-center flex flex-col">
       <div class="flex justify-end mt-3 mb-20">
-        <font-awesome-icon :icon="['fas', 'square']" />
-        <font-awesome-icon :icon="['far', 'square']" class="ml-1 text-zinc-500" />
+        <font-awesome-icon
+          :icon="['fas', 'square']"
+          @click="store.onHandleStep('prev')"
+          class="cursor-pointer"
+        />
+        <font-awesome-icon
+          :icon="['far', 'square']"
+          class="ml-1 text-zinc-500 cursor-pointer"
+          @click="store.onHandleStep('next')"
+        />
       </div>
       <h1 class="text-3xl text-center">Bem vindo!</h1>
       <span class="text-lg text-zinc-700 text-center">
@@ -51,13 +59,13 @@
       </div>
       <DefaultButton :label="'AVANÇAR'" :fill="true" class="mt-5" :to="'/'" />
       <ButtonGoogle />
-
     </div>
   </Form>
 </template>
 
 <script setup lang="ts">
 import { Form, Field, ErrorMessage } from "vee-validate";
+const store = useCreateAccount();
 const isPass = ref(false);
 
 function onHandlePass() {

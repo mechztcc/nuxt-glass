@@ -5,23 +5,17 @@
         <CreateAccountStep />
       </div>
       <div class="col-span-1 md:col-span-2 px-5">
-        <CreateAccountUser />
-        <CreateAccountShop />
+        <CreateAccountUser v-if="store.step == 1" />
+        <CreateAccountShop v-if="store.step == 2" />
       </div>
     </div>
   </NuxtLayout>
 </template>
 
 <script setup lang="ts">
-const step = ref(1);
+import { useCreateAccount } from "~/stores/create-account";
+const store = useCreateAccount();
 
-function onNext() {
-  step.value++;
-}
-
-function onPrev() {
-  step.value--;
-}
 </script>
 
 <style lang="scss" scoped></style>

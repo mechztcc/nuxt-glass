@@ -1,7 +1,8 @@
 <template>
   <NuxtLink :to="to">
     <button
-      :class="{'bg-zinc-900 text-white w-full hover:bg-zinc-950': fill }"
+      type="button"
+      :class="{ 'bg-zinc-900 text-white w-full hover:bg-zinc-950': fill }"
       class="px-3 py-2 hover:text-white hover:bg-zinc-900 relative"
     >
       <slot></slot>
