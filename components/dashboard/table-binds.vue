@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-zinc-50 p-5">
+  <div class="bg-zinc-50 p-5 rounded shadow">
     <div class="flex justify-between mb-10 border-b-2 py-3">
       <span class="text-xl font-semibold">Lançamentos Recentes</span>
       <div class="flex">
@@ -23,8 +23,14 @@
     <table class="w-full mb-5">
       <tr class="">
         <th>#</th>
-        <th>Usuário</th>
-        <th>Ultima oferta</th>
+        <th>
+          <font-awesome-icon :icon="['far', 'user']" />
+          Usuário
+        </th>
+        <th>
+          <font-awesome-icon :icon="['fas', 'sack-dollar']" />
+          Ultima oferta
+        </th>
         <th>
           <font-awesome-icon :icon="['fas', 'location-dot']" />
           Cidade
@@ -60,14 +66,14 @@
       </tr>
     </table>
 
-    <div class="flex justify-end border-t-2 py-2">
-      <DefaultButton >
+    <div class="flex justify-end  py-2">
+      <DefaultButton>
         <font-awesome-icon :icon="['fas', 'angle-left']" />
       </DefaultButton>
       <DefaultButton class="bg-zinc-900 text-white">
         <font-awesome-icon :icon="['fas', '1']" :fill="true" />
       </DefaultButton>
-      <DefaultButton class="text-zinc-500"> 
+      <DefaultButton class="text-zinc-500">
         <font-awesome-icon :icon="['fas', '2']" />
       </DefaultButton>
       <DefaultButton class="text-zinc-500">
@@ -87,4 +93,6 @@ td,
 th {
   text-align: start;
 }
+
+
 </style>
