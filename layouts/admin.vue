@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
     <Sidebar />
-    <div class="w-full mx-5 my-5">
+    <div class="w-full mx-5 my-10">
       <slot></slot>
     </div>
   </div>

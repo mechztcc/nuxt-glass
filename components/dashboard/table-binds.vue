@@ -21,7 +21,7 @@
       </div>
     </div>
     <table class="w-full mb-5">
-      <tr class="">
+      <tr class=" bg-zinc-100">
         <th>#</th>
         <th>
           <font-awesome-icon :icon="['far', 'user']" />
@@ -92,6 +92,9 @@
 td,
 th {
   text-align: start;
+}
+th {
+  padding: 10px 0;
 }
 
 
