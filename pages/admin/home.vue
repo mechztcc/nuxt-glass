@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout :name="'admin'"> </NuxtLayout>
+  <NuxtLayout :name="'admin'"> <DashboardTableBinds /> </NuxtLayout>
 </template>
 
 <script setup lang="ts"></script>

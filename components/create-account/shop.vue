@@ -18,7 +18,7 @@
         Preencha o formulário abaixo com os detalhes da sua loja.
       </span>
       <label for="" class="mb-2 mt-10 font-semibold">Nome da loja</label>
-      <div class="flex items-center border px-5 border-zinc-300">
+      <div class="flex items-center border px-5 border-zinc-300  bg-white">
         <font-awesome-icon
           :icon="['far', 'user']"
           class="text-zinc-900 rounded-full"
@@ -29,7 +29,7 @@
       <div class="grid grid-cols-2 md:grid-cols-3 gap-5 mt-5">
         <div class="col-span-1 md:col-span-1">
           <label for="" class="mb-2 mt-5 font-semibold">CEP</label>
-          <div class="flex items-center border px-5 border-zinc-300">
+          <div class="flex items-center border px-5 border-zinc-300  bg-white">
             <font-awesome-icon
               :icon="['fas', 'location-dot']"
               class="text-zinc-900 rounded-full"
@@ -40,7 +40,7 @@
 
         <div class="col-span-1 md:col-span-2">
           <label for="" class="mb-2 mt-5 font-semibold">Estado</label>
-          <div class="flex items-center border px-5 border-zinc-300">
+          <div class="flex items-center border px-5 border-zinc-300  bg-white">
             <font-awesome-icon
               :icon="['fas', 'location-dot']"
               class="text-zinc-900 rounded-full"
@@ -53,14 +53,14 @@
       <div class="grid grid-cols-2 md:grid-cols-3 gap-5 mt-5">
         <div class="col-span-1 md:col-span-1">
           <label for="" class="mb-2 mt-5 font-semibold">Número</label>
-          <div class="flex items-center border px-5 border-zinc-300">
+          <div class="flex items-center border px-5 border-zinc-300  bg-white">
             <Field name="email" class="p-3 rounded-xl outline-none w-full" />
           </div>
         </div>
 
         <div class="col-span-1 md:col-span-2">
           <label for="" class="mb-2 mt-5 font-semibold">Cidade</label>
-          <div class="flex items-center border px-5 border-zinc-300">
+          <div class="flex items-center border px-5 border-zinc-300  bg-white">
             <Field name="email" class="p-3 rounded-xl outline-none w-full" />
           </div>
         </div>
@@ -69,14 +69,14 @@
       <div class="grid grid-cols-2 md:grid-cols-3 gap-5 mt-5">
         <div class="col-span-1 md:col-span-1">
           <label for="" class="mb-2 mt-5 font-semibold">CPF / CNPJ</label>
-          <div class="flex items-center border px-5 border-zinc-300">
+          <div class="flex items-center border px-5 border-zinc-300  bg-white">
             <Field name="email" class="p-3 rounded-xl outline-none w-full" />
           </div>
         </div>
 
         <div class="col-span-1 md:col-span-2">
           <label for="" class="mb-2 mt-5 font-semibold">Rua</label>
-          <div class="flex items-center border px-5 border-zinc-300">
+          <div class="flex items-center border px-5 border-zinc-300  bg-white">
             <Field name="email" class="p-3 rounded-xl outline-none w-full" />
           </div>
         </div>

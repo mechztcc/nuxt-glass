@@ -25,11 +25,13 @@
         <font-awesome-icon :icon="['fas', 'layer-group']" />
       </SidebarButton>
 
-      <span class="text-sm text-zinc-500 mt-10" v-if="!isHide">Minha Conta</span>
+      <span class="text-sm text-zinc-500 mt-10" v-if="!isHide"
+        >Minha Conta</span
+      >
       <SidebarButton :label="'Configurações'" :isHide="isHide">
         <font-awesome-icon :icon="['fas', 'sliders']" />
       </SidebarButton>
-      <SidebarButton :label="'Sair'" :isHide="isHide">
+      <SidebarButton :label="'Sair'" :isHide="isHide" :to="'/login'">
         <font-awesome-icon :icon="['fas', 'right-from-bracket']" />
       </SidebarButton>
     </div>

@@ -1,7 +1,10 @@
 <template>
-  <!-- <Navbar /> -->
-  <Sidebar />
-  <slot></slot>
+  <div class="flex">
+    <Sidebar />
+    <div class="w-full mx-5 my-5">
+      <slot></slot>
+    </div>
+  </div>
 </template>
 
 <script setup></script>

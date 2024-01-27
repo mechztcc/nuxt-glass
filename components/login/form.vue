@@ -8,7 +8,7 @@
       </span>
 
       <label for="" class="mb-2 mt-10 font-semibold">E-mail</label>
-      <div class="flex items-center border px-5 w-full border-zinc-300">
+      <div class="flex items-center border px-5 w-full border-zinc-300 bg-white">
         <font-awesome-icon
           :icon="['far', 'envelope']"
           class="text-zinc-900 rounded-full"
@@ -17,7 +17,7 @@
       </div>
 
       <label for="" class="mb-2 mt-10 font-semibold">Senha</label>
-      <div class="flex items-center border px-5 w-full border-zinc-300">
+      <div class="flex items-center border px-5 w-full border-zinc-300  bg-white">
         <font-awesome-icon
           :icon="['fas', 'lock']"
           class="text-zinc-900 rounded-full cursor-pointer"
