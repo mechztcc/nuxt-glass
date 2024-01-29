@@ -1,7 +1,7 @@
 <template>
   <div class="bg-zinc-50 p-5 rounded shadow">
     <div class="flex justify-between mb-10 border-b-2 py-3">
-      <span class="text-xl font-semibold">Lançamentos Recentes</span>
+      <span class="text-xl font-semibold">Meus produtos</span>
       <div class="flex">
         <DefaultButton>
           <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
@@ -22,35 +22,40 @@
     </div>
     <table class="w-full mb-5">
       <tr class="bg-zinc-100">
-        <th>#</th>
+        <th class="">
+          Imagem
+        </th>
         <th>
-          <font-awesome-icon :icon="['far', 'user']" />
-          Usuário
+          Nome
         </th>
         <th>
           <font-awesome-icon :icon="['fas', 'sack-dollar']" />
-          Ultima oferta
+          Preço Min
         </th>
         <th>
-          <font-awesome-icon :icon="['fas', 'location-dot']" />
-          Cidade
+          <font-awesome-icon :icon="['fas', 'paintbrush']" />
+          Cor
         </th>
-        <th>
-          <font-awesome-icon :icon="['far', 'calendar']" />
-          Ultima atualização
-        </th>
-        <th>Situação</th>
+        <th>Quantidade</th>
+        <th>Status</th>
         <th>Ações</th>
       </tr>
-      <tr class="hover:bg-zinc-100" v-for="(item, index) in 6" :key="index">
-        <td>1</td>
-        <td>Alberto Paiva</td>
-        <td>R$ 599,00</td>
-        <td>Recife</td>
-        <td>22/10/2023 20:33</td>
+      <tr class="hover:bg-zinc-100" v-for="(item, index) in 3" :key="index">
         <td>
-          <Badge :label="'Concluído'">
-            <font-awesome-icon :icon="['far', 'clock']" />
+          <img
+            src="https://www.artviso.com.br/media/catalog/product/cache/1/image/800x/9df78eab33525d08d6e5fb8d27136e95/a/r/armacao-oculos-de-grau-boss-1514g-r81-titanio-redondo-grafite-masculino-lateral.jpg"
+            alt=""
+          />
+        </td>
+        <td>Armação Lacoste (M)</td>
+        <td>R$ 599,00</td>
+        <td>
+          <font-awesome-icon :icon="['fas', 'square']" class="text-purple-900" />
+        </td>
+        <td>0</td>
+        <td>
+          <Badge :label="'Esgotado'" :style="'bg-red-400 text-white'">
+            <font-awesome-icon :icon="['far', 'circle-xmark']" />
           </Badge>
         </td>
         <td>
@@ -94,5 +99,13 @@ th {
 }
 th {
   padding: 10px 0;
+}
+
+img {
+  max-height: 200x;
+  max-width: 200px;
+  min-height: 200x;
+  min-width: 200px;
+  object-fit: cover;
 }
 </style>
