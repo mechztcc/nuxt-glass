@@ -7,7 +7,11 @@
     <div class="flex flex-col mt-20">
       <span class="text-sm text-zinc-500" v-if="!isHide">Minha Loja</span>
       <template v-if="isAdmin">
-        <SidebarButton :label="'Dashboard'" :isHide="isHide" :to="'/admin/home'">
+        <SidebarButton
+          :label="'Dashboard'"
+          :isHide="isHide"
+          :to="'/admin/home'"
+        >
           <font-awesome-icon :icon="['fas', 'chart-simple']" />
         </SidebarButton>
         <SidebarButton
@@ -17,7 +21,7 @@
         >
           <font-awesome-icon :icon="['fas', 'tags']" />
         </SidebarButton>
-        <SidebarButton :label="'Carteira'" :isHide="isHide">
+        <SidebarButton :label="'Carteira'" :isHide="isHide" :to="'/admin/wallet'">
           <font-awesome-icon :icon="['fas', 'sack-dollar']" />
         </SidebarButton>
         <SidebarButton :label="'Conversas'" :isHide="isHide">
@@ -31,7 +35,11 @@
         </SidebarButton>
       </template>
       <template v-if="!isAdmin">
-        <SidebarButton :label="'Ofertas'" :isHide="isHide" :to="'/customer/offers'">
+        <SidebarButton
+          :label="'Ofertas'"
+          :isHide="isHide"
+          :to="'/customer/offers'"
+        >
           <font-awesome-icon :icon="['fas', 'chart-simple']" />
         </SidebarButton>
         <SidebarButton
@@ -58,7 +66,7 @@
 
 <script setup lang="ts">
 const isHide = ref<boolean>(false);
-const isAdmin = ref<boolean>(false);
+const isAdmin = ref<boolean>(true);
 
 function onHandleBar() {
   isHide.value = !isHide.value;

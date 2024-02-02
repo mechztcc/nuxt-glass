@@ -61,6 +61,9 @@
           <DefaultButton>
             <font-awesome-icon :icon="['fas', 'pen']" />
           </DefaultButton>
+          <DefaultButton>
+            <font-awesome-icon :icon="['far', 'comment']" />
+          </DefaultButton>
         </td>
       </tr>
     </table>

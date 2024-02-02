@@ -11,15 +11,15 @@
       <div class="col-span-1 md:col-span-1 lg:col-span-4">
         <span class="text-xl">Óticas guaraná</span>
         <div class="flex">
-          <font-awesome-icon :icon="['fas', 'star']" />
-          <font-awesome-icon :icon="['fas', 'star']" />
-          <font-awesome-icon :icon="['fas', 'star']" />
+          <font-awesome-icon :icon="['fas', 'star']" class="text-yellow-400" />
+          <font-awesome-icon :icon="['fas', 'star']" class="text-yellow-400" />
+          <font-awesome-icon :icon="['fas', 'star']" class="text-yellow-400" />
           <font-awesome-icon :icon="['far', 'star']" />
           <font-awesome-icon :icon="['far', 'star']" />
         </div>
-        <div class="flex items-center mt-3">
+        <div class="flex items-center mt-3 text-green-400">
           <font-awesome-icon :icon="['fab', 'pix']" />
-          <span class="text-zinc-700 mx-1">R$ 599,00</span>
+          <span class=" mx-1">R$ 599,00</span>
         </div>
 
         <div class="flex items-center">
@@ -38,8 +38,8 @@
         </div>
 
         <div class="flex justify-end">
-          <DefaultButton :label="'recusar'" />
-          <DefaultButton :label="'aceitar'" />
+          <DefaultButton :label="'RECUSAR'" />
+          <DefaultButton :label="'ACEITAR'" />
         </div>
       </div>
     </div>
