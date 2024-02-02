@@ -6,28 +6,42 @@
   >
     <div class="flex flex-col mt-20">
       <span class="text-sm text-zinc-500" v-if="!isHide">Minha Loja</span>
-      <SidebarButton :label="'Dashboard'" :isHide="isHide" :to="'/admin/home'">
-        <font-awesome-icon :icon="['fas', 'chart-simple']" />
-      </SidebarButton>
-      <SidebarButton
-        :label="'Produtos'"
-        :isHide="isHide"
-        :to="'/admin/products'"
-      >
-        <font-awesome-icon :icon="['fas', 'tags']" />
-      </SidebarButton>
-      <SidebarButton :label="'Carteira'" :isHide="isHide">
-        <font-awesome-icon :icon="['fas', 'sack-dollar']" />
-      </SidebarButton>
-      <SidebarButton :label="'Conversas'" :isHide="isHide">
-        <font-awesome-icon :icon="['fas', 'comment']" />
-      </SidebarButton>
-      <SidebarButton :label="'Calendário'" :isHide="isHide">
-        <font-awesome-icon :icon="['far', 'calendar']" />
-      </SidebarButton>
-      <SidebarButton :label="'Integrações'" :isHide="isHide">
-        <font-awesome-icon :icon="['fas', 'layer-group']" />
-      </SidebarButton>
+      <template v-if="isAdmin">
+        <SidebarButton :label="'Dashboard'" :isHide="isHide" :to="'/admin/home'">
+          <font-awesome-icon :icon="['fas', 'chart-simple']" />
+        </SidebarButton>
+        <SidebarButton
+          :label="'Produtos'"
+          :isHide="isHide"
+          :to="'/admin/products'"
+        >
+          <font-awesome-icon :icon="['fas', 'tags']" />
+        </SidebarButton>
+        <SidebarButton :label="'Carteira'" :isHide="isHide">
+          <font-awesome-icon :icon="['fas', 'sack-dollar']" />
+        </SidebarButton>
+        <SidebarButton :label="'Conversas'" :isHide="isHide">
+          <font-awesome-icon :icon="['fas', 'comment']" />
+        </SidebarButton>
+        <SidebarButton :label="'Calendário'" :isHide="isHide">
+          <font-awesome-icon :icon="['far', 'calendar']" />
+        </SidebarButton>
+        <SidebarButton :label="'Integrações'" :isHide="isHide">
+          <font-awesome-icon :icon="['fas', 'layer-group']" />
+        </SidebarButton>
+      </template>
+      <template v-if="!isAdmin">
+        <SidebarButton :label="'Ofertas'" :isHide="isHide" :to="'/customer/offers'">
+          <font-awesome-icon :icon="['fas', 'chart-simple']" />
+        </SidebarButton>
+        <SidebarButton
+          :label="'Histórico'"
+          :isHide="isHide"
+          :to="'/admin/products'"
+        >
+          <font-awesome-icon :icon="['fas', 'tags']" />
+        </SidebarButton>
+      </template>
 
       <span class="text-sm text-zinc-500 mt-10" v-if="!isHide">
         Minha Conta
@@ -44,6 +58,7 @@
 
 <script setup lang="ts">
 const isHide = ref<boolean>(false);
+const isAdmin = ref<boolean>(false);
 
 function onHandleBar() {
   isHide.value = !isHide.value;
