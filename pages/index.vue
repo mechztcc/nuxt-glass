@@ -3,7 +3,6 @@
     <Header />
     <Informative />
     <Collaborates />
-    <PopularProducts />
     <Footer />
   </NuxtLayout>
 </template>

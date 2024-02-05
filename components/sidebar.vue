@@ -57,6 +57,9 @@
       <SidebarButton :label="'Configurações'" :isHide="isHide">
         <font-awesome-icon :icon="['fas', 'sliders']" />
       </SidebarButton>
+      <SidebarButton :label="'Tema'" :isHide="isHide">
+        <font-awesome-icon :icon="['fas', 'sun']" />
+      </SidebarButton>
       <SidebarButton :label="'Sair'" :isHide="isHide" :to="'/login'">
         <font-awesome-icon :icon="['fas', 'right-from-bracket']" />
       </SidebarButton>
