@@ -2,7 +2,7 @@
   <div
     @mouseenter="isHide = false"
     @mouseleave="isHide = true"
-    class="flex justify-center items-between min-h-screen bg-zinc-50 w-fit p-3 shadow-xl"
+    class="flex justify-center items-between min-h-screen bg-zinc-900 w-fit p-3 shadow-xl"
   >
     <div class="flex flex-col mt-20">
       <span class="text-sm text-zinc-500" v-if="!isHide">Minha Loja</span>
