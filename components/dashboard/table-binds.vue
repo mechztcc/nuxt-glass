@@ -1,7 +1,7 @@
 <template>
   <div class="bg-zinc-50 p-5 rounded shadow">
     <div class="flex justify-between mb-10 border-b-2 py-3">
-      <span class="text-xl font-semibold">Lançamentos Recentes</span>
+      <span class="text-xl font-semibold">Leilões Recentes</span>
       <div class="flex">
         <DefaultButton>
           <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
@@ -39,6 +39,7 @@
           <font-awesome-icon :icon="['far', 'calendar']" />
           Ultima atualização
         </th>
+        <th>Status</th>
         <th>Situação</th>
         <th>Ações</th>
       </tr>
@@ -48,6 +49,11 @@
         <td>R$ 599,00</td>
         <td>Recife</td>
         <td>22/10/2023 20:33</td>
+        <td>
+          <Badge :label="'Arrematou'" :style="'bg-zinc-900 text-zinc-50'">
+            <font-awesome-icon :icon="['fas', 'stamp']" />
+          </Badge>
+        </td>
         <td>
           <Badge :label="'Concluído'">
             <font-awesome-icon :icon="['far', 'clock']" />
