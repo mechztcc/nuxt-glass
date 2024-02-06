@@ -7,7 +7,7 @@
     <div class="flex flex-col mt-20">
       <span class="text-sm text-zinc-500" v-if="!isHide">Minha Loja</span>
       <SidebarButton :label="'Dashboard'" :isHide="isHide" :to="'/admin/home'">
-        <font-awesome-icon :icon="['fas', 'chart-simple']" />
+        <font-awesome-icon :icon="['fas', 'chart-simple']" class="text-green-400" />
       </SidebarButton>
       <SidebarButton
         :label="'Produtos'"

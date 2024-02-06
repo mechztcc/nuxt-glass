@@ -1,7 +1,7 @@
 <template>
   <NuxtLink :to="to">
     <button
-      class="hover:bg-zinc-50 text-zinc-50 hover:text-zinc-700 p-3 px-5 mt-2 flex w-full items-center justify-start"
+      class="hover:bg-zinc-800 text-zinc-50 hover:text-green-400 p-3 px-5 mt-2 flex w-full items-center justify-start"
     >
       <slot></slot>
       <span class="mx-2" v-if="!isHide">{{ label }}</span>
