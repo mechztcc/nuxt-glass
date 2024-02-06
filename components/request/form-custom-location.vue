@@ -1,11 +1,17 @@
 <template>
   <div class="grid grid-cols-4 gap-5">
     <div class="col-span-4">
-      <span class="">Seu pedido fica disponível em:</span>
+      <span class="text-zinc-500">Seu pedido fica disponível em:</span>
       <div class="flex mt-2">
-        <Badge :label="'Recife'" />
-        <Badge :label="'Olinda'" class="mx-2" />
-        <Badge :label="'Paulista'" />
+        <Badge :label="'Recife'">
+          <font-awesome-icon :icon="['fas', 'circle-xmark']" />
+        </Badge>
+        <Badge :label="'Olinda'" class="mx-2">
+          <font-awesome-icon :icon="['fas', 'circle-xmark']" />
+        </Badge>
+        <Badge :label="'Paulista'">
+          <font-awesome-icon :icon="['fas', 'circle-xmark']" />
+        </Badge>
       </div>
     </div>
     <div class="col-span-1 col-start-1 mt-5">

@@ -1,10 +1,11 @@
 <template>
   <div class="flex flex-col">
-    <font-awesome-icon :icon="['fas', 'bullhorn']" :size="'2x'" class="mb-2"/>
-    <h1 class="text-3xl text-center ">Novo Pedido!</h1>
+    <font-awesome-icon :icon="['fas', 'glasses']" :size="'2x'" class="mb-2" />
+    <h1 class="text-3xl text-center">Novo Pedido!</h1>
     <span class="text-lg text-zinc-700 text-center">
       Nos conte mais sobre sua escolha de óculos
     </span>
+
     <div class="grid grid-cols-3 gap-5 mt-20">
       <div class="col-span-3">
         <span class="text-zinc-700 text-lg">
@@ -31,6 +32,27 @@
       </div>
       <div class="col-span-1">
         <DefaultSelectedButton :label="'Unisex'" />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-3 gap-5 mt-20">
+      <div class="col-span-3">
+        <span class="text-zinc-700 text-lg"
+          >Envie uma foto do seu Exame de vista</span
+        >
+      </div>
+
+      <div class="col-span-3" style="height: 200px">
+        <div
+          class="flex flex-col justify-center items-center w-full h-full border-dotted border-4 hover:border-black rounded-xl"
+        >
+          <font-awesome-icon :icon="['fas', 'image']" :size="'3x'" />
+          <span class="text-xl font-semibold"
+            >Arraste o arquivo e solte aqui</span
+          >
+          <span class="text-zinc-500">JPG, JPEG, PNG, PDF</span>
+          <span class="text-zinc-500">Tamanho máximo: 5mb</span>
+        </div>
       </div>
     </div>
 

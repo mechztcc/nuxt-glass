@@ -1,11 +1,13 @@
 <template>
   <div
-    class="border p-5 cursor-pointer hover:shadow-md "
-    :class="isSelected ? 'bg-zinc-900 text-white shadow-md  border-none' : ''"
+    class="border p-5 cursor-pointer bg-zinc-50"
+    :class="isSelected ? 'border-2 border-zinc-900 text-zinc-900 rounded-xl' : ''"
     @click="onSelect()"
   >
     <font-awesome-icon
-      :icon="['far', isSelected ? 'square-check' : 'square']"
+      :icon="isSelected ? ['fas','square-check'] : ['far', 'square']"
+      :size="'lg'"
+      class="text-zinc-900"
     />
     <h1>{{ label }}</h1>
   </div>

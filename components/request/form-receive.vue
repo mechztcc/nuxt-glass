@@ -1,28 +1,24 @@
 <template>
   <div class="flex flex-col justify-start h-screen">
-    <font-awesome-icon :icon="['fas', 'earth-americas']" :size="'2x'" class="mb-2"/>
-    <h1 class="text-3xl text-center">Novo Pedido!</h1>
+    <font-awesome-icon :icon="['fas', 'location-dot']" :size="'2x'" class="mb-2" />
+    <h1 class="text-3xl text-center">Retirada do Produto!</h1>
     <span class="text-lg text-zinc-700 text-center">
-      Escolha à região onde seu pedido ficará disponível
+      Nos conte como você deseja receber seu Produto
     </span>
 
     <div class="grid grid-cols-3 mt-10 gap-5">
       <div class="col-span-1">
-        <DefaultSelectedButton :label="'Em todo Pernambuco'" />
+        <DefaultSelectedButton :label="'Retirar no local'" />
       </div>
       <div class="col-span-1">
-        <DefaultSelectedButton :label="'Apenas minha Recife'" />
-      </div>
-      <div class="col-span-1">
-        <DefaultSelectedButton :label="'Escolher mais de uma Local'" />
+        <DefaultSelectedButton :label="'Receber em casa'" />
       </div>
     </div>
 
-    <div class="grid grid-cols-3 mt-10 gap-5">
-      <div class="col-span-3">
-        <RequestFormCustomLocation />
-      </div>
-
+    <span class="text-zinc-500 mt-10">Endereço padrão</span>
+    <div class="flex items-center">
+      <font-awesome-icon :icon="['fas', 'location-dot']" />
+      <span class="ml-2">Av. Inhamã n9, Cruz de rebouças - PE</span>
     </div>
   </div>
 </template>
