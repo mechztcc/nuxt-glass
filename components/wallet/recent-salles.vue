@@ -27,7 +27,7 @@
 
       <div class="flex flex-col mx-5">
         <span class="text-zinc-700 text-lg font-semibold">Status</span>
-        <Badge :label="'Em andamento'" :style="'bg-yellow-400 text-white'"></Badge>
+        <Badge :label="'Andamento'" :style="'bg-yellow-400 text-white'"></Badge>
       </div>
       <div class="flex flex-col mx-5">
         <span class="text-zinc-700 text-lg font-semibold">Cliente</span>
