@@ -1,10 +1,10 @@
 <template>
   <NuxtLayout :name="'no-navbar'">
-    <div class="grid grid-cols-1 md:grid-cols-3 min-h-screen">
-      <div class="col-span-1 md:col-span-1 px-5 md:px-10 bg-zinc-200">
+    <div class="grid grid-cols-1 md:grid-cols-4 min-h-screen">
+      <div class="col-span-1 md:col-span-4 px-5 md:px-10">
         <CreateAccountStep />
       </div>
-      <div class="col-span-1 md:col-span-2 px-5">
+      <div class="col-span-1 md:col-span-2 md:col-start-2 px-5 py-10">
         <CreateAccountUser v-if="store.step == 1" />
         <CreateAccountShop v-if="store.step == 2" />
       </div>

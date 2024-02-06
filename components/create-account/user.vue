@@ -1,24 +1,12 @@
 <template>
-  <Form class="h-full flex justify-center">
+  <Form class="h-full flex justify-center items-center">
     <div class="w-full md:w-1/2 h-full justify-center flex flex-col">
-      <div class="flex justify-end mt-3 mb-20">
-        <font-awesome-icon
-          :icon="['fas', 'square']"
-          @click="store.onHandleStep('prev')"
-          class="cursor-pointer"
-        />
-        <font-awesome-icon
-          :icon="['far', 'square']"
-          class="ml-1 text-zinc-500 cursor-pointer"
-          @click="store.onHandleStep('next')"
-        />
-      </div>
       <h1 class="text-3xl text-center">Bem vindo!</h1>
       <span class="text-lg text-zinc-700 text-center">
         Preencha o formulário abaixo para criar seu acesso.
       </span>
       <label for="" class="mb-2 mt-10 font-semibold">Nome</label>
-      <div class="flex items-center border px-5 border-zinc-300  bg-white">
+      <div class="flex items-center border px-5 border-zinc-300 bg-white">
         <font-awesome-icon
           :icon="['far', 'user']"
           class="text-zinc-900 rounded-full"
@@ -27,7 +15,7 @@
       </div>
 
       <label for="" class="mb-2 mt-5 font-semibold">E-mail</label>
-      <div class="flex items-center border px-5 border-zinc-300  bg-white">
+      <div class="flex items-center border px-5 border-zinc-300 bg-white">
         <font-awesome-icon
           :icon="['far', 'envelope']"
           class="text-zinc-900 rounded-full"
@@ -36,7 +24,7 @@
       </div>
 
       <label for="" class="mb-2 mt-5 font-semibold">Senha</label>
-      <div class="flex items-center border px-5 border-zinc-300  bg-white">
+      <div class="flex items-center border px-5 border-zinc-300 bg-white">
         <font-awesome-icon
           :icon="['fas', 'lock']"
           class="text-zinc-900 rounded-full cursor-pointer"
@@ -50,7 +38,7 @@
       </div>
 
       <label for="" class="mb-2 mt-5 font-semibold">Confirmar senha</label>
-      <div class="flex items-center border px-5 border-zinc-300 mb-5  bg-white">
+      <div class="flex items-center border px-5 border-zinc-300 mb-5 bg-white">
         <Field
           name="password"
           :type="!isPass ? 'text' : 'password'"

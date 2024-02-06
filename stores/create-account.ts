@@ -14,5 +14,8 @@ export const useCreateAccount = defineStore("createAccount", {
         this.step--;
       }
     },
+    onSetStep(v: number) {
+      this.step = v;
+    },
   },
 });
