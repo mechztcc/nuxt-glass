@@ -3,13 +3,14 @@
     <div class="col-span-1 px-5 h-screen bg-zinc-200">
       <RequestStep />
     </div>
-    <div class="col-span-2">
-      <div class="flex justify-end mt-20 mx-10 md:mx-20">
+    <div class="col-span-2 mt-20 mx-10 md:mx-20">
+      <div class="flex justify-end">
       <font-awesome-icon :icon="['fas', 'square']" />
       <font-awesome-icon :icon="['far', 'square']" class="mx-2" />
       <font-awesome-icon :icon="['far', 'square']" />
     </div>
-      <RequestFormGlassType />
+      <!-- <RequestFormGlassType /> -->
+      <RequestGlassInformation />
     </div>
   </div>
 </template>
