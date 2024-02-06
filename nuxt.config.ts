@@ -30,7 +30,7 @@ export default defineNuxtConfig({
       "@nuxtjs/google-fonts",
       {
         families: {
-          Lora: true
+          Rajdhani: true
         },
       },
     ],

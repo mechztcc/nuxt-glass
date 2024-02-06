@@ -1,6 +1,6 @@
 <template>
   <div class="flex">
-    <Sidebar />
+    <SidebarContainer />
     <div class="w-full mx-5 md:mx-10 my-10">
       <slot></slot>
     </div>
