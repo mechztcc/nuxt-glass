@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 defineProps({
-  label: { type: String, required: true },
+  label: { type: String, required: false },
   to: { type: String, required: false },
   isHide: { type: Boolean, required: true, default: false },
 });

@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col justify-start h-screen">
+  <div class="flex flex-col justify-start">
     <font-awesome-icon :icon="['fas', 'earth-americas']" :size="'2x'" class="mb-2"/>
-    <h1 class="text-3xl text-center">Novo Pedido!</h1>
+    <h1 class="text-3xl text-center">Região de Busca</h1>
     <span class="text-lg text-zinc-700 text-center">
       Escolha à região onde seu pedido ficará disponível
     </span>

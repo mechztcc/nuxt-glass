@@ -21,7 +21,7 @@ defineProps({
 const isSelected = ref(false);
 
 function onSelect() {
-  this.isSelected = !this.isSelected;
+  isSelected.value = !isSelected.value;
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col justify-start h-screen">
+  <div class="flex flex-col justify-start ">
     <font-awesome-icon :icon="['fas', 'location-dot']" :size="'2x'" class="mb-2" />
-    <h1 class="text-3xl text-center">Retirada do Produto!</h1>
+    <h1 class="text-3xl text-center">Retirada do Produto</h1>
     <span class="text-lg text-zinc-700 text-center">
       Nos conte como você deseja receber seu Produto
     </span>
