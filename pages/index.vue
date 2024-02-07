@@ -2,7 +2,7 @@
   <NuxtLayout :name="'default'">
     <Header />
     <Informative />
-    <Collaborates />
+    <HomePlansContainer />
     <Footer />
   </NuxtLayout>
 </template>

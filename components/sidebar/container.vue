@@ -2,12 +2,21 @@
   <div
     @mouseenter="isHide = false"
     @mouseleave="isHide = true"
-    :class="['flex justify-center items-between min-h-screen bg-zinc-900 shadow-xl', !isHide ? 'sidebar': '']"
+    :class="[
+      'flex justify-center items-between min-h-screen bg-zinc-900 shadow-xl',
+      !isHide ? 'sidebar' : '',
+    ]"
   >
-    <div class="flex flex-col mt-20">
+    <div class="flex flex-col mt-20 w-full px-3">
+      <div class="flex justify-center mb-10">
+        <Logo :color="'text-zinc-50'" />
+      </div>
       <span class="text-sm text-zinc-500" v-if="!isHide">Minha Loja</span>
       <SidebarButton :label="'Dashboard'" :isHide="isHide" :to="'/admin/home'">
-        <font-awesome-icon :icon="['fas', 'chart-simple']" class="text-green-400" />
+        <font-awesome-icon
+          :icon="['fas', 'chart-simple']"
+          class="text-green-400"
+        />
       </SidebarButton>
       <SidebarButton
         :label="'Produtos'"
@@ -63,7 +72,6 @@ function onHandleBar() {
 
 <style lang="css" scoped>
 .sidebar {
-  width: 270px;
+  width: 300px;
 }
-
 </style>

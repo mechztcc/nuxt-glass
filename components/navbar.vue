@@ -3,7 +3,7 @@
     class="flex w-full justify-between px-5 border-b-2 py-5 sticky top-0 bg-zinc-50 z-10"
   >
     <NuxtLink to="/">
-      <span class="text-4xl">VALKYRIE</span>
+      <Logo />
     </NuxtLink>
     <div class="flex">
       <DefaultButton class="mr-2">

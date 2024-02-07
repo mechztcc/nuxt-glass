@@ -157,7 +157,7 @@ onMounted(() => {
 function onChangeContent() {
   const interval = setInterval(() => {
     customer.value = !customer.value;
-  }, 5000);
+  }, 10000);
 }
 </script>
 
