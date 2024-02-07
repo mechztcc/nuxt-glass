@@ -10,6 +10,10 @@
   animation: fadeIn 0.5s ease-in-out; /* Ajuste a duração conforme necessário */
 }
 
+.trans {
+  transition: all ease 0.5s;
+}
+
 
 @keyframes fadeIn {
   from {

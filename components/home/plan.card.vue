@@ -1,12 +1,12 @@
 <template>
-  <div class="flex flex-col bg-zinc-50 p-10 hover:mt-0 mt-5 hover:shadow-lg rounded">
+  <div
+    class="flex flex-col bg-zinc-50 p-10 hover:mt-0 mt-5 hover:shadow-lg rounded trans"
+  >
     <Logo />
     <div class="flex relative items-center justify-center">
       <img src="~assets/imgs/img2.png" alt="" style="z-index: 1" />
     </div>
-    <span class="text-5xl font-semibold mt-2">
-      Plano Gratuito
-    </span>
+    <span class="text-5xl font-semibold mt-2"> Plano Gratuito </span>
 
     <hr class="my-5" />
     <div class="flex items-center mb-3">
@@ -34,4 +34,8 @@
 
 <script setup></script>
 
-<style lang="scss" scoped></style>
+<style lang="css" scoped>
+img {
+  width: 250px;
+}
+</style>
