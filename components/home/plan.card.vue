@@ -2,11 +2,12 @@
   <div
     class="flex flex-col bg-zinc-50 p-10 hover:mt-0 mt-5 hover:shadow-lg rounded trans"
   >
-    <Logo />
     <div class="flex relative items-center justify-center">
-      <img src="~assets/imgs/img2.png" alt="" style="z-index: 1" />
+      <slot></slot>
     </div>
-    <span class="text-5xl font-semibold mt-2"> Plano Gratuito </span>
+    <font-awesome-icon :icon="['fas', 'medal']" :size="'2x'"/>
+    <span class="text-3xl font-semibold mt-2 text-center"> {{ title }} </span>
+    <span class="text-green-400 text-6xl font-bold text-center">R$ 0,00</span>
 
     <hr class="my-5" />
     <div class="flex items-center mb-3">
@@ -32,10 +33,14 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+defineProps({
+  title: { type: String, required: false },
+});
+</script>
 
 <style lang="css" scoped>
 img {
-  width: 250px;
+  width: 200px;
 }
 </style>

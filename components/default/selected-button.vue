@@ -1,6 +1,6 @@
 <template>
   <div
-    class="border p-5 cursor-pointer bg-zinc-50"
+    class="border p-5 cursor-pointer bg-zinc-50 trans"
     :class="
       isSelected ? 'border-2 border-zinc-900 text-zinc-900 rounded-xl' : ''
     "
