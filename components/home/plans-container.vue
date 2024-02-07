@@ -12,17 +12,18 @@
     </div>
     <div class="col-span-1" v-for="(item, index) in plans" :key="index">
       <HomePlanCard :title="item">
-        <img src="~assets/imgs/img1.png" alt="" style="z-index: 1" v-if="index == 0"/>
-        <img src="~assets/imgs/img2.png" alt="" style="z-index: 1" v-if="index == 1"/>
-        <img src="~assets/imgs/img3.png" alt="" style="z-index: 1" v-if="index == 2"/>
+        <div class="flex">
+          <font-awesome-icon :icon="['fas', 'medal']" :size="'2x'" />
+          <font-awesome-icon :icon="['fas', 'medal']" :size="'2x'" v-if="index > 0" />
+          <font-awesome-icon :icon="['fas', 'medal']" :size="'2x'" v-if="index > 1"  />
+        </div>
       </HomePlanCard>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-
-  const plans = ['Plano Gratuito', 'Plano Mensal', 'Plano Anual']
+const plans = ["Plano Gratuito", "Plano Mensal", "Plano Anual"];
 </script>
 
 <style lang="css" scoped>

@@ -1,14 +1,19 @@
 <template>
   <Form class="flex flex-col justify-between h-full w-full">
-    <div class="flex mt-5"></div>
+    <div class="flex justify-center mt-5"></div>
     <div class="flex flex-col">
+      <div class="flex justify-center mb-2">
+        <Logo />
+      </div>
       <h1 class="text-3xl text-center">Bem vindo!</h1>
       <span class="text-lg text-zinc-700 text-center">
         Preencha o formulário abaixo para acessar sua conta.
       </span>
 
       <label for="" class="mb-2 mt-10 font-semibold">E-mail</label>
-      <div class="flex items-center border px-5 w-full border-zinc-300 bg-white">
+      <div
+        class="flex items-center border px-5 w-full border-zinc-300 bg-white"
+      >
         <font-awesome-icon
           :icon="['far', 'envelope']"
           class="text-zinc-900 rounded-full"
@@ -17,7 +22,9 @@
       </div>
 
       <label for="" class="mb-2 mt-10 font-semibold">Senha</label>
-      <div class="flex items-center border px-5 w-full border-zinc-300  bg-white">
+      <div
+        class="flex items-center border px-5 w-full border-zinc-300 bg-white"
+      >
         <font-awesome-icon
           :icon="['fas', 'lock']"
           class="text-zinc-900 rounded-full cursor-pointer"
