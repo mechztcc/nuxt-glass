@@ -6,7 +6,7 @@
         'bg-zinc-900 text-white w-full hover:bg-zinc-950 hover:text-green-400':
           fill,
       }"
-      class="px-3 py-2 hover:text-white hover:bg-zinc-900 relative"
+      class="px-3 py-2 hover:text-white hover:bg-zinc-900 relative rounded"
     >
       <slot></slot>
       <span class="text-lg"> {{ label }}</span>
