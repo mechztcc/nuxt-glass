@@ -13,8 +13,15 @@
       <RequestComplete v-if="store.step == 6" />
     </div>
 
-    <div class="col-span-1 col-start-3 mx-10 md:mx-20 mt-10" v-if="store.step !== 6">
-      <DefaultButton :label="'Avançar'" :fill="true" />
+    <div
+      class="col-span-1 col-start-3 mx-10 md:mx-20 mt-10"
+      v-if="store.step !== 6"
+    >
+      <DefaultButton
+        :label="'Avançar'"
+        :fill="true"
+        @pressed="store.onHandleStep('next')"
+      />
     </div>
   </div>
 </template>

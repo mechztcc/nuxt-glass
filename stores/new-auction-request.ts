@@ -6,7 +6,7 @@ export const useNewAuctionRequest = defineStore("newAuctionRequest", {
   },
   actions: {
     onHandleStep(type: "prev" | "next") {
-      if (type == "next" && this.step < 2) {
+      if (type == "next" && this.step < 6) {
         this.step++;
       }
       if (type == "prev" && this.step > 0) {

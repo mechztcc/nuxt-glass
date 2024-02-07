@@ -16,7 +16,7 @@
       </div>
     </div>
 
-    <div class="col-span-3 bg-zinc-50" style="height: 200px">
+    <div class="col-span-3 bg-zinc-50" style="height: 200px" ref="dropZoneRef">
       <div
         class="flex flex-col justify-center items-center w-full h-full border-dotted border-4 hover:border-black rounded-xl"
       >
@@ -24,6 +24,7 @@
         <span class="text-xl font-semibold">
           Arraste o arquivo e solte aqui
         </span>
+        {{ isOverDropZone }}
         <span class="text-zinc-500">JPG, JPEG, PNG, PDF</span>
         <span class="text-zinc-500">Tamanho máximo: 5mb</span>
       </div>
@@ -31,6 +32,18 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useDropZone } from "@vueuse/core";
+
+const dropZoneRef = ref<HTMLDivElement>();
+const onDrop = (files: File[] | null) => {
+  console.log(files);
+};
+
+const { isOverDropZone } = useDropZone(dropZoneRef, {
+  onDrop,
+  dataTypes: ["image/jpeg", "image/png", "image/*"],
+});
+</script>
 
 <style lang="scss" scoped></style>
