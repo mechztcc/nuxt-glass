@@ -70,7 +70,12 @@
         </div>
       </div>
 
-      <DefaultButton :label="'AVANÇAR'" :fill="true" class="mt-10" :to="'/'" />
+      <DefaultButton
+        :label="'AVANÇAR'"
+        :fill="true"
+        class="mt-10"
+        @pressed="store.onHandleStep('next')"
+      />
     </div>
   </Form>
 </template>

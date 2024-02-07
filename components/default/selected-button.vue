@@ -1,11 +1,13 @@
 <template>
   <div
     class="border p-5 cursor-pointer bg-zinc-50"
-    :class="isSelected ? 'border-2 border-zinc-900 text-zinc-900 rounded-xl' : ''"
+    :class="
+      isSelected ? 'border-2 border-zinc-900 text-zinc-900 rounded-xl' : ''
+    "
     @click="onSelect()"
   >
     <font-awesome-icon
-      :icon="isSelected ? ['fas','square-check'] : ['far', 'square']"
+      :icon="isSelected ? ['fas', 'square-check'] : ['far', 'square']"
       :size="'lg'"
       class="text-zinc-900"
     />
@@ -14,14 +16,22 @@
 </template>
 
 <script setup lang="ts">
-defineProps({
+const props = defineProps({
   label: { type: String, required: true },
 });
 
-const isSelected = ref(false);
+const emit = defineEmits(["selected"]);
+const selected = () => {
+  emit("selected", {
+    label: props.label,
+    selected: isSelected.value,
+  });
+};
 
+const isSelected = ref(false);
 function onSelect() {
   isSelected.value = !isSelected.value;
+  selected();
 }
 </script>
 

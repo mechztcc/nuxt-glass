@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center items-center my-20">
+  <div class="flex justify-center items-center mt-20 mb-10">
     <template v-for="(item, _) in items" :key="index">
       <div
         class="flex flex-col items-center cursor-pointer"
@@ -20,7 +20,7 @@
         </div>
         <div class="text-center mt-2">{{ item.label }}</div>
       </div>
-      <div class="h-px bg-gray-400 w-16 mb-7" v-if="item.step !== 2"></div>
+      <div :class="['h-2 w-16 mb-7', item.step >= store.step ? 'bg-gray-300' : 'bg-green-400']" v-if="item.step !== 2"></div>
     </template>
   </div>
 </template>

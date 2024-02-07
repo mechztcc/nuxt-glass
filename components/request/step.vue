@@ -20,7 +20,7 @@
         </div>
         <div class="text-center mt-2">{{ item.label }}</div>
       </div>
-      <div class="h-px bg-gray-400 w-16 mb-7" v-if="item.step !== 5"></div>
+      <div :class="['h-2 w-16 mb-7', item.step >= store.step ? 'bg-gray-300' : 'bg-green-400']" v-if="item.step !== 5"></div>
     </template>
   </div>
 </template>

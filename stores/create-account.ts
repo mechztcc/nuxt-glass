@@ -6,7 +6,7 @@ export const useCreateAccount = defineStore("createAccount", {
   },
   actions: {
     onHandleStep(type: "prev" | "next") {
-      if (type == "next" && this.step < 2) {
+      if (type == "next" && this.step < 3) {
         this.step++;
       }
 
