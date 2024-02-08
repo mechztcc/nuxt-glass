@@ -1,7 +1,7 @@
 <template>
   <div class="grid grid-cols-3 bg-zinc-400">
     <div class="col-span-3 md:col-span-1 flex flex-col justify-end">
-      <div class="px-5">
+      <div class="px-5 mt-5">
         <Logo />
         <span class="text-zinc-700 text-xl mt-2">
           O maior E-commerce de Óculos do Brasil

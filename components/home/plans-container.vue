@@ -1,6 +1,6 @@
 <template>
-  <div class="grid grid-cols-3 mx-10 md:mx-20 py-20 gap-20">
-    <div class="col-span-3">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-10 md:mx-20 py-20 gap-20">
+    <div class="col-span-1 md:col-span-2 lg:col-span-3">
       <div class="flex justify-center">
         <font-awesome-icon :icon="['fas', 'ruler-combined']" :size="'3x'" />
       </div>

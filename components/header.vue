@@ -44,7 +44,6 @@
 <style lang="css" scoped>
 .header {
   min-height: 40vh;
-  height: 40vh;
 }
 
 

@@ -17,6 +17,6 @@
 
 <style lang="css" scoped>
 .h-300px {
-  height: 300px;
+  max-height: 300px;
 }
 </style>
