@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
     <SidebarContainer />
-    <div class="w-full mx-5 md:mx-10 my-10">
+    <div class="w-full mx-5 md:mx-10 my-10 trans">
       <slot></slot>
     </div>
   </div>

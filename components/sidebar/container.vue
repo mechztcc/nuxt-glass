@@ -3,7 +3,7 @@
     @mouseenter="isHide = false"
     @mouseleave="isHide = true"
     :class="[
-      'flex justify-center items-between min-h-screen bg-zinc-900 shadow-xl',
+      'flex justify-center items-between min-h-screen bg-zinc-900 shadow-xl trans',
       !isHide ? 'sidebar' : '',
     ]"
   >
