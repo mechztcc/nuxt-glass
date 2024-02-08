@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout :name="'default'">
     <Header />
-    <div class="w-full h-full">
+    <div class="w-full h-300px">
       <img src="~assets/imgs/wave-1.svg" alt="" />
     </div>
     <Informative />
@@ -15,4 +15,8 @@
 
 <script setup></script>
 
-<style lang="scss" scoped></style>
+<style lang="css" scoped>
+.h-300px {
+  height: 300px;
+}
+</style>

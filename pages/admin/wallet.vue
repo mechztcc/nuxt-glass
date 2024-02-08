@@ -8,26 +8,27 @@
         <WalletCardSummary :label="'Vendas Realizadas'" :value="'28'" />
       </div>
 
+      <div class="col-span-1">
+        <ChartsDonut
+          :labels="binds.labels"
+          :data="binds.data"
+          :title="binds.title"
+        />
+      </div>
+
+      <div class="col-span-1">
+        <ChartsDonut
+          :labels="goat.labels"
+          :data="goat.data"
+          :title="goat.title"
+        />
+      </div>
+
       <div class="col-span-2">
-        <ChartsLine
+        <ChartsBars
           :labels="lastWeek.labels"
           :title="lastWeek.title"
           :data="lastWeek.data"
-        />
-      </div>
-      <div class="col-span-1">
-        <ChartsDonut :labels="binds.labels" :data="binds.data" :title="binds.title" />
-      </div>
-
-      <div class="col-span-1">
-        <ChartsDonut :labels="goat.labels" :data="goat.data" :title="goat.title"/>
-      </div>
-
-      <div class="col-span-2">
-        <ChartsLine
-          :labels="lastMonth.labels"
-          :title="lastMonth.title"
-          :data="lastMonth.data"
         />
       </div>
       <div class="col-span-1 md:col-span-3 md:col-start-1 my-5">
@@ -60,17 +61,16 @@ const lastWeek = {
 };
 
 const goat = {
-  title: 'Mais Vendidos',
+  title: "Mais Vendidos",
   labels: ["Oculos de sol", "Oculos de grau", "Lentes de contato"],
   data: [500, 600, 430],
 };
 
 const binds = {
-  title: 'Lances Realizados X Vendas Concluídas',
-  labels: ["Realizados", "Concluídos", ],
+  title: "Lances Realizados X Vendas Concluídas",
+  labels: ["Realizados", "Concluídos"],
   data: [50, 20],
 };
-
 </script>
 
 <style lang="scss" scoped></style>

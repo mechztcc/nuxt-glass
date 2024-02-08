@@ -1,26 +1,24 @@
 <template>
-  <div class="bg-zinc-50 rounded text-center pt-3">
-    <span class="text-xl font-semibold">{{ title }}</span>
-  </div>
-  <div class="bg-zinc-50 p-5 rounded">
-    <Doughnut :data="chartData" :options="chartOptions" />
+  <div class="bg-zinc-50 p-5 rounded h-full">
+    <Bar :data="chartData" :options="chartOptions" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { Doughnut } from "vue-chartjs";
+import { Bar } from "vue-chartjs";
 
 const props = defineProps({
   title: { type: String, required: true },
   labels: { type: Array, required: true },
-  data: { type: Array, required: true },
+  data: { type: Array, required: true, default: [] },
 });
 
 const chartData = ref({
   labels: props.labels,
   datasets: [
     {
-      backgroundColor: ["#4ade80", "#3f3f46", "#f472b6"],
+      label: props.title,
+      backgroundColor: "#3f3f46",
       data: props.data as [],
     },
   ],

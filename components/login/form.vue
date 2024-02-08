@@ -6,39 +6,21 @@
         <Logo />
       </div>
       <h1 class="text-3xl text-center">Bem vindo!</h1>
-      <span class="text-lg text-zinc-700 text-center">
-        Preencha o formulário abaixo para acessar sua conta.
-      </span>
+      <span class="text-lg text-zinc-700 text-center"> Preencha o formulário abaixo para acessar sua conta. </span>
 
-      <label for="" class="mb-2 mt-10 font-semibold">E-mail</label>
-      <div
-        class="flex items-center border px-5 w-full border-zinc-300 bg-white"
-      >
-        <font-awesome-icon
-          :icon="['far', 'envelope']"
-          class="text-zinc-900 rounded-full"
-        />
-        <Field name="email" class="p-3 rounded-xl outline-none w-full" />
-      </div>
+      <DefaultInput :label="'Senha'" :type="'text'" :field="'email'">
+        <template #prepend>
+          <font-awesome-icon :icon="['far', 'envelope']" class="text-zinc-900 rounded-full" />
+        </template>
+      </DefaultInput>
 
-      <label for="" class="mb-2 mt-10 font-semibold">Senha</label>
-      <div
-        class="flex items-center border px-5 w-full border-zinc-300 bg-white"
-      >
-        <font-awesome-icon
-          :icon="['fas', 'lock']"
-          class="text-zinc-900 rounded-full cursor-pointer"
-          @click="onHandlePass"
-        />
-        <Field
-          name="password"
-          :type="!isPass ? 'text' : 'password'"
-          class="p-3 rounded-xl outline-none w-full"
-        />
-      </div>
-      <span class="text-zinc-700 text-end mt-2 cursor-pointer">
-        Esqueceu a senha?
-      </span>
+      <DefaultInput :label="'Senha'" :type="isPass ? 'password' : 'text'" :field="'password'">
+        <template #prepend>
+          <font-awesome-icon :icon="['fas', 'lock']" class="text-zinc-900 rounded-full cursor-pointer" @click="onHandlePass" />
+        </template>
+      </DefaultInput>
+
+      <span class="text-zinc-700 text-end mt-2 cursor-pointer"> Esqueceu a senha? </span>
       <DefaultButton :label="'ENTRAR'" :fill="true" class="mt-5" :to="'/'" />
       <ButtonGoogle />
     </div>
@@ -52,7 +34,7 @@
 </template>
 
 <script setup lang="ts">
-import { Form, Field, ErrorMessage } from "vee-validate";
+import { Form, Field, ErrorMessage } from 'vee-validate';
 
 const isPass = ref(true);
 
