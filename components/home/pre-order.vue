@@ -3,7 +3,7 @@
     <div
       class="col-span-1 md:col-span-4 bg-zinc-900 rounded-lg px-5 py-10"
     >
-      <div class="flex flex-col text-green-400">
+      <div class="flex flex-col text-teal-400">
         <h1 class="text-2xl">
           Ainda estamos em desenvolvimento, se inscreva para ficar por dentro do
           nosso lançamento.
@@ -28,7 +28,7 @@
             />
             <Field name="email" class="p-3 rounded-xl outline-none w-full" />
           </div>
-          <button class="border rounded border-green-400 hover:bg-green-400 hover:text-white p-3 ml-2">
+          <button class="border rounded border-green-400 hover:bg-teal-400 hover:text-white p-3 ml-2">
               <font-awesome-icon :icon="['fab', 'space-awesome']" class="mr-2"/>
             ENVIAR
           </button>

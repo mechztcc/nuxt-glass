@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col text-center">
-    <h1 class="text-green-400 text-3xl">
+    <h1 class="text-teal-400 text-3xl">
       Parabéns! Seu Pedido foi realizado com sucesso
     </h1>
 

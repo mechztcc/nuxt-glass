@@ -8,7 +8,7 @@
 <script setup lang="ts">
 defineProps({
   label: { type: String, required: false, default: "Aguardando" },
-  style: { type: String, required: false, default: "bg-green-400 text-white" },
+  style: { type: String, required: false, default: "bg-teal-400 text-white" },
 });
 </script>
 

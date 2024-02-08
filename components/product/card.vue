@@ -16,7 +16,7 @@
           <font-awesome-icon :icon="['far', 'star']" />
           <font-awesome-icon :icon="['far', 'star']" />
         </div>
-        <span class="text-xl font-semibold text-green-400 mt-2">R$ 150,00</span>
+        <span class="text-xl font-semibold text-teal-400 mt-2">R$ 150,00</span>
         <div class="flex mt-2 mb-3">
           <div class="flex flex-col items-center">
             <span class="font-semibold">Cor</span>

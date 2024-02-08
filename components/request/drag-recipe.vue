@@ -7,7 +7,7 @@
         </span>
         <font-awesome-icon
           :icon="['fas', 'circle-check']"
-          class="mx-2 text-green-400"
+          class="mx-2 text-teal-400"
         />
         <font-awesome-icon
           :icon="['fas', 'circle-xmark']"

@@ -15,7 +15,7 @@
       <SidebarButton :label="'Dashboard'" :isHide="isHide" :to="'/admin/home'">
         <font-awesome-icon
           :icon="['fas', 'chart-simple']"
-          class="text-green-400"
+          class="text-teal-400"
         />
       </SidebarButton>
       <SidebarButton

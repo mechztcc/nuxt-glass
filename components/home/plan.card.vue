@@ -6,12 +6,12 @@
       <slot></slot>
     </div>
     <span class="text-3xl font-semibold mt-2 text-start"> {{ title }} </span>
-    <span class="text-green-400 text-6xl font-bold text-start">R$ 0,00</span>
+    <span class="text-teal-400 text-6xl font-bold text-start">R$ 0,00</span>
     <span class="text-end text-lg">/ desconto de 0%</span>
 
     <hr class="my-5" />
     <div class="flex items-center mb-3">
-      <font-awesome-icon :icon="['fas', 'check']" class="text-green-400 mr-5" />
+      <font-awesome-icon :icon="['fas', 'check']" class="text-teal-400 mr-5" />
       <span class="text-xl">Duração ILimitada</span>
     </div>
     <div class="flex items-center mb-3">

@@ -14,7 +14,7 @@
           </span>
           <font-awesome-icon
             :icon="['fas', 'circle-check']"
-            class="mx-2 text-green-400"
+            class="mx-2 text-teal-400"
             v-if="hasFrames"
           />
           <font-awesome-icon
@@ -44,7 +44,7 @@
           <span class="text-zinc-700 text-lg">Qual Genero da armação?</span>
           <font-awesome-icon
             :icon="['fas', 'circle-check']"
-            class="mx-2 text-green-400"
+            class="mx-2 text-teal-400"
             v-if="hasGender"
           />
           <font-awesome-icon
@@ -79,7 +79,7 @@
           </span>
           <font-awesome-icon
             :icon="['fas', 'circle-check']"
-            class="mx-2 text-green-400"
+            class="mx-2 text-teal-400"
             v-if="hasLenses"
           />
           <font-awesome-icon

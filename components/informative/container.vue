@@ -2,7 +2,7 @@
   <template v-if="!customer">
     <div class="flex flex-col mt-20 px-10">
       <div class="flex justify-between items-center">
-        <h1 class="text-3xl text-start text-green-400 font-semibold">Possuo uma loja de óculos</h1>
+        <h1 class="text-3xl text-start text-teal-400 font-semibold">Possuo uma loja de óculos</h1>
         <div class="flex items-center">
           <font-awesome-icon :icon="['fas', 'square']" class="text-zinc-900" />
           <font-awesome-icon

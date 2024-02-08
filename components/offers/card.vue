@@ -1,6 +1,6 @@
 <template>
   <div class="rounded bg-zinc-50 p-5 hover:shadow-md cursor-pointer">
-    <div class="flex items-center w-fit p-1 text-white bg-green-400 mb-2 rounded">
+    <div class="flex items-center w-fit p-1 text-white bg-teal-400 mb-2 rounded">
       <font-awesome-icon :icon="['fas', 'gem']" class="" />
       <span class="mx-2">Diamante</span>
     </div>
@@ -20,7 +20,7 @@
           <font-awesome-icon :icon="['fas', 'location-dot']" />
           <span class="mx-1">Av. Inhamã n9 53625-816</span>
         </div>
-        <div class="flex items-center text-green-400">
+        <div class="flex items-center text-teal-400">
           <font-awesome-icon :icon="['fab', 'pix']" />
           <span class="mx-1">R$ 599,00</span>
         </div>

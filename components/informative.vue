@@ -1,5 +1,5 @@
 <template>
-  <div class="grid-cols-1 bg-zinc-900 text-green-400">
+  <div class="grid-cols-1 bg-zinc-900 text-teal-400">
     <div class="flex flex-col items-center mx-10">
       <div class="flex justify-center">
         <font-awesome-icon :icon="['fas', 'gift']" :size="'3x'"/>

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col text-start justify-between p-5 h-full bg-zinc-800 text-green-400 rounded"
+    class="flex flex-col text-start justify-between p-5 h-full bg-zinc-800 text-teal-400 rounded"
   >
     <font-awesome-icon :icon="['fas', 'anchor']" class="p-3 bg-zinc-900 w-fit rounded mb-2"/>
     <h1 class="text-2xl text-start font-semibold">{{ title }}</h1>
