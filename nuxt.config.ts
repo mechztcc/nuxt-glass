@@ -1,10 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  css: [
-    "~/assets/css/main.css",
-    "@fortawesome/fontawesome-svg-core/styles.css",
-  ],
+  css: ['~/assets/css/main.css', '@fortawesome/fontawesome-svg-core/styles.css'],
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -12,25 +9,24 @@ export default defineNuxtConfig({
     },
   },
   build: {
-    transpile: ["@fortawesome/vue-fontawesome"],
+    transpile: ['@fortawesome/vue-fontawesome'],
   },
   app: {
     head: {
-      charset: "utf-8",
-      title: "VALKYRIE",
+      charset: 'utf-8',
+      title: 'VALKYRIE',
       bodyAttrs: {
-        class: "bg-zinc-100 relative min-h-screen",
+        class: 'bg-zinc-100 relative min-h-screen',
       },
     },
   },
   modules: [
-    "@vee-validate/nuxt",
     '@pinia/nuxt',
     [
-      "@nuxtjs/google-fonts",
+      '@nuxtjs/google-fonts',
       {
         families: {
-          Rajdhani: true
+          Rajdhani: true,
         },
       },
     ],
