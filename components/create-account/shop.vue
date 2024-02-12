@@ -7,42 +7,37 @@
       <h1 class="text-3xl text-center">Bem vindo!</h1>
       <span class="text-lg text-zinc-700 text-center"> Preencha o formulário abaixo com os detalhes da sua loja. </span>
 
-      <DefaultInput :label="'Nome da Loja'" :type="'text'" :field="'shopName'" :mask="'currency'" />
-      <DefaultFormError :name="'shopName'" v-if="hasError.shopName" />
+      <DefaultInput :label="'Nome da Loja'" :type="'text'" :field="'shopName'" />
+
+      <div class="grid grid-cols-1">
+        <div class="flex flex-col">
+          <DefaultInput :label="'CPF / CNPJ'" :type="'text'" :field="'document'" />
+        </div>
+      </div>
 
       <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
         <div class="flex flex-col col-span-1">
-          <DefaultInput :label="'CEP'" :type="'text'" :field="'zip'" :mask="'currency'" />
-          <DefaultFormError :name="'zip'" v-if="hasError.zip" />
+          <DefaultSelectInput :field="'state'" :label="'Estado'" :options="states" />
         </div>
 
         <div class="col-span-2 flex flex-col">
-          <DefaultInput :label="'Estado'" :type="'text'" :field="'state'" />
-          <DefaultFormError :name="'state'" v-if="hasError.state" />
+          <DefaultInput :label="'CEP'" :type="'text'" :field="'zip'" />
         </div>
       </div>
 
       <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
         <div class="flex flex-col">
           <DefaultInput :label="'Número'" :type="'text'" :field="'number'" />
-          <DefaultFormError :name="'number'" v-if="hasError.number" />
         </div>
 
         <div class="flex flex-col col-span-2">
           <DefaultInput :label="'Cidade'" :type="'text'" :field="'city'" />
-          <DefaultFormError :name="'city'" v-if="hasError.city" />
         </div>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
+      <div class="grid grid-cols-1 gap-5">
         <div class="flex flex-col">
-          <DefaultInput :label="'CPF / CNPJ'" :type="'text'" :field="'document'" />
-          <DefaultFormError :name="'document'" v-if="hasError.document" />
-        </div>
-
-        <div class="flex flex-col col-span-2">
           <DefaultInput :label="'Rua'" :type="'text'" :field="'street'" />
-          <DefaultFormError :name="'street'" v-if="hasError.street" />
         </div>
       </div>
 
@@ -57,6 +52,7 @@ import { toTypedSchema } from '@vee-validate/zod';
 import * as zod from 'zod';
 
 const store = useCreateAccount();
+const states = ['PE', 'AL', 'CE', 'SE', 'SC'];
 
 interface Iform {
   shopName?: string;

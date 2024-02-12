@@ -8,28 +8,24 @@
       <span class="text-lg text-zinc-700 text-center"> Preencha o formulário abaixo para criar seu acesso. </span>
 
       <DefaultInput :label="'Name'" :type="'text'" :field="'name'" />
-      <DefaultFormError :name="'name'" v-if="hasError.name" />
 
       <DefaultInput :label="'E-mail'" :type="'text'" :field="'email'">
         <template #prepend>
           <font-awesome-icon :icon="['far', 'envelope']" class="text-zinc-900 rounded-full" />
         </template>
       </DefaultInput>
-      <DefaultFormError :name="'email'" v-if="hasError.email" />
 
       <DefaultInput :label="'Senha'" :type="isPass ? 'password' : 'text'" :field="'password'">
         <template #prepend>
           <font-awesome-icon :icon="['fas', 'lock']" class="text-zinc-900 rounded-full cursor-pointer" @click="onHandlePass" />
         </template>
       </DefaultInput>
-      <DefaultFormError :name="'password'" v-if="hasError.password" />
 
       <DefaultInput :label="'Confirmar Senha'" :type="isConfirmPass ? 'password' : 'text'" :field="'confirmPass'">
         <template #prepend>
           <font-awesome-icon :icon="['fas', 'lock']" class="text-zinc-900 rounded-full cursor-pointer" @click="onHandleConfirmPass" />
         </template>
       </DefaultInput>
-      <DefaultFormError :name="'confirmPass'" v-if="hasError.confirmPass" />
 
       <DefaultButton :label="'AVANÇAR'" :fill="true" class="mt-5" :type="'submit'" />
       <ButtonGoogle />
@@ -61,7 +57,6 @@ const schema = toTypedSchema(
     confirmPass: zod.string().min(6, { message: 'Senha é obrigatório' }).default(''),
   })
 );
-
 
 const isPass = ref(true);
 const isConfirmPass = ref(true);
