@@ -1,5 +1,5 @@
 <template>
-  <Form class="h-full flex justify-center" :validation-schema="schema" @invalid-submit="handleErrors" @submit="onSubmit">
+  <Form class="h-full flex justify-center" :validation-schema="schema" @submit="onSubmit">
     <div class="w-full md:w-1/2 h-full justify-center flex flex-col">
       <div class="flex justify-center mt-10">
         <Logo />
@@ -41,7 +41,7 @@
         </div>
       </div>
 
-      <DefaultButton :label="'AVANÇAR'" :fill="true" class="mt-10" @pressed="store.onHandleStep('next')" />
+      <DefaultButton :label="'AVANÇAR'" :fill="true" class="mt-10" :type="'submit'" />
     </div>
   </Form>
 </template>
@@ -65,7 +65,9 @@ interface Iform {
 }
 
 const isPass = ref(false);
-const hasError = ref<Iform>({});
+function onHandlePass() {
+  isPass.value = !isPass.value;
+}
 
 const schema = toTypedSchema(
   zod.object({
@@ -79,23 +81,18 @@ const schema = toTypedSchema(
   })
 );
 
-function onHandlePass() {
-  isPass.value = !isPass.value;
-}
+const { execute } = useFetchAuth('auth', { immediate: false, method: 'post', body: store.payload });
 
-function handleErrors({ errors }: any) {
-  hasError.value = errors;
-}
-
-function onSubmit(form: Iform) {
+async function onSubmit(form: Iform) {
   store.payload.store.city = form.city!;
+  store.payload.store.name = form.shopName!;
   store.payload.store.document = form.document!;
   store.payload.store.number = form.number!;
   store.payload.store.state = form.state!;
   store.payload.store.street = form.street!;
   store.payload.store.zipcode = form.zip!;
 
-  store.onHandleStep('next');
+  await execute();
 }
 </script>
 
