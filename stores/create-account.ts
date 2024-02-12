@@ -2,7 +2,6 @@ export const useCreateAccount = defineStore('createAccount', {
   state: () => {
     return {
       step: 1 as number,
-      profile: '' as string,
       steps: [
         {
           step: 1,
@@ -17,6 +16,7 @@ export const useCreateAccount = defineStore('createAccount', {
         email: '',
         password: '',
         name: '',
+        profile: '',
         store: {
           name: '',
           document: '',
@@ -44,7 +44,7 @@ export const useCreateAccount = defineStore('createAccount', {
       this.step = v;
     },
     onSetProfile(type: 'CUSTOMER' | 'ADMIN') {
-      this.profile = type;
+      this.payload.profile = type;
       const thirdStep = {
         step: 3,
         label: 'Detalhes da Loja',

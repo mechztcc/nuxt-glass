@@ -47,7 +47,13 @@ interface Iform {
   confirmPass?: string;
 }
 
-const { execute } = useFetchAuth('auth', { immediate: false, method: 'post', body: store.payload });
+const { execute } = useFetchAuth('users', {
+  immediate: false,
+  method: 'post',
+  body: store.payload,
+  successMsg: 'Usuário registrado com sucesso!',
+  redirect: '/',
+});
 
 const schema = toTypedSchema(
   zod.object({
@@ -74,7 +80,7 @@ async function onSubmit(form: Iform) {
   store.payload.password = form.password!;
   store.payload.name = form.name!;
 
-  if (store.profile == 'CUSTOMER') {
+  if (store.payload.profile == 'CUSTOMER') {
     await execute();
     return;
   }

@@ -38,6 +38,9 @@ import { Form } from 'vee-validate';
 import { toTypedSchema } from '@vee-validate/zod';
 import * as zod from 'zod';
 
+const toastr = useToaster()
+
+
 const schema = toTypedSchema(
   zod.object({
     email: zod.string().email({ message: 'E-mail inválido' }),
@@ -54,8 +57,8 @@ const body = computed(() => {
   return payload.value;
 });
 
-const { data, pending, execute } = useFetch('users', {
-  method: 'POST',
+const { data, pending, execute } = useFetchAuth('users', {
+  method: 'post',
   immediate: false,
   body,
 });

@@ -2,10 +2,15 @@ interface IParams {
   body?: any;
   method: 'post' | 'get' | 'put' | 'delete';
   immediate: boolean;
+  successMsg?: string;
+  redirect?: string;
 }
 
-export default function useFetchAuth(url: string, { body, immediate, method }: IParams) {
+export default function useFetchAuth(url: string, { body, immediate, method, successMsg, redirect }: IParams) {
   const runtimeConfig = useRuntimeConfig();
+  const toastr = useToaster();
+  const router = useRouter();
+
   const api = runtimeConfig.public.apiBase;
 
   const token = computed(() => {
@@ -25,7 +30,20 @@ export default function useFetchAuth(url: string, { body, immediate, method }: I
     },
     method,
     server: true,
-    onResponseError: (e: any) => {},
+    onRequestError: (e: any) => {
+      toastr.onShow('ERROR', { msg: e.error.message });
+    },
+    onResponseError: (e: any) => {
+      toastr.onShow('ERROR', { msg: e.response._data.message });
+    },
+    onResponse: (e: any) => {
+      if (successMsg) {
+        toastr.onShow('SUCCESS', { msg: successMsg });
+      }
+      if (redirect) {
+        router.push(redirect);
+      }
+    },
   });
 
   return {
