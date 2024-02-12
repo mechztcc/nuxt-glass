@@ -1,3 +1,4 @@
 <template>
+  <DefaultToaster />
   <RouterView />
 </template>
