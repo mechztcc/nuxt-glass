@@ -16,6 +16,7 @@ export const useCreateAccount = defineStore('createAccount', {
       payload: {
         email: '',
         password: '',
+        name: '',
         store: {
           name: '',
           document: '',

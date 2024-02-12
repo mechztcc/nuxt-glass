@@ -1,5 +1,5 @@
 <template>
-  <Form class="h-full flex justify-center items-center mb-20" :validation-schema="schema" v-on:invalid-submit="handleErrors" @submit="onSubmit">
+  <Form class="h-full flex justify-center items-center mb-20" :validation-schema="schema" @submit="onSubmit">
     <div class="w-full md:w-1/2 h-full justify-center flex flex-col">
       <div class="flex justify-center mt-2">
         <Logo />
@@ -47,7 +47,7 @@ interface Iform {
   confirmPass?: string;
 }
 
-const hasError = ref<Iform>({});
+const { execute } = useFetchAuth('auth', { immediate: false, method: 'post', body: store.payload });
 
 const schema = toTypedSchema(
   zod.object({
@@ -69,13 +69,15 @@ function onHandleConfirmPass() {
   isConfirmPass.value = !isConfirmPass.value;
 }
 
-function handleErrors({ errors }: any) {
-  hasError.value = errors;
-}
-
-function onSubmit(form: Iform) {
+async function onSubmit(form: Iform) {
   store.payload.email = form.email!;
   store.payload.password = form.password!;
+  store.payload.name = form.name!;
+
+  if (store.profile == 'CUSTOMER') {
+    await execute();
+    return;
+  }
   store.onHandleStep('next');
 }
 </script>

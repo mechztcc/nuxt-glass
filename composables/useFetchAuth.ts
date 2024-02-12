@@ -25,9 +25,7 @@ export default function useFetchAuth(url: string, { body, immediate, method }: I
     },
     method,
     server: true,
-    onResponseError: (e: any) => {
-      alert('Deu errado!');
-    },
+    onResponseError: (e: any) => {},
   });
 
   return {
