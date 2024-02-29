@@ -40,6 +40,7 @@ export default function useFetchAuth(url: string, { body, immediate, method, suc
       if (successMsg) {
         toastr.onShow('SUCCESS', { msg: successMsg });
       }
+
       if (redirect) {
         router.push(redirect);
       }

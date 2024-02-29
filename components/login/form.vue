@@ -38,9 +38,6 @@ import { Form } from 'vee-validate';
 import { toTypedSchema } from '@vee-validate/zod';
 import * as zod from 'zod';
 
-const toastr = useToaster()
-
-
 const schema = toTypedSchema(
   zod.object({
     email: zod.string().email({ message: 'E-mail inválido' }),
@@ -74,6 +71,9 @@ function onHandlePass() {
 async function onSubmit(v: any) {
   payload.value = v;
   await execute();
+
+  localStorage.setItem('credentials', JSON.stringify(data.value));
+  
 }
 </script>
 
