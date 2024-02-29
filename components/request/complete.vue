@@ -6,7 +6,7 @@
 
     <div class="grid grid-cols-5 mt-5">
       <div class="col-span-1 col-start-3">
-        <DefaultButton :label="'Acompanhar Pedido'" :fill="true" :to="'/customer/offers'"/>
+        <DefaultButton :label="'Acompanhar Pedido'" :fill="true" />
       </div>
     </div>
   </div>
