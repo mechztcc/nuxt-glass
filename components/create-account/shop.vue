@@ -81,7 +81,13 @@ const schema = toTypedSchema(
   })
 );
 
-const { execute } = useFetchAuth('users', { immediate: false, method: 'post', body: store.payload, successMsg: 'Usuário registrado com sucesso!' });
+const { execute } = useFetchAuth('users', {
+  immediate: false,
+  method: 'post',
+  body: store.payload,
+  successMsg: 'Usuário registrado com sucesso!',
+  redirect: '/login',
+});
 
 async function onSubmit(form: Iform) {
   store.payload.store.city = form.city!;

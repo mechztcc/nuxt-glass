@@ -8,7 +8,7 @@
       <h1 class="text-3xl text-center">Bem vindo!</h1>
       <span class="text-lg text-zinc-700 text-center"> Preencha o formulário abaixo para acessar sua conta. </span>
 
-      <DefaultInput :label="'Senha'" :type="'text'" :field="'email'">
+      <DefaultInput :label="'E-mail'" :type="'text'" :field="'email'">
         <template #prepend>
           <font-awesome-icon :icon="['far', 'envelope']" class="text-zinc-900 rounded-full" />
         </template>
@@ -57,10 +57,12 @@ const body = computed(() => {
   return payload.value;
 });
 
-const { data, pending, execute } = useFetchAuth('users', {
+const { data, pending, execute } = useFetchAuth('auth', {
   method: 'post',
   immediate: false,
   body,
+  successMsg: 'Login Realizado com sucesso!',
+  redirect: '/'
 });
 
 
