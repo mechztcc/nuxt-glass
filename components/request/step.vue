@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-center items-center mb-20">
-    <template v-for="(item, _) in items" :key="index">
+    <template v-for="(item, index) in items" :key="index">
       <div
         class="flex flex-col items-center cursor-pointer"
         @click="store.onSetStep(item.step)"

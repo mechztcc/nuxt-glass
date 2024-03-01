@@ -5,7 +5,7 @@
     <span class="text-lg text-zinc-700 text-center"> Nos conte como você deseja receber seu Produto </span>
 
     <div class="grid grid-cols-3 mt-10 gap-5">
-      <div class="col-span-1" v-for="(location, index) of store.orderInformations.orderDeliveryType">
+      <div class="col-span-1" v-for="(location, index) of store.orderInformations.orderDeliveryType" :key="index">
         <DefaultSelectedButton  :label="location.name" :id="location.id" @selected="onSelect($event, index)" />
       </div>
     </div>
