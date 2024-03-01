@@ -20,15 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import type { IDefaultSelectedButtonProps } from '~/interfaces/default-selected-button-props';
-
 const store = useNewAuctionRequest();
-
-const selecteds = ref([]);
-const hasItem = computed(() => {
-  const labels = ['Óculos de sol', 'Óculos de gráu', 'Lentes de contato'];
-  return selecteds.value.filter((el: IDefaultSelectedButtonProps) => labels.includes(el.label)).length > 0;
-});
 
 </script>
 
