@@ -7,25 +7,23 @@
     </span>
 
     <div class="grid grid-cols-3 mt-10 gap-5">
-      <div class="col-span-1">
-        <DefaultSelectedButton :label="'Em todo Pernambuco'" />
-      </div>
-      <div class="col-span-1">
-        <DefaultSelectedButton :label="'Apenas minha Recife'" />
-      </div>
-      <div class="col-span-1">
-        <DefaultSelectedButton :label="'Escolher mais de uma Local'" />
+      <div class="col-span-3">
+        <RequestFormCustomLocation />
       </div>
     </div>
 
-    <div class="grid grid-cols-3 mt-10 gap-5">
-      <div class="col-span-3">
-        <RequestFormCustomLocation />
+    <div class="grid grid-cols-3 mt-20" v-if="store.hasAvailableAt">
+      <div class="col-span-1 col-start-3">
+        <DefaultButton :label="'Avançar'" :fill="true" @pressed="store.onHandleStep('next')" />
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+
+const store = useNewAuctionRequest();
+
+</script>
 
 <style lang="scss" scoped></style>

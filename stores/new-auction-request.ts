@@ -18,6 +18,7 @@ export const useNewAuctionRequest = defineStore('newAuctionRequest', {
         glassGender: [] as IDetails[],
         glassFrame: [] as IDetails[],
         glassLensType: [] as IDetails[],
+        availableAt: [] as { state: string; city: string }[],
       },
       orderInformations: {
         glassFrame: [] as IDetails[],
@@ -73,10 +74,29 @@ export const useNewAuctionRequest = defineStore('newAuctionRequest', {
       }
       this.payload.glassLensType = this.payload.glassLensType.filter((el: any) => el.id !== id);
     },
+
+    onSetAvailableRegion(data: { state: string; city: string }) {
+      let region = this.payload.availableAt;
+
+      const regionExists = region.some((re) => re.city === data.city && re.state === data.state);
+      if (regionExists) {
+        return;
+      }
+
+      region.push(data);
+    },
+
+    onRemoveRegion(index: number) {
+      this.payload.availableAt.splice(index, 1);
+    },
   },
   getters: {
     hasGlassType: (state) => {
       return state.payload.glassType.length > 0;
+    },
+
+    hasAvailableAt: (state) => {
+      return state.payload.availableAt.length > 0;
     },
 
     hasOrderDetails: (state) => {

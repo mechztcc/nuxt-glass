@@ -1,5 +1,5 @@
 <template>
-  <div :class="['p-1 px-2 w-fit rounded', style]">
+  <div :class="['p-1 px-2 w-fit rounded d-flex justify-center items-center', style]">
     <slot></slot>
     {{ label }}
   </div>
