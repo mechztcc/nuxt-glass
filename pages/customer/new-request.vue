@@ -4,7 +4,7 @@
       <RequestStep />
     </div>
 
-    <div class="col-span-3 mx-10 md:mx-20 py-10">
+    <div class="col-span-3 mx-10 md:mx-20 py-10" v-if="store.orderInformations">
       <RequestFormGlassType v-if="store.step == 1" />
       <RequestGlassInformation v-if="store.step == 2" />
       <RequestFormLocationOrder v-if="store.step == 3" />
@@ -13,23 +13,20 @@
       <RequestComplete v-if="store.step == 6" />
     </div>
 
-    <div
-      class="col-span-1 col-start-3 mx-10 md:mx-20 mt-10"
-      v-if="store.step !== 6"
-    >
-      <DefaultButton
-        :label="'Avançar'"
-        :fill="true"
-        @pressed="store.onHandleStep('next')"
-      />
-    </div>
+    
   </div>
 </template>
 
 <script setup lang="ts">
-import { useNewAuctionRequest } from "~/stores/new-auction-request";
+import { useNewAuctionRequest } from '~/stores/new-auction-request';
 
 const store = useNewAuctionRequest();
+
+const { data, pending } = useFetchAuth('glasses/create-order-informations', { immediate: true, method: 'get' });
+store.orderInformations = data.value;
+console.log(store.orderInformations);
+
+
 </script>
 
 <style lang="scss" scoped></style>

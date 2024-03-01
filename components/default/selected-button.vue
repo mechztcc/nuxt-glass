@@ -18,11 +18,13 @@
 <script setup lang="ts">
 const props = defineProps({
   label: { type: String, required: true },
+  id: { type: Number, required: false, default: 0 }
 });
 
 const emit = defineEmits(["selected"]);
 const selected = () => {
   emit("selected", {
+    id: props.id,
     label: props.label,
     selected: isSelected.value,
   });
