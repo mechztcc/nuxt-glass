@@ -20,7 +20,7 @@
         </div>
         <div class="text-center mt-2">{{ item.label }}</div>
       </div>
-      <div :class="['h-2 w-16 mb-7 trans', item.step >= store.step ? 'bg-gray-300' : 'bg-teal-400']" v-if="item.step !== 5"></div>
+      <div :class="['h-2 w-16 mb-7 trans', item.step >= store.step ? 'bg-gray-300' : 'bg-teal-400']" v-if="item.step !== 7"></div>
     </template>
   </div>
 </template>
@@ -48,6 +48,14 @@ const items = [
   {
     step: 5,
     label: "Retirada do Produto",
+  },
+  {
+    step: 6,
+    label: "Resumo do Pedido",
+  },
+  {
+    step: 7,
+    label: "Concluído!",
   },
 ];
 </script>
