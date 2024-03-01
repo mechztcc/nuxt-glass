@@ -19,7 +19,8 @@ export const useNewAuctionRequest = defineStore('newAuctionRequest', {
         glassFrame: [] as IDetails[],
         glassLensType: [] as IDetails[],
         availableAt: [] as { state: string; city: string }[],
-        paymentType: [] as IDetails[]
+        paymentType: [] as IDetails[],
+        delivery: '' as string,
       },
       orderInformations: {
         glassFrame: [] as IDetails[],
@@ -93,14 +94,22 @@ export const useNewAuctionRequest = defineStore('newAuctionRequest', {
 
     onSetPaymentType({ id, label: name, selected }: IBadgeInfo) {
       let payment = this.payload.paymentType;
-      
-      if(selected) {
+
+      if (selected) {
         payment.push({ id, name });
         return;
       }
-
       this.payload.paymentType = payment.filter((el: any) => el.id !== id);
-    }
+    },
+
+    onSelectDelivery({ id, label: name, selected }: IBadgeInfo) {
+      if (selected) {
+        this.payload.delivery = name;
+        return;
+      }
+
+      this.payload.delivery = '';
+    },
   },
   getters: {
     hasGlassType: (state) => {
@@ -121,9 +130,9 @@ export const useNewAuctionRequest = defineStore('newAuctionRequest', {
     },
 
     hasPaymentType: (state) => {
-      console.log(state);
-      
-      return state.payload.paymentType.length > 0
-    }
+      return state.payload.paymentType.length > 0;
+    },
+
+    hasDelivery: (state) => state.payload.delivery
   },
 });
