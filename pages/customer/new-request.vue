@@ -12,9 +12,9 @@
       <RequestFormReceive v-if="store.step == 5" />
       <RequestComplete v-if="store.step == 8" />
     </div>
-
-    
   </div>
+  
+  <DefaultLoad v-if="pending" />
 </template>
 
 <script setup lang="ts">
@@ -24,9 +24,6 @@ const store = useNewAuctionRequest();
 
 const { data, pending } = useFetchAuth('glasses/create-order-informations', { immediate: true, method: 'get' });
 store.orderInformations = data.value;
-console.log(store.orderInformations);
-
-
 </script>
 
 <style lang="scss" scoped></style>
