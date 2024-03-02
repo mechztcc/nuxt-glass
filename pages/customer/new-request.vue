@@ -10,7 +10,8 @@
       <RequestFormLocationOrder v-if="store.step == 3" />
       <RequestFormPayment v-if="store.step == 4" />
       <RequestFormReceive v-if="store.step == 5" />
-      <RequestComplete v-if="store.step == 8" />
+      <RequestResume v-if="store.step == 6" />
+      <RequestComplete v-if="store.step == 7" />
     </div>
   </div>
   
