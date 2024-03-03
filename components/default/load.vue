@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen w-screen flex flex-col justify-center items-center absolute top-0 bg">
+  <div class="h-screen w-screen flex flex-col justify-center items-center fixed top-0 left-0 bg">
     <font-awesome-icon :icon="['fas', 'circle-notch']" :size="'3x'" />
     <h3 class="mt-2">Buscando informações...</h3>
   </div>

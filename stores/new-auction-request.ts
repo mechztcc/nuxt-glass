@@ -20,7 +20,7 @@ export const useNewAuctionRequest = defineStore('newAuctionRequest', {
         glassLensType: [] as IDetails[],
         availableAt: [] as { state: string; city: string }[],
         paymentType: [] as IDetails[],
-        delivery: '' as string,
+        delivery: {} as IDetails,
       },
       orderInformations: {
         glassFrame: [] as IDetails[],
@@ -104,11 +104,11 @@ export const useNewAuctionRequest = defineStore('newAuctionRequest', {
 
     onSelectDelivery({ id, label: name, selected }: IBadgeInfo) {
       if (selected) {
-        this.payload.delivery = name;
+        this.payload.delivery = { id, name };
         return;
       }
 
-      this.payload.delivery = '';
+      this.payload.delivery = { id: 0, name: '' };
     },
   },
   getters: {

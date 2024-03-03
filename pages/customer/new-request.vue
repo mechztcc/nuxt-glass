@@ -23,7 +23,7 @@ import { useNewAuctionRequest } from '~/stores/new-auction-request';
 
 const store = useNewAuctionRequest();
 
-const { data, pending } = useFetchAuth('glasses/create-order-informations', { immediate: true, method: 'get' });
+const { data, pending } = useFetchAuth('orders/create-order-informations', { immediate: true, method: 'get' });
 store.orderInformations = data.value;
 </script>
 

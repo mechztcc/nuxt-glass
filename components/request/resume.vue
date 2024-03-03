@@ -63,12 +63,20 @@
           {{ item.name }}
         </span>
       </div>
+
+      <div class="flex flex-col my-5">
+        <span class="text-lg">
+          <font-awesome-icon :icon="['far', 'circle']" />
+          Retirada do Produto
+        </span>
+        <span class="ml-5"> {{ store.payload.delivery.name }} </span>
+      </div>
     </div>
   </div>
 
-  <div class="grid grid-cols-3 mt-20" >
+  <div class="grid grid-cols-3 mt-20">
     <div class="col-span-1 col-start-3">
-      <DefaultButton :label="'Avançar'" :fill="true" @pressed="store.onHandleStep('next')" />
+      <DefaultButton :label="'Concluir Pedido'" :fill="true" @pressed="onSubmit()" />
     </div>
   </div>
 </template>
@@ -76,5 +84,37 @@
   import { useNewAuctionRequest } from '~/stores/new-auction-request';
 
   const store = useNewAuctionRequest();
+
+  const body = {
+    userId: 1,
+    glassType: store.payload.glassType,
+    glassFrame: store.orderInformations.glassFrame,
+    glassLensType: store.orderInformations.glassLensType,
+    glassGender: store.orderInformations.glassGender,
+    payment: store.payload.paymentType,
+    delivery: [store.payload.delivery],
+    exam: 'EXAME',
+    status: 'OPENED',
+    expiresAt: new Date().toISOString(),
+    region: store.payload.availableAt.map((el) => {
+      return `${el.state} - ${el.city}`;
+    }),
+  };
+
+  const { data, pending, execute } = useFetchAuth('orders', {
+    immediate: false,
+    method: 'post',
+    successMsg: 'Pedido realizado com sucesso!',
+    body,
+    cb: () => {
+      setTimeout(() => {
+        store.onHandleStep('next');
+      }, 2000)
+    },
+  });
+
+  async function onSubmit() {
+    await execute();
+  }
 </script>
 <style lang="css"></style>

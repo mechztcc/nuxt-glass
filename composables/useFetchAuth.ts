@@ -4,9 +4,10 @@ interface IParams {
   immediate: boolean;
   successMsg?: string;
   redirect?: string;
+  cb?: Function
 }
 
-export default function useFetchAuth(url: string, { body, immediate, method, successMsg, redirect }: IParams) {
+export default function useFetchAuth(url: string, { body, immediate, method, successMsg, redirect, cb }: IParams) {
   const runtimeConfig = useRuntimeConfig();
   const toastr = useToaster();
   const router = useRouter();
@@ -43,6 +44,10 @@ export default function useFetchAuth(url: string, { body, immediate, method, suc
 
       if (redirect) {
         router.push(redirect);
+      }
+
+      if(cb) {
+        cb();
       }
     },
   });
