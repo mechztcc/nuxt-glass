@@ -4,7 +4,7 @@ interface IParams {
   immediate: boolean;
   successMsg?: string;
   redirect?: string;
-  cb?: Function
+  cb?: Function;
 }
 
 export default function useFetchAuth(url: string, { body, immediate, method, successMsg, redirect, cb }: IParams) {
@@ -14,21 +14,11 @@ export default function useFetchAuth(url: string, { body, immediate, method, suc
 
   const api = runtimeConfig.public.apiBase;
 
-  const token = computed(() => {
-    if (!process.client) {
-      return;
-    }
-    const data = JSON.parse(localStorage.getItem('credentials') ?? '');
-    return data.user.token;
-  });
-
   const { error, data, pending, execute } = useFetch(`${api}/${url}`, {
     body,
     immediate,
     watch: false,
-    headers: {
-      authorization: token,
-    },
+    credentials: 'include',
     method,
     server: true,
     onRequestError: (e: any) => {
@@ -46,7 +36,7 @@ export default function useFetchAuth(url: string, { body, immediate, method, suc
         router.push(redirect);
       }
 
-      if(cb) {
+      if (cb) {
         cb();
       }
     },

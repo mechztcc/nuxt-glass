@@ -38,6 +38,9 @@ import { Form } from 'vee-validate';
 import { toTypedSchema } from '@vee-validate/zod';
 import * as zod from 'zod';
 
+const cookie = useCookie('credentials');
+
+
 const schema = toTypedSchema(
   zod.object({
     email: zod.string().email({ message: 'E-mail inválido' }),
@@ -73,6 +76,7 @@ async function onSubmit(v: any) {
   await execute();
 
   localStorage.setItem('credentials', JSON.stringify(data.value));
+  cookie.value = JSON.stringify(data.value);
   
 }
 </script>

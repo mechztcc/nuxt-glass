@@ -4,17 +4,17 @@
       <div class="col-span-1 md:col-span-1 lg:col-span-1 lg:col-start-3 mb-10">
         <OffersNewThrow />
       </div>
-      <div
-        class="col-span-1 md:col-span-1 lg:col-span-1"
-        v-for="(item, index) in 5"
-        :key="index"
-      >
+      <div class="col-span-1 md:col-span-1 lg:col-span-1" v-for="(item, index) in data" :key="index">
         <OffersCard />
       </div>
     </div>
   </NuxtLayout>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+  if (process.client) {
+    const { data, pending } = useFetchAuth('orders/list-by-user', { immediate: true, method: 'get' });
+  }
+</script>
 
 <style lang="scss" scoped></style>
