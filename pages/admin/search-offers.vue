@@ -7,6 +7,8 @@
   </NuxtLayout>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+  const { data } = useFetchAuth('orders/list-by-region', { immediate: true, method: 'get' });
+</script>
 
 <style lang="scss" scoped></style>
