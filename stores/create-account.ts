@@ -43,7 +43,7 @@ export const useCreateAccount = defineStore('createAccount', {
     onSetStep(v: number) {
       this.step = v;
     },
-    onSetProfile(type: 'CUSTOMER' | 'ADMIN') {
+    onSetProfile(type: 'CUSTOMER' | 'ADMIN' | 'OWNER') {
       this.payload.profile = type;
       const thirdStep = {
         step: 3,

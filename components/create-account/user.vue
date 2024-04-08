@@ -34,58 +34,54 @@
 </template>
 
 <script setup lang="ts">
-import { Form } from 'vee-validate';
-import { toTypedSchema } from '@vee-validate/zod';
-import * as zod from 'zod';
+  import { Form } from 'vee-validate';
+  import { toTypedSchema } from '@vee-validate/zod';
+  import * as zod from 'zod';
 
-const store = useCreateAccount();
+  const store = useCreateAccount();
 
-interface Iform {
-  name?: string;
-  email?: string;
-  password?: string;
-  confirmPass?: string;
-}
-
-const { execute } = useFetchAuth('users', {
-  immediate: false,
-  method: 'post',
-  body: store.payload,
-  successMsg: 'Usuário registrado com sucesso!',
-  redirect: '/',
-});
-
-const schema = toTypedSchema(
-  zod.object({
-    name: zod.string().min(8, { message: 'Nome muito curto' }).default(''),
-    email: zod.string().email({ message: 'E-mail inválido' }).default(''),
-    password: zod.string().min(6, { message: 'Senha é obrigatório' }).default(''),
-    confirmPass: zod.string().min(6, { message: 'Senha é obrigatório' }).default(''),
-  })
-);
-
-const isPass = ref(true);
-const isConfirmPass = ref(true);
-
-function onHandlePass() {
-  isPass.value = !isPass.value;
-}
-
-function onHandleConfirmPass() {
-  isConfirmPass.value = !isConfirmPass.value;
-}
-
-async function onSubmit(form: Iform) {
-  store.payload.email = form.email!;
-  store.payload.password = form.password!;
-  store.payload.name = form.name!;
-
-  if (store.payload.profile == 'CUSTOMER') {
-    await execute();
-    return;
+  interface Iform {
+    name?: string;
+    email?: string;
+    password?: string;
+    confirmPass?: string;
   }
-  store.onHandleStep('next');
-}
+
+  const { execute } = useFetchAuth('users', {
+    immediate: false,
+    method: 'post',
+    body: store.payload,
+    successMsg: 'Usuário registrado com sucesso!',
+    redirect: '/',
+  });
+
+  const schema = toTypedSchema(
+    zod.object({
+      name: zod.string().min(8, { message: 'Nome muito curto' }).default(''),
+      email: zod.string().email({ message: 'E-mail inválido' }).default(''),
+      password: zod.string().min(6, { message: 'Senha é obrigatório' }).default(''),
+      confirmPass: zod.string().min(6, { message: 'Senha é obrigatório' }).default(''),
+    })
+  );
+
+  const isPass = ref(true);
+  const isConfirmPass = ref(true);
+
+  function onHandlePass() {
+    isPass.value = !isPass.value;
+  }
+
+  function onHandleConfirmPass() {
+    isConfirmPass.value = !isConfirmPass.value;
+  }
+
+  async function onSubmit(form: Iform) {
+    store.payload.email = form.email!;
+    store.payload.password = form.password!;
+    store.payload.name = form.name!;
+
+    await execute();
+  }
 </script>
 
 <style lang="scss" scoped></style>
