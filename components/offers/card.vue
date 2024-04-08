@@ -49,11 +49,16 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+  
+  defineProps({
+    order: { type: Object, required: true },
+  });
+</script>
 
 <style lang="css" scoped>
-img {
-  min-height: 60px;
-  max-height: 60px;
-}
+  img {
+    min-height: 60px;
+    max-height: 60px;
+  }
 </style>

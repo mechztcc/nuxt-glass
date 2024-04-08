@@ -20,7 +20,7 @@ export default function useFetchAuth(url: string, { body, immediate, method, suc
     watch: false,
     credentials: 'include',
     method,
-    server: true,
+    server: false,
     onRequestError: (e: any) => {
       toastr.onShow('ERROR', { msg: e.error.message });
     },
