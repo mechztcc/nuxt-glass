@@ -40,7 +40,6 @@ import * as zod from 'zod';
 
 const cookie = useCookie('credentials');
 
-
 const schema = toTypedSchema(
   zod.object({
     email: zod.string().email({ message: 'E-mail inválido' }),

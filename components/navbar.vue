@@ -12,7 +12,7 @@
       <DefaultButton class="mr-2">
         <font-awesome-icon :icon="['fas', 'bag-shopping']" :size="'lg'" />
       </DefaultButton>
-      <DefaultButton class="mr-2">
+      <DefaultButton class="mr-2" :to="'/admin/home'">
         <font-awesome-icon :icon="['far', 'user']" :size="'lg'" />
       </DefaultButton>
       <DefaultButton class="mr-2" :to="'/login'">
