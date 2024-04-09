@@ -1,6 +1,7 @@
 <template>
   <NuxtLayout :name="'admin'">
     <ShopNotFound />
+    <CreateAccountShop />
   </NuxtLayout>
 </template>
 

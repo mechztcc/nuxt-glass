@@ -18,14 +18,16 @@
       <span>Receber em casa</span>
       <span class="mx-2">Retirar no local</span>
     </div>
-    <div class="flex">
-      <span>À vista no PIX</span>
-    </div>
-    <div class="flex">
-      <span>Entre R$ 500,00 e R$ 1.000,00</span>
-    </div>
-    <span class="mt-2">Recebeu 28 lances</span>
-    <span class="mt-2"> Busco óculos de sol, com armação resistente! Preferencia na cor PRETA. </span>
+    <template>
+      <div class="flex">
+        <span>À vista no PIX</span>
+      </div>
+      <div class="flex">
+        <span>Entre R$ 500,00 e R$ 1.000,00</span>
+      </div>
+      <span class="mt-2">Recebeu 28 lances</span>
+      <span class="mt-2"> Busco óculos de sol, com armação resistente! Preferencia na cor PRETA. </span>
+    </template>
 
     <hr class="my-2" />
     <div class="flex justify-between">
@@ -52,6 +54,8 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+  const isVisible = ref(false);
+</script>
 
 <style lang="scss" scoped></style>
