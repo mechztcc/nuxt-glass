@@ -14,17 +14,20 @@
       <RequestComplete v-if="store.step == 7" />
     </div>
   </div>
-  
+
   <DefaultLoad v-if="pending" />
 </template>
 
 <script setup lang="ts">
-import { useNewAuctionRequest } from '~/stores/new-auction-request';
+  import { useNewAuctionRequest } from '~/stores/new-auction-request';
+  const store = useNewAuctionRequest();
 
-const store = useNewAuctionRequest();
+  const { data, pending } = useFetchAuth('orders/create-order-informations', {
+    immediate: true,
+    method: 'get',
+  });
 
-const { data, pending } = useFetchAuth('orders/create-order-informations', { immediate: true, method: 'get' });
-store.orderInformations = data.value;
+  store.orderInformations = data.value
 </script>
 
 <style lang="scss" scoped></style>

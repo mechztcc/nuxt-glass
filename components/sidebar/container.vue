@@ -18,7 +18,7 @@
       <SidebarButton :label="'Configurações'" :isHide="isHide">
         <font-awesome-icon :icon="['fas', 'sliders']" />
       </SidebarButton>
-      <SidebarButton :label="'Tema'" :isHide="isHide">
+      <SidebarButton :label="'Tema'" :isHide="isHide" @pressed="onHandleTheme()">
         <font-awesome-icon :icon="['fas', 'sun']" />
       </SidebarButton>
       <SidebarButton :label="'Sair'" :isHide="isHide" :to="'/login'">
@@ -38,7 +38,15 @@
     isHide.value = !isHide.value;
   }
 
+  function onHandleTheme() {
+    const html = document.querySelector('html');
+    if(html?.classList.contains('dark')) {
+      html.classList.replace('dark', 'light')
+      return;
+    }
 
+    html?.classList.add('dark')
+  }
 </script>
 
 <style lang="css" scoped>

@@ -1,7 +1,7 @@
 <template>
-  <div class="bg-zinc-50 p-5 rounded shadow">
+  <div class="bg-zinc-50 dark:bg-zinc-900 p-5 rounded shadow dark:text-zinc-50">
     <div class="flex justify-between mb-10 border-b-2 py-3">
-      <span class="text-xl font-semibold">Leilões Recentes</span>
+      <span class="text-xl font-semibold ">Leilões Recentes</span>
       <div class="flex">
         <DefaultButton>
           <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
@@ -21,7 +21,7 @@
       </div>
     </div>
     <table class="w-full mb-5">
-      <tr class="bg-zinc-100">
+      <tr class="bg-zinc-100 dark:bg-zinc-900">
         <th>#</th>
         <th>
           <font-awesome-icon :icon="['far', 'user']" />
@@ -43,7 +43,7 @@
         <th>Situação</th>
         <th>Ações</th>
       </tr>
-      <tr class="hover:bg-zinc-100" v-for="(item, index) in 6" :key="index">
+      <tr class="hover:bg-zinc-100 dark:hover:bg-zinc-700" v-for="(item, index) in 6" :key="index">
         <td>1</td>
         <td>Alberto Paiva</td>
         <td>R$ 599,00</td>
