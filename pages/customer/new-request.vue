@@ -1,10 +1,10 @@
 <template>
-  <div class="grid grid-cols-3 py-20">
+  <div class="grid grid-cols-3 py-20 dark:bg-zinc-800 dark:text-zinc-50">
     <div class="col-span-3 mt-20">
       <RequestStep />
     </div>
 
-    <div class="col-span-3 mx-10 md:mx-20 py-10" v-if="store.orderInformations">
+    <div class="col-span-3 mx-10 md:mx-20 py-10  dark:bg-zinc-800 dark:text-zinc-50" v-if="store.orderInformations">
       <RequestFormGlassType v-if="store.step == 1" />
       <RequestGlassInformation v-if="store.step == 2" />
       <RequestFormLocationOrder v-if="store.step == 3" />

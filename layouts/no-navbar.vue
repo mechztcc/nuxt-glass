@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="dark:bg-zinc-800">
     <Nuxt />
     <slot></slot>
   </div>

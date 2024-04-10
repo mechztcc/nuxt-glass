@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-3 md:grid-cols-7 lg:col-span-7 rounded hover:shadow-md p-5 bg-zinc-50">
+  <div class="grid grid-cols-3 md:grid-cols-7 lg:col-span-7 rounded hover:shadow-md p-5 bg-zinc-50 dark:bg-zinc-900 dark:text-zinc-50">
     <div class="col-span-1 md:col-span-1">
       <div class="flex flex-col mx-2">
         <div class="flex items-center">
