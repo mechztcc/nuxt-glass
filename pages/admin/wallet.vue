@@ -31,7 +31,7 @@
           :data="lastWeek.data"
         />
       </div>
-      <div class="col-span-1 md:col-span-3 md:col-start-1 my-5">
+      <div class="col-span-1 md:col-span-3 md:col-start-1 my-5 dark:text-zinc-50">
         <h1 class="text-2xl">Transações Recentes</h1>
         <WalletRecentSalles v-for="(item, index) in 5" :key="index" />
       </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-zinc-50 p-5 rounded h-full">
+  <div class="bg-zinc-50 dark:bg-zinc-900 dark:text-zinc-50 p-5 rounded h-full">
     <Bar :data="chartData" :options="chartOptions" />
   </div>
 </template>
