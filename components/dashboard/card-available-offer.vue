@@ -1,11 +1,6 @@
 <template>
-  <div class="rounded p-5 flex flex-col bg-zinc-50 my-3 mx-3">
-    <div class="flex items-start justify-between">
-      <img
-        src="https://img.freepik.com/free-photo/full-shot-plus-sized-woman-stretching_23-2150172315.jpg?w=1380"
-        alt=""
-        class="rounded-full h-20 w-20 object-cover"
-      />
+  <div class="rounded p-5 flex flex-col bg-zinc-50 dark:bg-zinc-900 dark:text-zinc-50 my-3 mx-3">
+    <div class="flex items-start justify-end">
       <Badge :label="'Em andamento'"></Badge>
     </div>
     <span class="text-xl font-bold">Claudia farias</span>
