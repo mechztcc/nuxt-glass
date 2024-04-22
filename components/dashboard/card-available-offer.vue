@@ -3,15 +3,13 @@
     <div class="flex items-start justify-end">
       <Badge :label="'Em andamento'"></Badge>
     </div>
-    <span class="text-xl font-bold">Claudia farias</span>
+    <span class="text-xl font-bold">{{ order.user.name  }}</span>
     <div class="flex mt-2">
-      <span>PE - Recife</span>
-      <span class="mx-2">PE - Olinda</span>
+      <span class="mr-2" v-for="(item, index) in order.region" :key="index">{{ item.state }} - {{ item.city }}</span>
     </div>
-    <span>Óculos de sol</span>
+    <span v-for="(item, index) in order.glassTypes" :key="index">{{ item.name }}</span>
     <div class="flex">
-      <span>Receber em casa</span>
-      <span class="mx-2">Retirar no local</span>
+      <span v-for="(item, index) in order.deliveryTypes" :key="index">{{ item.name }}</span>
     </div>
     <template>
       <div class="flex">
@@ -28,7 +26,7 @@
     <div class="flex justify-between">
       <div class="flex items-center mt-2">
         <font-awesome-icon :icon="['far', 'clock']" />
-        <span class="mx-2">Termina em 18 horas e 21 min</span>
+        <span class="mx-2">Termina em: {{ expiresAt }}</span>
       </div>
 
       <div class="flex">
@@ -50,7 +48,13 @@
 </template>
 
 <script setup lang="ts">
-  const isVisible = ref(false);
+  import { useDateFormat } from '@vueuse/core';
+
+  const props = defineProps({
+    order: { type: Object, required: true },
+  });
+
+  const expiresAt = useDateFormat(props.order.expiresAt, 'DD/MM/YYYY hh:mm');
 </script>
 
 <style lang="scss" scoped></style>
