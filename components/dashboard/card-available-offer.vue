@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded p-5 flex flex-col bg-zinc-50 dark:bg-zinc-900 dark:text-zinc-50 my-3 mx-3">
+  <div class="rounded p-5 flex flex-col bg-zinc-50 hover:shadow-md dark:bg-zinc-900 dark:text-zinc-50 my-3 mx-3">
     <div class="flex items-start justify-end">
       <Badge :label="'Em andamento'"></Badge>
     </div>
