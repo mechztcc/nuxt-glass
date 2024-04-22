@@ -36,12 +36,7 @@
         <DefaultButton>
           <font-awesome-icon :icon="['fas', 'paperclip']" />
         </DefaultButton>
-        <DefaultButton class="mx-2">
-          <font-awesome-icon :icon="['fas', 'comment-dollar']" />
-        </DefaultButton>
-        <DefaultButton>
-          <font-awesome-icon :icon="['fas', 'trash']" />
-        </DefaultButton>
+        <OffersBindModal />
       </div>
     </div>
   </div>
