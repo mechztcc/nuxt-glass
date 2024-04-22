@@ -80,7 +80,7 @@
     <div class="col-span-3 md:col-span-7 lg:col-span-7">
       <hr class="my-2" />
       <div class="flex justify-between">
-        <span>Expira em: {{ order.expiresAt }}</span>
+        <span>Expira em: {{ expiresAt }}</span>
         <div class="flex">
           <DefaultButton :label="'Ofertas'">
             <font-awesome-icon :icon="['fas', 'envelopes-bulk']" class="mx-2"/>
@@ -99,9 +99,13 @@
 
 
 <script setup lang="ts">
+import { useDateFormat } from '@vueuse/core';
+
   const props = defineProps({
     order: { type: Object, required: true },
   });
+
+  const expiresAt = useDateFormat(props.order.expiresAt, 'DD/MM/YYYY hh:mm')
 </script>
 
 <style scoped></style>
