@@ -1,26 +1,26 @@
 <template>
-  <Form class="flex flex-col justify-between h-full w-full" :validation-schema="schema" @submit="onSubmit">
+  <Form class="flex flex-col justify-between h-full w-full dark:bg-zinc-800" :validation-schema="schema" @submit="onSubmit">
     <div class="flex justify-center mt-5"></div>
     <div class="flex flex-col">
       <div class="flex justify-center mb-2">
         <Logo />
       </div>
-      <h1 class="text-3xl text-center">Bem vindo!</h1>
-      <span class="text-lg text-zinc-700 text-center"> Preencha o formulário abaixo para acessar sua conta. </span>
+      <h1 class="text-3xl text-center dark:text-zinc-50">Bem vindo!</h1>
+      <span class="text-lg text-zinc-700 dark:text-zinc-50 text-center"> Preencha o formulário abaixo para acessar sua conta. </span>
 
       <DefaultInput :label="'E-mail'" :type="'text'" :field="'email'">
         <template #prepend>
-          <font-awesome-icon :icon="['far', 'envelope']" class="text-zinc-900 rounded-full" />
+          <font-awesome-icon :icon="['far', 'envelope']" class="text-zinc-900 dark:text-zinc-50 rounded-full" />
         </template>
       </DefaultInput>
 
       <DefaultInput :label="'Senha'" :type="isPass ? 'password' : 'text'" :field="'password'">
         <template #prepend>
-          <font-awesome-icon :icon="['fas', 'lock']" class="text-zinc-900 rounded-full cursor-pointer" @click="onHandlePass" />
+          <font-awesome-icon :icon="['fas', 'lock']" class="text-zinc-900 dark:text-zinc-50 rounded-full cursor-pointer" @click="onHandlePass" />
         </template>
       </DefaultInput>
 
-      <span class="text-zinc-700 text-end mt-2 cursor-pointer"> Esqueceu a senha? </span>
+      <span class="text-zinc-700 dark:text-zinc-50 text-end mt-2 cursor-pointer"> Esqueceu a senha? </span>
       <DefaultButton :label="'ENTRAR'" :fill="true" class="mt-5" :type="'submit'" />
       <ButtonGoogle />
     </div>
