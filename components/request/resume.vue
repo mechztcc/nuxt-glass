@@ -2,7 +2,7 @@
   <div class="flex flex-col justify-center">
     <font-awesome-icon :icon="['fas', 'receipt']" :size="'2x'" class="mb-2" />
     <h1 class="text-3xl text-center">Resumo do Pedido</h1>
-    <span class="text-lg text-zinc-700 text-center"> Verifique se os dados do seu pedido estão corretos. </span>
+    <span class="text-lg text-zinc-700 dark:text-zinc-50 text-center"> Verifique se os dados do seu pedido estão corretos. </span>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-4 mt-20">
     <div class="col-span-1 md:col-span-4">

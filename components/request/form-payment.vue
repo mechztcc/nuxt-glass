@@ -2,7 +2,7 @@
   <div class="flex flex-col justify-start">
     <font-awesome-icon :icon="['fas', 'receipt']" :size="'2x'" class="mb-2" />
     <h1 class="text-3xl text-center">Forma de pagamento</h1>
-    <span class="text-lg text-zinc-700 text-center"> Nos conte como você deseja realizar o pagamento </span>
+    <span class="text-lg text-zinc-700 dark:text-zinc-50 text-center"> Nos conte como você deseja realizar o pagamento </span>
 
     <div class="grid grid-cols-3 mt-10 gap-5">
       <div class="col-span-1" v-for="(item, index) of store.orderInformations.orderPaymentType">

@@ -8,7 +8,7 @@
         <div
           :class="[
             'flex items-center justify-center w-10 h-10 rounded-full trans',
-            store.step > item.step ? 'bg-teal-400' : 'bg-zinc-300',
+            store.step > item.step ? 'bg-teal-400' : 'bg-zinc-300 dark:bg-zinc-800 dark:border-zinc-50 dark:border-2',
           ]"
         >
           <span v-if="store.step <= item.step">{{ item.step }}</span>

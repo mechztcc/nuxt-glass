@@ -1,7 +1,7 @@
 <template>
   <Teleport to="body">
     <div class="frame" v-if="store.status == 'OPENED'" @click="store.onCloseFromView($event)">
-      <div :class="['flex flex-col z-10 justify-center items-center content rounded shadow-xl p-5 py-3 text-center bg-zinc-50']">
+      <div :class="['flex flex-col z-10 justify-center items-center content rounded shadow-xl p-5 py-3 text-center bg-zinc-50 dark:bg-zinc-900']">
         <div class="flex justify-end w-full mb-2">
           <button class="hover:border p-2 px-3 rounded hover:bg-zinc-100" @click="store.onHandle()">
             <font-awesome-icon :icon="['fas', 'xmark']" class="text-zinc-500" />

@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-3 py-20 dark:bg-zinc-800 dark:text-zinc-50">
+  <div class="grid grid-cols-3 py-20 dark:bg-zinc-800 dark:text-zinc-50 min-h-screen">
     <div class="col-span-3 mt-20">
       <RequestStep />
     </div>

@@ -2,7 +2,7 @@
   <Form>
     <div class="grid grid-cols-4 gap-5">
       <div class="col-span-4">
-        <span class="text-zinc-500">Seu pedido fica disponível em:</span>
+        <span class="text-zinc-500 dark:text-zinc-50">Seu pedido fica disponível em:</span>
         <div class="flex mt-2">
           <Badge class="mx-1" v-for="(item, index) of store.payload.availableAt" :label="`${item.state} - ${item.city}`" @click="store.onRemoveRegion(index)">
             <font-awesome-icon :icon="['fas', 'circle-xmark']" />
@@ -14,8 +14,8 @@
       </div>
       <div class="col-span-1 col-start-1 mt-5">
         <label for="" class="mt-5 font-semibold">Estado</label>
-        <div class="flex items-center border px-5 border-zinc-300 bg-white mt-2">
-          <Field name="state" as="select" v-model="selectedState" class="p-3 rounded-xl outline-none w-full bg-zinc-50">
+        <div class="flex items-center border px-5 border-zinc-300 dark:bg-zinc-900 bg-white mt-2">
+          <Field name="state" as="select" v-model="selectedState" class="p-3 rounded-xl outline-none w-full bg-zinc-50 dark:bg-zinc-900">
             <option class="" v-for="(item, index) in states" :key="index" :value="item.name">{{ item.name }}</option>
           </Field>
         </div>
@@ -23,8 +23,8 @@
 
       <div class="col-span-1 mt-5">
         <label for="" class="mb-2 mt-5 font-semibold">Cidade</label>
-        <div class="flex items-center border px-5 border-zinc-300 bg-white mt-2">
-          <Field name="city" as="select" v-model="selectedCity" class="p-3 rounded-xl outline-none w-full bg-zinc-50">
+        <div class="flex items-center border px-5 border-zinc-300 dark:bg-zinc-900 bg-white mt-2">
+          <Field name="city" as="select" v-model="selectedCity" class="p-3 rounded-xl outline-none w-full bg-zinc-50 dark:bg-zinc-900">
             <option v-for="city in selectedCities" :key="city" :value="city">{{ city }}</option>
           </Field>
         </div>

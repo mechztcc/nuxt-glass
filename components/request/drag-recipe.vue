@@ -2,7 +2,7 @@
   <div class="grid grid-cols-3 gap-5 mt-20">
     <div class="col-span-3">
       <div class="flex items-center">
-        <span class="text-zinc-700 text-lg">
+        <span class="text-zinc-700 dark:text-zinc-50 text-lg">
           Envie uma foto do seu Exame de vista
         </span>
         <font-awesome-icon
@@ -16,9 +16,9 @@
       </div>
     </div>
 
-    <div class="col-span-3 bg-zinc-50" style="height: 200px" ref="dropZoneRef">
+    <div class="col-span-3 bg-zinc-50 dark:bg-zinc-900" style="height: 200px" ref="dropZoneRef">
       <div
-        class="flex flex-col justify-center items-center w-full h-full border-dotted border-4 hover:border-black rounded-xl"
+        class="flex flex-col justify-center items-center w-full h-full border-dotted border-4 hover:border-black dark:hover:border-teal-400 rounded-xl"
       >
         <font-awesome-icon :icon="['fas', 'image']" :size="'3x'" />
         <span class="text-xl font-semibold">
