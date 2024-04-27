@@ -39,6 +39,8 @@ import { toTypedSchema } from '@vee-validate/zod';
 import * as zod from 'zod';
 
 const cookie = useCookie('credentials');
+const router = useRouter();
+
 
 const schema = toTypedSchema(
   zod.object({
@@ -61,7 +63,6 @@ const { data, pending, execute } = useFetchAuth('auth', {
   immediate: false,
   body,
   successMsg: 'Login Realizado com sucesso!',
-  redirect: '/'
 });
 
 
@@ -73,10 +74,10 @@ function onHandlePass() {
 async function onSubmit(v: any) {
   payload.value = v;
   await execute();
+  router.push(data.value.redirectTo)
 
   localStorage.setItem('credentials', JSON.stringify(data.value));
   cookie.value = JSON.stringify(data.value);
-  
 }
 </script>
 
