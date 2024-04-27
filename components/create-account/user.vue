@@ -1,5 +1,5 @@
 <template>
-  <Form class="h-full flex justify-center items-center mb-20" :validation-schema="schema" @submit="onSubmit">
+  <Form class="h-full flex justify-center items-center mb-20" :validation-schema="schema" @submit="execute()">
     <div class="w-full md:w-1/2 h-full justify-center flex flex-col">
       <div class="flex justify-center mt-2">
         <Logo />
@@ -7,21 +7,21 @@
       <h1 class="text-3xl text-center">Bem vindo!</h1>
       <span class="text-lg text-zinc-700 text-center"> Preencha o formulário abaixo para criar seu acesso. </span>
 
-      <DefaultInput :label="'Name'" :type="'text'" :field="'name'" />
+      <DefaultInput :label="'Name'" :type="'text'" :field="'name'" @change="onUpdateForm($event, 'name')"/>
 
-      <DefaultInput :label="'E-mail'" :type="'text'" :field="'email'">
+      <DefaultInput :label="'E-mail'" :type="'text'" :field="'email'" @change="onUpdateForm($event, 'email')">
         <template #prepend>
           <font-awesome-icon :icon="['far', 'envelope']" class="text-zinc-900 rounded-full" />
         </template>
       </DefaultInput>
 
-      <DefaultInput :label="'Senha'" :type="isPass ? 'password' : 'text'" :field="'password'">
+      <DefaultInput :label="'Senha'" :type="isPass ? 'password' : 'text'" :field="'password'" @change="onUpdateForm($event, 'password')">
         <template #prepend>
           <font-awesome-icon :icon="['fas', 'lock']" class="text-zinc-900 rounded-full cursor-pointer" @click="onHandlePass" />
         </template>
       </DefaultInput>
 
-      <DefaultInput :label="'Confirmar Senha'" :type="isConfirmPass ? 'password' : 'text'" :field="'confirmPass'">
+      <DefaultInput :label="'Confirmar Senha'" :type="isConfirmPass ? 'password' : 'text'" :field="'confirmPass'" @change="onUpdateForm($event, 'confirmPass')">
         <template #prepend>
           <font-awesome-icon :icon="['fas', 'lock']" class="text-zinc-900 rounded-full cursor-pointer" @click="onHandleConfirmPass" />
         </template>
@@ -53,6 +53,9 @@
     body: store.payload,
     successMsg: 'Usuário registrado com sucesso!',
     redirect: '/',
+    cb: () => {
+      store.$reset();
+    }
   });
 
   const schema = toTypedSchema(
@@ -75,13 +78,10 @@
     isConfirmPass.value = !isConfirmPass.value;
   }
 
-  async function onSubmit(form: Iform) {
-    store.payload.email = form.email!;
-    store.payload.password = form.password!;
-    store.payload.name = form.name!;
-
-    await execute();
+  function onUpdateForm({ value }: any, field: string) {
+    store.payload[field] = value;
   }
+
 </script>
 
 <style lang="scss" scoped></style>

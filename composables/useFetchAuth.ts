@@ -28,6 +28,10 @@ export default function useFetchAuth(url: string, { body, immediate, method, suc
       toastr.onShow('ERROR', { msg: e.response._data.message });
     },
     onResponse: (e: any) => {
+      if(!e.response.ok) {
+        return
+      }
+      
       if (successMsg) {
         toastr.onShow('SUCCESS', { msg: successMsg });
       }
