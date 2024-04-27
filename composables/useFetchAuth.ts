@@ -21,6 +21,7 @@ export default function useFetchAuth(url: string, { body, immediate, method, suc
     credentials: 'include',
     method,
     server: true,
+    headers: useRequestHeaders(['cookie']),
     onRequestError: (e: any) => {
       toastr.onShow('ERROR', { msg: e.error.message });
     },
@@ -28,10 +29,10 @@ export default function useFetchAuth(url: string, { body, immediate, method, suc
       toastr.onShow('ERROR', { msg: e.response._data.message });
     },
     onResponse: (e: any) => {
-      if(!e.response.ok) {
-        return
+      if (!e.response.ok) {
+        return;
       }
-      
+
       if (successMsg) {
         toastr.onShow('SUCCESS', { msg: successMsg });
       }
