@@ -45,19 +45,7 @@ export const useCreateAccount = defineStore('createAccount', {
     },
     onSetProfile(type: 'CUSTOMER' | 'ADMIN' | 'OWNER') {
       this.payload.profile = type;
-      const thirdStep = {
-        step: 3,
-        label: 'Detalhes da Loja',
-      };
-
-      const stepsExists = this.steps.some((el: any) => el.step === thirdStep.step);
-      if (type == 'ADMIN' && !stepsExists) {
-        this.steps.push(thirdStep);
-        return;
-      }
-      if (type == 'ADMIN' && stepsExists) {
-        this.steps = this.steps.filter((el: any) => el.step !== thirdStep.step);
-      }
+      
     },
   },
 });

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="border p-5 cursor-pointer bg-zinc-50 trans dark:bg-zinc-800 dark:text-zinc-50"
+    class="p-5 cursor-pointer bg-zinc-50 trans dark:bg-zinc-800 dark:text-zinc-50 border-2"
     :class="isSelected ? 'border-2 border-zinc-900 dark:border-teal-400 dark:bg-zinc-900 text-zinc-900 rounded-xl' : ''"
     @click="onSelect()"
   >
@@ -16,6 +16,7 @@ const props = defineProps({
   label: { type: String, required: true },
   id: { type: Number, required: false, default: 0 },
   disabled: { type: Boolean, required: false, default: false },
+  checked: { type: Boolean, required: false, default: false }
 });
 
 const emit = defineEmits(['selected']);
@@ -27,11 +28,15 @@ const selected = () => {
   });
 };
 
-const isSelected = ref(false);
+const isSelected = ref(props.checked);
 function onSelect() {
   isSelected.value = !isSelected.value;
   selected();
 }
+
+watch(() => props.checked, () => {
+  isSelected.value = props.checked;  
+})
 </script>
 
 <style lang="scss" scoped></style>

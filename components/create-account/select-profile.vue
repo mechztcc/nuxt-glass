@@ -5,8 +5,8 @@
     <span class="text-lg text-zinc-700 text-center"> Qual tipo de usuário você é? </span>
   </div>
   <div class="flex w-full justify-around mt-10">
-    <DefaultSelectedButton @selected="store.onSetProfile('OWNER')" :label="'Sou vendedor e quero VENDER na plataforma'" />
-    <DefaultSelectedButton @selected="store.onSetProfile('CUSTOMER')" :label="'Sou comprador e desejo COMPRAR na plataforma'" />
+    <DefaultSelectedButton @selected="store.onSetProfile('OWNER')" :label="'Sou vendedor e quero VENDER na plataforma'" :checked="store.payload.profile == 'OWNER'" />
+    <DefaultSelectedButton @selected="store.onSetProfile('CUSTOMER')" :label="'Sou comprador e desejo COMPRAR na plataforma'" :checked="store.payload.profile == 'CUSTOMER'" />
   </div>
   <div class="flex mt-10 justify-center" v-if="store.payload.profile">
     <DefaultButton :label="'AVANÇAR'" :fill="true" @pressed="store.onHandleStep('next')" />
