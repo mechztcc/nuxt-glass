@@ -14,11 +14,12 @@
 </template>
 
 <script setup lang="ts">
-
+  const cookie = useCookie('credentials');
+  cookie.value = null;
 </script>
 
 <style lang="css" scoped>
-img {
-  object-fit: cover;
-}
+  img {
+    object-fit: cover;
+  }
 </style>
