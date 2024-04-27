@@ -28,6 +28,10 @@
       </DefaultInput>
 
       <DefaultButton :label="'AVANÇAR'" :fill="true" class="mt-5" :type="'submit'" />
+      <NuxtLink class="text-center text-xl my-5 dark:text-zinc-50 hover:text-teal-400" to="/login">
+        <span>Sair</span>
+      </NuxtLink>
+
     </div>
   </Form>
 </template>

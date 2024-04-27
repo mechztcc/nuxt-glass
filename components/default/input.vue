@@ -1,6 +1,10 @@
 <template>
   <label for="" class="mb-2 mt-3 font-semibold dark:text-zinc-50">{{ label }}</label>
-  <div class="flex items-center border px-5 w-full border-zinc-300 dark:bg-zinc-900 bg-white rounded">
+  <div
+    :class="['flex items-center border px-5 w-full border-zinc-300 dark:bg-zinc-900 bg-white rounded', hasFocus ? 'border-teal-400' : '']"
+    @focusin="onFocusIn()"
+    @focusout="onFocusOut()"
+  >
     <slot name="prepend"></slot>
     <Field
       :name="field"
@@ -33,6 +37,14 @@
   const emit = defineEmits(['change']);
   function onChange() {
     emit('change', inputValue);
+  }
+
+  const hasFocus = ref(false);
+  function onFocusIn() {
+    hasFocus.value = true;
+  }
+  function onFocusOut() {
+    hasFocus.value = false;
   }
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <NuxtLink :to="to" @click="pressed()">
-    <button :type="type =='button' ? 'button': 'submit'" :class="['p-2 hover:bg-zinc-900 dark:hover:border-teal-400 dark:hover:border-2 hover:text-teal-400 rounded trans', fill ? 'bg-zinc-900 w-full text-white' : '']">
+    <button :type="type =='button' ? 'button': 'submit'" :class="['p-2 hover:bg-zinc-900 dark:hover:border-teal-400 border-2 border-zinc-800 hover:text-teal-400 rounded trans', fill ? 'bg-zinc-900 w-full text-white' : '']">
       <slot></slot>
       <span class="text-lg"> {{ label }}</span>
     </button>

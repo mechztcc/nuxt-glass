@@ -24,7 +24,7 @@
       <DefaultButton :label="'ENTRAR'" :fill="true" class="mt-5" :type="'submit'" />
       <ButtonGoogle />
     </div>
-    <NuxtLink :to="'/create-account'" class="text-zinc-700 mb-5 text-center">
+    <NuxtLink :to="'/create-account'" class="text-zinc-700 dark:text-zinc-50 mb-5 text-center">
       <span>
         Não possui uma conta?
         <b class="cursor-pointer">Registrar</b>
