@@ -4,8 +4,8 @@
       <div class="flex justify-center mt-2">
         <Logo />
       </div>
-      <h1 class="text-3xl text-center">Bem vindo!</h1>
-      <span class="text-lg text-zinc-700 text-center"> Preencha o formulário abaixo para criar seu acesso. </span>
+      <h1 class="text-3xl text-center dark:text-zinc-50">Bem vindo!</h1>
+      <span class="text-lg text-zinc-700 dark:text-zinc-50 text-center"> Preencha o formulário abaixo para criar seu acesso. </span>
 
       <DefaultInput :label="'Name'" :type="'text'" :field="'name'" @change="onUpdateForm($event, 'name')"/>
 
@@ -28,7 +28,6 @@
       </DefaultInput>
 
       <DefaultButton :label="'AVANÇAR'" :fill="true" class="mt-5" :type="'submit'" />
-      <ButtonGoogle />
     </div>
   </Form>
 </template>

@@ -6,7 +6,7 @@
           <span v-if="store.step <= item.step">{{ item.step }}</span>
           <font-awesome-icon class="text-white" :icon="['fas', 'check']" v-if="store.step > item.step" />
         </div>
-        <div class="text-center mt-2">{{ item.label }}</div>
+        <div class="text-center mt-2 dark:text-zinc-50">{{ item.label }}</div>
       </div>
       <div :class="['h-2 w-16 mb-7 trans', item.step >= store.step ? 'bg-gray-300' : 'bg-teal-400']" v-if="item.step !== store.steps.length"></div>
     </template>
