@@ -7,7 +7,7 @@
       <h1 class="text-3xl text-center dark:text-zinc-50">Bem vindo!</h1>
       <span class="text-lg text-zinc-700 dark:text-zinc-50 text-center"> Preencha o formulário abaixo para criar seu acesso. </span>
 
-      <DefaultInput :label="'Name'" :type="'text'" :field="'name'" @change="onUpdateForm($event, 'name')"/>
+      <DefaultInput :label="'Name'" :type="'text'" :field="'name'" @change="onUpdateForm($event, 'name')" />
 
       <DefaultInput :label="'E-mail'" :type="'text'" :field="'email'" @change="onUpdateForm($event, 'email')">
         <template #prepend>
@@ -21,7 +21,12 @@
         </template>
       </DefaultInput>
 
-      <DefaultInput :label="'Confirmar Senha'" :type="isConfirmPass ? 'password' : 'text'" :field="'confirmPass'" @change="onUpdateForm($event, 'confirmPass')">
+      <DefaultInput
+        :label="'Confirmar Senha'"
+        :type="isConfirmPass ? 'password' : 'text'"
+        :field="'confirmPass'"
+        @change="onUpdateForm($event, 'confirmPass')"
+      >
         <template #prepend>
           <font-awesome-icon :icon="['fas', 'lock']" class="text-zinc-900 rounded-full cursor-pointer" @click="onHandleConfirmPass" />
         </template>
@@ -31,7 +36,6 @@
       <NuxtLink class="text-center text-xl my-5 dark:text-zinc-50 hover:text-teal-400" to="/login">
         <span>Sair</span>
       </NuxtLink>
-
     </div>
   </Form>
 </template>
@@ -42,6 +46,8 @@
   import * as zod from 'zod';
 
   const store = useCreateAccount();
+  const router = useRouter();
+  const cookie = useCookie('credentials');
 
   interface Iform {
     name?: string;
@@ -50,15 +56,16 @@
     confirmPass?: string;
   }
 
-  const { execute } = useFetchAuth('users', {
+
+  const { execute, data } = useFetchAuth('users', {
     immediate: false,
     method: 'post',
     body: store.payload,
     successMsg: 'Usuário registrado com sucesso!',
-    redirect: '/',
+    redirect: '/login',
     cb: () => {
       store.$reset();
-    }
+    },
   });
 
   const schema = toTypedSchema(
@@ -84,7 +91,6 @@
   function onUpdateForm({ value }: any, field: string) {
     store.payload[field] = value;
   }
-
 </script>
 
 <style lang="scss" scoped></style>

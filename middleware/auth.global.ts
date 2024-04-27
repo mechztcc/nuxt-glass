@@ -4,7 +4,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
   const cookie = useCookie('credentials');
 
   
-  if (!cookie.value && !noNeedCredentials.includes(to.fullPath)) {
+  if (!cookie.value && !noNeedCredentials.includes(to.fullPath) && !from.fullPath.includes('/create-account')) {
     toaster.onShow('ERROR', {
       msg: 'Sessão expirada, realize um novo login.',
     });
