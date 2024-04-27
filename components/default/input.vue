@@ -11,6 +11,7 @@
       v-model="inputValue"
       :placeholder="placeholder"
       :type="type"
+      :as="as"
       :validate-on-change="true"
       :keep-value="true"
       @update:model-value="onChange()"
@@ -29,6 +30,7 @@
     type: { type: String, required: true },
     placeholder: { type: String, required: false },
     field: { type: String, required: true },
+    as: { type: String, required: false },
     mask: { type: String, required: false, default: '' },
   });
 

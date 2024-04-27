@@ -19,6 +19,10 @@
           <DefaultButton>
             <font-awesome-icon :icon="['fas', 'grip-vertical']" />
           </DefaultButton>
+          <DefaultButton :to="'/admin/products/create'">
+            <font-awesome-icon :icon="['fas', 'plus']" />
+          </DefaultButton>
+
         </div>
       </div>
 

@@ -1,9 +1,11 @@
 <template>
   <div class="rounded p-5 flex flex-col bg-zinc-50 hover:shadow-md dark:bg-zinc-900 dark:text-zinc-50 my-3 mx-3">
-    <div class="flex items-start justify-end">
-      <Badge :label="'Em andamento'"></Badge>
+    <div class="flex justify-between items-center mb-3">
+      <span class="text-xl font-bold">{{ order.user.name }}</span>
+      <div class="flex items-start justify-end">
+        <Badge :label="'Em andamento'"></Badge>
+      </div>
     </div>
-    <span class="text-xl font-bold">{{ order.user.name  }}</span>
     <div class="flex mt-2">
       <span class="mr-2" v-for="(item, index) in order.region" :key="index">{{ item.state }} - {{ item.city }}</span>
     </div>
