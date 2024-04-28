@@ -7,17 +7,21 @@
       <h1 class="text-3xl text-center dark:text-zinc-50">Bem vindo!</h1>
       <span class="text-lg text-zinc-700 dark:text-zinc-50 text-center"> Preencha o formulário abaixo para criar seu acesso. </span>
 
-      <DefaultInput :label="'Name'" :type="'text'" :field="'name'" @change="onUpdateForm($event, 'name')" />
+      <DefaultInput :label="'Name'" :type="'text'" :field="'name'" @change="onUpdateForm($event, 'name')">
+        <template #prepend>
+          <font-awesome-icon :icon="['fas', 'user']" class="text-zinc-900 dark:text-zinc-50 rounded-full"/>
+        </template>
+      </DefaultInput>
 
       <DefaultInput :label="'E-mail'" :type="'text'" :field="'email'" @change="onUpdateForm($event, 'email')">
         <template #prepend>
-          <font-awesome-icon :icon="['far', 'envelope']" class="text-zinc-900 rounded-full" />
+          <font-awesome-icon :icon="['far', 'envelope']" class="text-zinc-900 dark:text-zinc-50 rounded-full" />
         </template>
       </DefaultInput>
 
       <DefaultInput :label="'Senha'" :type="isPass ? 'password' : 'text'" :field="'password'" @change="onUpdateForm($event, 'password')">
         <template #prepend>
-          <font-awesome-icon :icon="['fas', 'lock']" class="text-zinc-900 rounded-full cursor-pointer" @click="onHandlePass" />
+          <font-awesome-icon :icon="['fas', 'lock']" class="text-zinc-900 dark:text-zinc-50 rounded-full cursor-pointer" @click="onHandlePass" />
         </template>
       </DefaultInput>
 
@@ -28,7 +32,7 @@
         @change="onUpdateForm($event, 'confirmPass')"
       >
         <template #prepend>
-          <font-awesome-icon :icon="['fas', 'lock']" class="text-zinc-900 rounded-full cursor-pointer" @click="onHandleConfirmPass" />
+          <font-awesome-icon :icon="['fas', 'lock']" class="text-zinc-900 dark:text-zinc-50 rounded-full cursor-pointer" @click="onHandleConfirmPass" />
         </template>
       </DefaultInput>
 
