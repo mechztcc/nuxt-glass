@@ -13,6 +13,10 @@
   <ProductsCreateGenerals v-if="store.actualStep == 1" />
   <ProductsPriceStock v-if="store.actualStep == 2" />
   <ProductsUploadImg v-if="store.actualStep == 3" />
+
+  <div class="absolute bottom-10 right-10">
+    <DefaultThemeButton />
+  </div>
 </template>
 
 <script setup lang="ts">
