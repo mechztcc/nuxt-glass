@@ -1,31 +1,39 @@
 <template>
-  <div>
-    <div class="flex flex-col">
-      <span class="text-xl">Preço e estoque</span>
+  <div class="grid grid-cols-1 md:grid-cols-3 mx-5 md:mx-20 my-10">
+    <div class="col-span-1 md:col-span-1 md:col-start-2">
+      <div class="flex flex-col">
+        <div class="grid grid-cols-2 gap-5">
+          <DefaultInput :label="'Preço de custo'" :type="'number'" :field="'min'">
+            <template #prepend>
+              <font-awesome-icon :icon="['fas', 'tag']" class="dark:text-zinc-50" />
+            </template>
+          </DefaultInput>
+          <DefaultInput :label="'Porcentagem de lucro'" :type="'number'" :field="'min'">
+            <template #prepend>
+              <font-awesome-icon :icon="['fas', 'percent']" class="dark:text-zinc-50" />
+            </template>
+          </DefaultInput>
+          <DefaultInput :label="'Desconto máximo'" :type="'number'" :field="'min'">
+            <template #prepend>
+              <font-awesome-icon :icon="['fas', 'percent']" class="dark:text-zinc-50" />
+            </template>
+          </DefaultInput>
+  
+          <DefaultInput :label="'Quantidade'" :type="'number'" :field="'min'">
+            <template #prepend>
+              <font-awesome-icon :icon="['fas', 'box-archive']" class="dark:text-zinc-50" />
+            </template>
+          </DefaultInput>
 
-      <DefaultInput :label="'Preço de custo'" :type="'number'" :field="'min'">
-        <template #prepend>
-          <font-awesome-icon :icon="['fas', 'tag']" />
-        </template>
-      </DefaultInput>
+          <span class="dark:text-zinc-50">Valor de venda</span>
+          <span class="text-xl dark:text-zinc-50">R$ 800,00</span>
+        </div>
 
-      <DefaultInput :label="'Porcentagem de lucro'" :type="'number'" :field="'min'">
-        <template #prepend>
-          <font-awesome-icon :icon="['fas', 'percent']" />
-        </template>
-      </DefaultInput>
-
-      <DefaultInput :label="'Desconto máximo'" :type="'number'" :field="'min'">
-        <template #prepend>
-          <font-awesome-icon :icon="['fas', 'percent']" />
-        </template>
-      </DefaultInput>
-
-      <DefaultInput :label="'Quantidade'" :type="'number'" :field="'min'">
-        <template #prepend>
-          <font-awesome-icon :icon="['fas', 'box-archive']" />
-        </template>
-      </DefaultInput>
+        <DefaultButton :label="'Avançar'" :fill="true" class="mt-5" />
+        <div class="flex justify-center mt-5">
+          <span class="dark:text-zinc-50 hover:text-teal-400 cursor-pointer">Voltar</span>
+        </div>
+      </div>
     </div>
   </div>
 </template>

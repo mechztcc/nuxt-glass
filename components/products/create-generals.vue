@@ -1,24 +1,44 @@
 <template>
-  <div class="grid grid-cols-1 md:grid-cols-3">
-    <div class="col-span-1 md:col-span-1 md:col-start-2 mt-10">
-      <span class="font-bold">Informações do produto</span>
+  <div class="flex justify-center mt-10">
+    <div class="grid grid-cols-2 gap-5 items-start">
+      <div class="col-span-1">
+        <span class="dark:text-zinc-50 font-bold">Nome</span>
+      </div>
+      <div class="col-span-1">
+        <DefaultInput :type="'text'" :name="'name'">
+          <template #prepend>
+            <font-awesome-icon :icon="['fas', 'pen']" class="dark:text-zinc-50" />
+          </template>
+        </DefaultInput>
+      </div>
 
-      <div class="flex flex-col">
-        <DefaultInput :label="'Nome'" :field="'name'" :type="'text'" />
-        <Field label="Descrição" as="textarea" name="textarea" cols="30" rows="10" class="my-5"></Field>
-
-        <span class="text-xl">Gênero da armação</span>
+      <div class="col-span-1">
+        <span class="dark:text-zinc-50 font-bold">Gênero</span>
+      </div>
+      <div class="col-span-1">
         <div class="flex">
-          <DefaultSelectedButton :label="'Masculino'" />
-          <DefaultSelectedButton :label="'Feminino'" class="mx-3" />
-          <DefaultSelectedButton :label="'Unisex'" />
+          <Field type="radio" name="gender"></Field>
+          <span class="dark:text-zinc-50 mx-2">Masculino</span>
         </div>
-
-        <span class="text-xl">Cor</span>
         <div class="flex">
-          <DefaultSelectedButton :label="'Masculino'" />
-          <DefaultSelectedButton :label="'Feminino'" class="mx-3" />
-          <DefaultSelectedButton :label="'Unisex'" />
+          <Field type="radio" name="gender"></Field>
+          <span class="dark:text-zinc-50 mx-2">Feminino</span>
+        </div>
+        <div class="flex">
+          <Field type="radio" name="gender"></Field>
+          <span class="dark:text-zinc-50 mx-2">Unisex</span>
+        </div>
+      </div>
+
+      <div class="col-span-2 mt-5">
+        <span class="dark:text-zinc-50 font-bold">Descrição</span>
+        <Field as="textarea" name="description" class="w-full dark:bg-zinc-900 mt-5" rows="10" />
+      </div>
+
+      <div class="col-span-2 mt-5">
+        <DefaultButton label="Avançar" :fill="true" />
+        <div class="flex justify-center mt-5">
+          <span class="dark:text-zinc-50 hover:text-teal-400 cursor-pointer">Voltar</span>
         </div>
       </div>
     </div>

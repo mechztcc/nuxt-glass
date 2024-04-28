@@ -6,7 +6,7 @@
   <div class="flex justify-center mt-5">
     <div class="flex flex-col justify-center items-center">
       <Logo />
-      <h1 class="text-2xl">Criar produto</h1>
+      <h1 class="text-2xl dark:text-zinc-50">Criar produto</h1>
     </div>
   </div>
 

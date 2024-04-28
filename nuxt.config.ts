@@ -21,7 +21,7 @@ export default defineNuxtConfig({
       charset: 'utf-8',
       title: 'VALKYRIE',
       bodyAttrs: {
-        class: 'bg-zinc-100 relative min-h-screen',
+        class: 'bg-zinc-100 dark:bg-zinc-800 relative min-h-screen',
       },
     },
   },
