@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center mt-10">
+  <div class="flex justify-center mt-10 mx-5">
     <div class="grid grid-cols-2 gap-5 items-start">
       <div class="col-span-1">
         <span class="dark:text-zinc-50 font-bold">Nome</span>
@@ -27,6 +27,20 @@
         <div class="flex">
           <Field type="radio" name="gender"></Field>
           <span class="dark:text-zinc-50 mx-2">Unisex</span>
+        </div>
+      </div>
+
+      <div class="col-span-1">
+        <span class="dark:text-zinc-50 font-bold">Armação</span>
+      </div>
+      <div class="col-span-1">
+        <div class="flex">
+          <Field type="radio" name="gender"></Field>
+          <span class="dark:text-zinc-50 mx-2">Arredondada</span>
+        </div>
+        <div class="flex">
+          <Field type="radio" name="gender"></Field>
+          <span class="dark:text-zinc-50 mx-2">Quadrada</span>
         </div>
       </div>
 
