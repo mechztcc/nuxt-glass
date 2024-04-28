@@ -30,6 +30,14 @@
         </div>
       </div>
 
+      <div class="col-span-1">
+        <span class="dark:text-zinc-50 font-bold">Cor</span>
+      </div>
+
+      <div class="col-span-1">
+        <DefaultColorsSelect />
+      </div>
+
       <div class="col-span-2 mt-5">
         <span class="dark:text-zinc-50 font-bold">Descrição</span>
         <Field as="textarea" name="description" class="w-full dark:bg-zinc-900 mt-5" rows="10" />
