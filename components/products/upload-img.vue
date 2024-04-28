@@ -35,7 +35,7 @@
 
       <DefaultButton :label="'Avançar'" :fill="true" />
       <div class="flex justify-center mt-3">
-        <span class="dark:text-zinc-50 hover:text-teal-400 cursor-pointer">Voltar</span>
+        <span class="dark:text-zinc-50 hover:text-teal-400 cursor-pointer" @click="store.onPrev()">Voltar</span>
       </div>
     </div>
     <div class="col-span-1 md:col-span-2" v-if="renderBig">
@@ -50,6 +50,8 @@
     url: string;
   }
   import { useDropZone } from '@vueuse/core';
+
+  const store = useCreateProduct();
 
   const dropZoneRef = ref<HTMLDivElement>();
   const files = ref<FileWithRender[]>([]);

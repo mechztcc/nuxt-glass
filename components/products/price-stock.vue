@@ -18,7 +18,7 @@
               <font-awesome-icon :icon="['fas', 'percent']" class="dark:text-zinc-50" />
             </template>
           </DefaultInput>
-  
+
           <DefaultInput :label="'Quantidade'" :type="'number'" :field="'min'">
             <template #prepend>
               <font-awesome-icon :icon="['fas', 'box-archive']" class="dark:text-zinc-50" />
@@ -29,15 +29,17 @@
           <span class="text-xl dark:text-zinc-50">R$ 800,00</span>
         </div>
 
-        <DefaultButton :label="'Avançar'" :fill="true" class="mt-5" />
+        <DefaultButton :label="'Avançar'" :fill="true" class="mt-5" @pressed="store.onNext()" />
         <div class="flex justify-center mt-5">
-          <span class="dark:text-zinc-50 hover:text-teal-400 cursor-pointer">Voltar</span>
+          <span class="dark:text-zinc-50 hover:text-teal-400 cursor-pointer" @click="store.onPrev()">Voltar</span>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  const store = useCreateProduct();
+</script>
 
 <style scoped></style>
