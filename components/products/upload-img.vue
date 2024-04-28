@@ -4,13 +4,21 @@
       <div
         class="flex flex-col items-center px-5 text-center justify-center py-10 border-2 border-dashed rounded-md mb-5 hover:border-teal-400 hover:text-teal-400"
         ref="dropZoneRef"
+        @click="onHandleFile()"
       >
         <font-awesome-icon :icon="['fas', 'image']" :size="'3x'" class="mb-3" />
-        <span>Arraste e solte as imagens aqui para adicionar ao produto.</span>
-        <span>Formatos aceito: <b>JPG</b> <b>PNG</b></span>
-        <span>Tamanho máximo por arquivo: <b>5 MB</b></span>
-        <span>Limitte de imagens por produto: <b>4</b></span>
+        <tempalte v-if="files.length < 4">
+          <span>Arraste e solte as imagens aqui para adicionar ao produto.</span>
+          <span>Formatos aceito: <b>JPG</b> <b>PNG</b></span>
+          <span>Tamanho máximo por arquivo: <b>5 MB</b></span>
+          <span>Limitte de imagens por produto: <b>4</b></span>
+        </tempalte>
+        <template v-if="files.length == 4">
+          <span>Limite máximo de imágens atingido</span>
+        </template>
       </div>
+
+      <input type="file" ref="inputFile" class="hidden" @change="onUploadImage($event.target)" />
 
       <div :class="['grid gap-5 my-5', renderBig ? 'grid-cols-2' : 'grid-cols-3']">
         <ProductsImageRender
@@ -29,12 +37,7 @@
       </div>
     </div>
     <div class="col-span-1 md:col-span-2" v-if="renderBig">
-      <div class="flex flex-col">
-        <div class="flex justify-end mb-2">
-          <font-awesome-icon :icon="['far', 'circle-xmark']" :size="'2x'" class="text-zinc-500 dark:text-teal-400 cursor-pointer" @click="renderBig = ''" />
-        </div>
-        <img class="rounded-lg shadow-md" :src="renderBig" alt="" />
-      </div>
+      <ProductsImageRenderFull :src="renderBig" @close="renderBig = ''" />
     </div>
   </div>
 </template>
@@ -50,12 +53,19 @@
   const files = ref<FileWithRender[]>([]);
   const renderBig = ref('');
 
+  const acceptedFormats = ['image/jpeg', 'image/png', 'image/webp'];
+  const inputFile = ref<HTMLElement>();
+
   useDropZone(dropZoneRef, {
     onDrop,
-    dataTypes: ['image/jpeg', 'image/png', 'image/webp'],
+    dataTypes: acceptedFormats,
   });
 
   function onDrop(drops: File[] | null) {
+    if (files.value.length + (drops?.length || 0) > 4) {
+      return;
+    }
+
     drops?.map((file) => {
       const reader = new FileReader();
       reader.onload = () => {
@@ -71,6 +81,27 @@
 
   function onShowBig(index: number) {
     renderBig.value = files.value[index].url;
+  }
+
+  function onUploadImage(data: any) {
+    const file = data.files[0] as File;
+
+    if (files.value.length + 1 > 4) {
+      return;
+    }
+
+    if (!file || !acceptedFormats.includes(file.type)) {
+      return;
+    }
+
+    onDrop([file]);
+  }
+
+  function onHandleFile() {
+    if (files.value.length >= 4) {
+      return;
+    }
+    inputFile.value!.click();
   }
 </script>
 

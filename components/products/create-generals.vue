@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-center mt-10 mx-5">
-    <div class="grid grid-cols-2 gap-5 items-start">
+    <div class="grid grid-cols-2 gap-5 items-start ">
       <div class="col-span-1">
         <span class="dark:text-zinc-50 font-bold">Nome</span>
       </div>
