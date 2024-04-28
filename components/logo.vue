@@ -1,5 +1,5 @@
 <template>
-  <div :class="['flex', color]">
+  <div :class="['flex dark:text-zinc-50', color]">
     <font-awesome-icon :icon="['fas', 'diamond']" />
     <font-awesome-icon :icon="['fas', 'diamond']" :size="'2x'" class="" />
     <font-awesome-icon :icon="['fas', 'diamond']" />

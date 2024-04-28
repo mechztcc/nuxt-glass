@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center items-center">
+  <div class="flex justify-center items-center my-5">
     <DefaultStep :steps="store.steps" @change="store.onHandleStep($event)"></DefaultStep>
   </div>
 
