@@ -14,10 +14,6 @@ export const useCreateProduct = defineStore('createProduct', {
           position: 3,
           label: 'Imagens do produto',
         },
-        {
-          position: 4,
-          label: 'Resumo do produto',
-        },
       ],
       actualStep: 1
     };

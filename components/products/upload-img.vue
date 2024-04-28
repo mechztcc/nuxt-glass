@@ -2,17 +2,19 @@
   <div :class="['grid grid-cols-1 mx-5 my-20', renderBig ? 'md:grid-cols-5 gap-5' : 'md:grid-cols-3']">
     <div :class="['col-span-1 md:col-start-2 dark:text-zinc-50']">
       <div
-        class="flex flex-col items-center px-5 text-center justify-center py-10 border-2 border-dashed rounded-md mb-5 hover:border-teal-400 hover:text-teal-400"
+        class="flex flex-col items-center px-5 text-center justify-center py-10 border-2 border-dashed rounded-md mb-5 hover:border-teal-400 hover:text-teal-400 cursor-pointer"
         ref="dropZoneRef"
         @click="onHandleFile()"
       >
         <font-awesome-icon :icon="['fas', 'image']" :size="'3x'" class="mb-3" />
-        <tempalte v-if="files.length < 4">
-          <span>Arraste e solte as imagens aqui para adicionar ao produto.</span>
-          <span>Formatos aceito: <b>JPG</b> <b>PNG</b></span>
-          <span>Tamanho máximo por arquivo: <b>5 MB</b></span>
-          <span>Limitte de imagens por produto: <b>4</b></span>
-        </tempalte>
+        <template v-if="files.length < 4">
+          <div class="flex flex-col">
+            <span>Clique ou arraste e solte as imagens aqui para adicionar ao produto.</span>
+            <span>Formatos aceito: <b>JPG</b> <b>PNG</b> <b>WEBP</b></span>
+            <span>Tamanho máximo por arquivo: <b>5 MB</b></span>
+            <span>Limitte de imagens por produto: <b>4</b></span>
+          </div>
+        </template>
         <template v-if="files.length == 4">
           <span>Limite máximo de imágens atingido</span>
         </template>
