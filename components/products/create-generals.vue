@@ -13,6 +13,21 @@
       </div>
 
       <div class="col-span-1">
+        <div class="flex items-center">
+          <span class="dark:text-zinc-50 font-bold">Código do produto</span>
+          <DefaultTooltip :tooltip="'Aqui vai uma mensagem  de ajuda para o usuário'" />
+        </div>
+      </div>
+
+      <div class="col-span-1">
+        <DefaultInput :name="'mark'" :type="'text'">
+          <template #prepend>
+            <font-awesome-icon :icon="['fas', 'hashtag']" class="dark:text-zinc-50" />
+          </template>
+        </DefaultInput>
+      </div>
+
+      <div class="col-span-1">
         <span class="dark:text-zinc-50 font-bold">Gênero</span>
       </div>
       <div class="col-span-1">
@@ -65,7 +80,7 @@
       </div>
 
       <div class="col-span-1">
-        <span class="dark:text-zinc-50 font-bold">Material</span>
+        <span class="dark:text-zinc-50 font-bold">Material das astes</span>
       </div>
 
       <div class="col-span-1">
@@ -76,17 +91,34 @@
         </DefaultInput>
       </div>
 
+      
+
       <div class="col-span-1">
         <div class="flex items-center">
-          <span class="dark:text-zinc-50 font-bold">Código do produto</span>
-          <DefaultTooltip :tooltip="'Aqui vai uma mensagem  de ajuda para o usuário'" />
+          <span class="dark:text-zinc-50 font-bold">Peso</span>
+          <DefaultTooltip :tooltip="'Peso total do produto sem embalagem'" />
         </div>
       </div>
 
       <div class="col-span-1">
         <DefaultInput :name="'mark'" :type="'text'">
           <template #prepend>
-            <font-awesome-icon :icon="['fas', 'hashtag']" class="dark:text-zinc-50" />
+            <font-awesome-icon :icon="['fas', 'scale-balanced']" class="dark:text-zinc-50" />
+          </template>
+        </DefaultInput>
+      </div>
+
+      <div class="col-span-1">
+        <div class="flex items-center">
+          <span class="dark:text-zinc-50 font-bold">Dimensões</span>
+          <DefaultTooltip :tooltip="'Aqui vai uma mensagem de ajuda pro usuário.'" />
+        </div>
+      </div>
+
+      <div class="col-span-1">
+        <DefaultInput :name="'mark'" :type="'text'">
+          <template #prepend>
+            <font-awesome-icon :icon="['fas', 'ruler-combined']" class="dark:text-zinc-50" />
           </template>
         </DefaultInput>
       </div>

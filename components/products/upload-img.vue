@@ -2,7 +2,7 @@
   <div :class="['grid grid-cols-1 mx-5 my-20', renderBig ? 'md:grid-cols-5 gap-5' : 'md:grid-cols-3']">
     <div :class="['col-span-1 md:col-start-2 dark:text-zinc-50']">
       <div
-        class="flex flex-col items-center px-5 text-center justify-center py-10 border-2 border-dashed rounded-md mb-5 hover:border-teal-400 hover:text-teal-400 cursor-pointer"
+        class="flex flex-col items-center px-5 mt-10 text-center justify-center py-10 border-2 border-dashed rounded-xl mb-5 hover:border-teal-400 hover:text-teal-400 cursor-pointer"
         ref="dropZoneRef"
         @click="onHandleFile()"
       >
@@ -26,6 +26,7 @@
         <ProductsImageRender
           :imageURL="item.url"
           :index="index"
+          :selected="renderBig ==item.url"
           v-for="(item, index) in files"
           :key="index"
           @remove="onRemove(index)"

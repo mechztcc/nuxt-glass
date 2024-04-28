@@ -4,7 +4,7 @@
       <font-awesome-icon :icon="['far', 'circle-xmark']" :size="'2x'" class="text-zinc-500 dark:text-teal-400 cursor-pointer" @click="onClose()" />
     </div>
     <div class="flex overflow-scroll" id="image">
-      <img class="rounded-lg shadow-md img hover:cursor-zoom-in" @mousemove="onHover($event)" :src="src" alt="" />
+      <img class="rounded-xl shadow-md img hover:cursor-zoom-in" @mousemove="onHover($event)" :src="src" alt="" />
     </div>
   </div>
 </template>

@@ -2,7 +2,7 @@
   <div
     @mouseenter="isHide = false"
     @mouseleave="isHide = true"
-    :class="['flex justify-center items-between min-h-screen bg-zinc-900 shadow-xl trans', !isHide ? 'sidebar' : '']"
+    :class="['flex justify-center items-between shadow-lg min-h-screen fixed bg-zinc-900 shadow-xl trans', !isHide ? 'sidebar' : '']"
   >
     <div class="flex flex-col mt-20 w-full px-3">
       <div class="flex justify-center mb-10">
