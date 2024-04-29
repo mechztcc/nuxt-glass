@@ -2,9 +2,9 @@
   <div
     @mouseenter="isHide = false"
     @mouseleave="isHide = true"
-    :class="['flex justify-center items-between shadow-lg min-h-screen fixed bg-zinc-900 shadow-xl trans', !isHide ? 'sidebar' : '']"
+    :class="['flex justify-center items-center min-h-screen min-w-24 relative bg-zinc-900 shadow-xl trans', !isHide ? 'sidebar' : '']"
   >
-    <div class="flex flex-col mt-20 w-full px-3">
+    <div class="flex flex-col mt-20 px-3 fixed top-0 left-0">
       <div class="flex justify-center mb-10">
         <Logo :color="'text-zinc-50'" />
       </div>
@@ -51,7 +51,7 @@
 
 <style lang="css" scoped>
   .sidebar {
-    width: 300px;
+    width: 250px;
   }
 </style>
 
