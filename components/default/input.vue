@@ -38,7 +38,7 @@
 
   const emit = defineEmits(['change']);
   function onChange() {
-    emit('change', inputValue);
+    emit('change', inputValue.value);
   }
 
   const hasFocus = ref(false);

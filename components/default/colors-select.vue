@@ -18,11 +18,12 @@
   const colors = ref([
     { color: 'teal-400', name: 'Azul celeste' },
     { color: 'red-400', name: 'Vermelho' },
-    { color: 'blue-600', name: 'Azul' },
     { color: 'zinc-50', name: 'Branco' },
     { color: 'zinc-400', name: 'Cinza' },
     { color: 'yellow-400', name: 'Amarelo' },
     { color: 'green-400', name: 'Verde' },
+    { color: 'pink-400', name: 'Rosa' },
+    { color: 'purple-400', name: 'Roxo' },
   ]);
 
   const selected = ref('');
@@ -64,5 +65,12 @@
 
   .tooltip:hover::after {
     opacity: 1;
+  }
+
+  .bg-pink-400 {
+    background-color: #ec4899;
+  }
+  .bg-purple-400 {
+    background-color: #8b5cf6;
   }
 </style>
