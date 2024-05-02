@@ -82,13 +82,18 @@
     const toRemove = files.value[index];
     const nextImage = files.value[index + 1];
 
-    if(toRemove.url == renderBig.value && nextImage) {
-      renderBig.value = nextImage.url
+    if (toRemove.url == renderBig.value && nextImage) {
+      renderBig.value = nextImage.url;
     }
 
+    if (toRemove.url == renderBig.value && !nextImage) {
+      renderBig.value = '';
+    }
+
+    store.payload.files.splice(index, 1);
     files.value.splice(index, 1);
 
-    if(files.value.length == 0) {
+    if (files.value.length == 0) {
       renderBig.value = '';
     }
   }
