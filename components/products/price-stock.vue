@@ -3,23 +3,23 @@
     <div class="col-span-1 md:col-span-1 md:col-start-2">
       <div class="flex flex-col">
         <div class="grid grid-cols-2 gap-5">
-          <DefaultInput :label="'Preço de custo'" :type="'number'" :field="'min'" v-model="store.payload.costPrice">
+          <DefaultInput :label="'Preço de custo'" :type="'number'" :field="'min'" :value="store.payload.costPrice">
             <template #prepend>
               <font-awesome-icon :icon="['fas', 'tag']" class="dark:text-zinc-50" />
             </template>
           </DefaultInput>
-          <DefaultInput :label="'Porcentagem de lucro'" :type="'number'" :field="'min'" v-model="store.payload.profitPercents">
+          <DefaultInput :label="'Porcentagem de lucro'" :type="'number'" :field="'min'" :value="store.payload.profitPercents">
             <template #prepend>
               <font-awesome-icon :icon="['fas', 'percent']" class="dark:text-zinc-50" />
             </template>
           </DefaultInput>
-          <DefaultInput :label="'Desconto máximo'" :type="'number'" :field="'min'" v-model="store.payload.maxDescount">
+          <DefaultInput :label="'Desconto máximo'" :type="'number'" :field="'min'" :value="store.payload.maxDescount">
             <template #prepend>
               <font-awesome-icon :icon="['fas', 'percent']" class="dark:text-zinc-50" />
             </template>
           </DefaultInput>
 
-          <DefaultInput :label="'Quantidade'" :type="'number'" :field="'min'" v-model="store.payload.amount">
+          <DefaultInput :label="'Quantidade'" :type="'number'" :field="'min'" :value="store.payload.amount">
             <template #prepend>
               <font-awesome-icon :icon="['fas', 'box-archive']" class="dark:text-zinc-50" />
             </template>

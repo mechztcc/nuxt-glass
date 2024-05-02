@@ -17,7 +17,7 @@ export const useCreateProduct = defineStore('createProduct', {
       ],
       actualStep: 1,
       payload: {
-        name: '' as string,
+        name: 'prdoduto' as string,
         gender: '' as string,
         glassType: '' as string,
         color: '' as string,
@@ -58,12 +58,18 @@ export const useCreateProduct = defineStore('createProduct', {
         ...this.payload,
         ...data,
       };
-
-      console.log(this.payload);
     },
 
     onUpdateColor(color: string) {
       this.payload.color = color;
+    },
+
+    onGetGender(type: string) {
+      return this.payload.gender == type;
+    },
+
+    onGetColor(color: string) {
+      return this.payload.gender == color;
     },
   },
   getters: {
@@ -71,7 +77,7 @@ export const useCreateProduct = defineStore('createProduct', {
     expectedPrice: (state) => {
       const cost = state.payload.costPrice;
       const profitPercents = state.payload.profitPercents;
-      const descont = state.payload.maxDescount
+      const descont = state.payload.maxDescount;
 
       const totalProfit = cost + cost * (profitPercents / 100);
       const profitWithDescont = totalProfit - totalProfit * (descont / 100);

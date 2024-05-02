@@ -15,6 +15,10 @@
 </template>
 
 <script setup lang="ts">
+  const props = defineProps({
+    checked: { required: false },
+  });
+
   const colors = ref([
     { color: 'teal-400', name: 'Azul celeste' },
     { color: 'red-400', name: 'Vermelho' },
@@ -26,7 +30,7 @@
     { color: 'purple-400', name: 'Roxo' },
   ]);
 
-  const selected = ref('');
+  const selected = ref(props.checked);
 
   const emits = defineEmits(['pressed']);
   function change(color: string) {

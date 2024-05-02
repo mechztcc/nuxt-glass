@@ -1,13 +1,17 @@
 <template>
   <label for="" class="mb-2 mt-3 font-semibold dark:text-zinc-50">{{ label }}</label>
   <div
-    :class="['flex items-center px-5 w-full  border-zinc-300  dark:bg-zinc-900 bg-white rounded', hasFocus ? 'border border-teal-400 dark:border-teal-400' : '']"
+    :class="[
+      'flex items-center px-5 w-full  border-zinc-300  dark:bg-zinc-900 bg-white rounded',
+      hasFocus ? 'border border-teal-400 dark:border-teal-400' : '',
+    ]"
     @focusin="onFocusIn()"
     @focusout="onFocusOut()"
   >
     <slot name="prepend"></slot>
     <Field
       :name="field"
+      :value="value"
       v-model="inputValue"
       :placeholder="placeholder"
       :type="type"
@@ -31,10 +35,11 @@
     placeholder: { type: String, required: false },
     field: { type: String, required: true },
     as: { type: String, required: false },
+    value: { required: false },
     mask: { type: String, required: false, default: '' },
   });
 
-  const inputValue = ref('');
+  const inputValue = ref(props.value);
 
   const emit = defineEmits(['change']);
   function onChange() {
