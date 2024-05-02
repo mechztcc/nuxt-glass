@@ -32,15 +32,15 @@
       </div>
       <div class="col-span-1">
         <div class="flex">
-          <input type="checkbox" name="man" :checked="store.onGetGender('masculino')" @change="store.onUpdatePayload({ gender: 'masculino' })" />
+          <input type="radio" name="man" :checked="store.onGetGender('masculino')" @change="store.onUpdatePayload({ gender: 'masculino' })" />
           <span class="dark:text-zinc-50 mx-2">Masculino</span>
         </div>
         <div class="flex">
-          <input type="checkbox" name="man" :checked="store.onGetGender('feminino')" @change="store.onUpdatePayload({ gender: 'feminino' })" />
+          <input type="radio" name="man" :checked="store.onGetGender('feminino')" @change="store.onUpdatePayload({ gender: 'feminino' })" />
           <span class="dark:text-zinc-50 mx-2">Feminino</span>
         </div>
         <div class="flex">
-          <input type="checkbox" name="man" :checked="store.onGetGender('unisex')" @change="store.onUpdatePayload({ gender: 'unisex' })" />
+          <input type="radio" name="man" :checked="store.onGetGender('unisex')" @change="store.onUpdatePayload({ gender: 'unisex' })" />
           <span class="dark:text-zinc-50 mx-2">Unisex</span>
         </div>
       </div>
@@ -134,13 +134,6 @@
           <span class="dark:text-zinc-50"> {{ store.descSize }} / 1024</span>
         </div>
       </div>
-
-      <div class="col-span-2 mt-5">
-        <DefaultButton label="Avançar" :fill="true" @pressed="store.onNext()" />
-        <div class="flex justify-center mt-5">
-          <span class="dark:text-zinc-50 hover:text-teal-400 cursor-pointer" @click="store.onPrev()">Voltar</span>
-        </div>
-      </div>
     </div>
   </Form>
 </template>
@@ -158,10 +151,6 @@
       password: zod.string().min(6, { message: 'Senha é obrigatório' }),
     })
   );
-
-  onMounted(() => {
-    console.log(store.payload);
-  });
 </script>
 
 <style scoped></style>

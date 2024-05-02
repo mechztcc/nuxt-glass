@@ -5,14 +5,20 @@ interface IParams {
   successMsg?: string;
   redirect?: string;
   cb?: Function;
+  headers?: any;
 }
 
-export default function useFetchAuth(url: string, { body, immediate, method, successMsg, redirect, cb }: IParams) {
+export default function useFetchAuth(url: string, { body, immediate, method, successMsg, redirect, cb, headers }: IParams) {
   const runtimeConfig = useRuntimeConfig();
   const toastr = useToaster();
   const router = useRouter();
 
   const api = runtimeConfig.public.apiBase;
+  const hds = useRequestHeaders(['cookie'])
+  const t = {
+    ...hds,
+    "Content-Type": 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
+  }
 
   const { error, data, pending, execute } = useFetch(`${api}/${url}`, {
     body,
@@ -21,7 +27,7 @@ export default function useFetchAuth(url: string, { body, immediate, method, suc
     credentials: 'include',
     method,
     server: true,
-    headers: useRequestHeaders(['cookie']),
+    headers: hds,
     onRequestError: (e: any) => {
       toastr.onShow('ERROR', { msg: e.error.message });
     },

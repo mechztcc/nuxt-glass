@@ -17,7 +17,7 @@ export const useCreateProduct = defineStore('createProduct', {
       ],
       actualStep: 1,
       payload: {
-        name: 'prdoduto' as string,
+        name: '' as string,
         gender: '' as string,
         glassType: '' as string,
         color: '' as string,
@@ -42,7 +42,7 @@ export const useCreateProduct = defineStore('createProduct', {
     },
 
     onPrev() {
-      if (this.actualStep !== 0) {
+      if (this.actualStep > 1) {
         this.actualStep--;
       }
     },

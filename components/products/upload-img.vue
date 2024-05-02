@@ -26,17 +26,12 @@
         <ProductsImageRender
           :imageURL="item.url"
           :index="index"
-          :selected="renderBig ==item.url"
+          :selected="renderBig == item.url"
           v-for="(item, index) in files"
           :key="index"
           @remove="onRemove(index)"
           @select="onShowBig(index)"
         />
-      </div>
-
-      <DefaultButton :label="'Concluir'" :fill="true" @pressed="onSubmit()"/>
-      <div class="flex justify-center mt-3">
-        <span class="dark:text-zinc-50 hover:text-teal-400 cursor-pointer" @click="store.onPrev()">Voltar</span>
       </div>
     </div>
     <div class="col-span-1 md:col-span-2" v-if="renderBig">
@@ -61,6 +56,8 @@
   const acceptedFormats = ['image/jpeg', 'image/png', 'image/webp'];
   const inputFile = ref<HTMLElement>();
 
+  const form = new FormData();
+
   useDropZone(dropZoneRef, {
     onDrop,
     dataTypes: acceptedFormats,
@@ -77,6 +74,7 @@
         files.value.push({ file, url: reader.result as string });
       };
       reader.readAsDataURL(file);
+      store.payload.files.push(file);
     });
   }
 
@@ -107,10 +105,6 @@
       return;
     }
     inputFile.value!.click();
-  }
-
-  function onSubmit() {
-    store.payload.files = files.value.filter((file: FileWithRender) => file.file);
   }
 </script>
 

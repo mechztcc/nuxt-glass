@@ -15,6 +15,17 @@
     <ProductsPriceStock v-show="store.actualStep == 2" />
     <ProductsUploadImg v-show="store.actualStep == 3" />
 
+    <div class="grid grid-cols-3 mt-10">
+      <div class="col-start-2 col-span-1">
+        <DefaultButton :label="'Concluir'" :fill="true" @pressed="onSubmit()" v-if="store.actualStep == 3"/>
+        <DefaultButton :label="'Avançar'" :fill="true" @pressed="store.onNext()" v-if="store.actualStep < 3"/>
+
+        <div class="flex justify-center mt-3" v-if="store.actualStep > 1">
+          <span class="dark:text-zinc-50 hover:text-teal-400 cursor-pointer" @click="store.onPrev()">Voltar</span>
+        </div>
+      </div>
+    </div>
+
     <div class="absolute bottom-10 right-10">
       <DefaultThemeButton />
     </div>
@@ -25,6 +36,18 @@
   import { useCreateProduct } from '~/stores/create-product';
 
   const store = useCreateProduct();
+  const form = new FormData();
+
+  const { data, pending, execute } = useFetchAuth('products', { immediate: false, method: 'post', body: form });
+
+  async function onSubmit() {
+    const { files } = store.payload;
+
+    form.append('data', JSON.stringify(store.payload));
+    files.map((file) => form.append('files', file));
+
+    await execute();
+  }
 </script>
 
 <style scoped></style>

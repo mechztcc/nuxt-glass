@@ -52,11 +52,6 @@
           <span class="dark:text-zinc-50">Valor de venda</span>
           <span class="text-xl dark:text-zinc-50">R$ {{ store.expectedPrice }}</span>
         </div>
-
-        <DefaultButton :label="'Avançar'" :fill="true" class="mt-5" @pressed="store.onNext()" />
-        <div class="flex justify-center mt-5">
-          <span class="dark:text-zinc-50 hover:text-teal-400 cursor-pointer" @click="store.onPrev()">Voltar</span>
-        </div>
       </div>
     </div>
   </div>
