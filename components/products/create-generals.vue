@@ -32,15 +32,15 @@
       </div>
       <div class="col-span-1">
         <div class="flex">
-          <input type="radio" name="man" :checked="store.onGetGender('masculino')" @change="store.onUpdatePayload({ gender: 'masculino' })" />
+          <input type="radio" :checked="store.onGetGender('masculino')" @change="store.onUpdatePayload({ gender: 'masculino' })" />
           <span class="dark:text-zinc-50 mx-2">Masculino</span>
         </div>
         <div class="flex">
-          <input type="radio" name="man" :checked="store.onGetGender('feminino')" @change="store.onUpdatePayload({ gender: 'feminino' })" />
+          <input type="radio" :checked="store.onGetGender('feminino')" @change="store.onUpdatePayload({ gender: 'feminino' })" />
           <span class="dark:text-zinc-50 mx-2">Feminino</span>
         </div>
         <div class="flex">
-          <input type="radio" name="man" :checked="store.onGetGender('unisex')" @change="store.onUpdatePayload({ gender: 'unisex' })" />
+          <input type="radio" :checked="store.onGetGender('unisex')" @change="store.onUpdatePayload({ gender: 'unisex' })" />
           <span class="dark:text-zinc-50 mx-2">Unisex</span>
         </div>
       </div>
@@ -50,11 +50,11 @@
       </div>
       <div class="col-span-1">
         <div class="flex">
-          <Field type="radio" name="glassType" :value="store.payload.glassType" @change="store.onUpdatePayload({ glassType: $event })"></Field>
+          <input type="radio" :checked="store.onGetGlassType('arredondada')" @change="store.onUpdatePayload({ glassType: 'arredondada' })" />
           <span class="dark:text-zinc-50 mx-2">Arredondada</span>
         </div>
         <div class="flex">
-          <Field type="radio" name="glassType" :value="store.payload.glassType" @change="store.onUpdatePayload({ glassType: $event })"></Field>
+          <input type="radio" :checked="store.onGetGlassType('quadrada')" @change="store.onUpdatePayload({ glassType: 'quadrada' })" />
           <span class="dark:text-zinc-50 mx-2">Quadrada</span>
         </div>
       </div>
@@ -109,6 +109,9 @@
         </DefaultInput>
       </div>
 
+      <hr class="my-3 col-span-2">
+
+
       <div class="col-span-1">
         <div class="flex items-center">
           <span class="dark:text-zinc-50 font-bold">Dimensões</span>
@@ -116,20 +119,76 @@
         </div>
       </div>
 
+
       <div class="col-span-1">
-        <DefaultInput :field="'dimensions'" :type="'text'" :value="store.payload.dimensions" @change="store.onUpdatePayload({ dimensions: $event })">
-          <template #prepend>
-            <font-awesome-icon :icon="['fas', 'ruler-combined']" class="dark:text-zinc-50" />
-          </template>
-          <template #append>
-            <span>cm</span>
-          </template>
-        </DefaultInput>
+        <div class="flex flex-col">
+          <DefaultInput
+            :field="'dimensions'"
+            :label="'Aro vertical'"
+            :type="'text'"
+            :value="store.payload.dimensions"
+            @change="store.onUpdatePayload({ dimensions: $event })"
+          >
+            <template #prepend>
+              <font-awesome-icon :icon="['fas', 'ruler-combined']" class="dark:text-zinc-50" />
+            </template>
+            <template #append>
+              <span>cm</span>
+            </template>
+          </DefaultInput>
+
+          <DefaultInput
+            :field="'dimensions'"
+            :label="'Aro Horizontal'"
+            :type="'text'"
+            :value="store.payload.dimensions"
+            @change="store.onUpdatePayload({ dimensions: $event })"
+          >
+            <template #prepend>
+              <font-awesome-icon :icon="['fas', 'ruler-combined']" class="dark:text-zinc-50" />
+            </template>
+            <template #append>
+              <span>cm</span>
+            </template>
+          </DefaultInput>
+
+          <DefaultInput
+            :field="'dimensions'"
+            :label="'Ponte'"
+            :type="'text'"
+            :value="store.payload.dimensions"
+            @change="store.onUpdatePayload({ dimensions: $event })"
+          >
+            <template #prepend>
+              <font-awesome-icon :icon="['fas', 'ruler-combined']" class="dark:text-zinc-50" />
+            </template>
+            <template #append>
+              <span>cm</span>
+            </template>
+          </DefaultInput>
+
+          <DefaultInput
+            :field="'dimensions'"
+            :label="'Ponte + Aro'"
+            :type="'text'"
+            :value="store.payload.dimensions"
+            @change="store.onUpdatePayload({ dimensions: $event })"
+          >
+            <template #prepend>
+              <font-awesome-icon :icon="['fas', 'ruler-combined']" class="dark:text-zinc-50" />
+            </template>
+            <template #append>
+              <span>cm</span>
+            </template>
+          </DefaultInput>
+        </div>
       </div>
+
+      <hr class="my-3 col-span-2">
 
       <div class="col-span-2 mt-5">
         <span class="dark:text-zinc-50 font-bold">Descrição</span>
-        <Field as="textarea" name="description" class="w-full dark:bg-zinc-900 mt-5 px-5 py-5" rows="10" />
+        <textarea as="textarea" name="description" class="w-full dark:bg-zinc-900 mt-5 px-5 py-5" limit rows="10" @input="store.onUpdatePayload({ description: $event.target['value'] })" />
         <div class="flex justify-end">
           <span class="dark:text-zinc-50"> {{ store.descSize }} / 1024</span>
         </div>

@@ -68,6 +68,10 @@ export const useCreateProduct = defineStore('createProduct', {
       return this.payload.gender == type;
     },
 
+    onGetGlassType(type: string) {
+      return this.payload.glassType == type;
+    },
+
     onGetColor(color: string) {
       return this.payload.gender == color;
     },
