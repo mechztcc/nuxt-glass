@@ -3,23 +3,47 @@
     <div class="col-span-1 md:col-span-1 md:col-start-2">
       <div class="flex flex-col">
         <div class="grid grid-cols-2 gap-5">
-          <DefaultInput :label="'Preço de custo'" :type="'number'" :field="'min'" :value="store.payload.costPrice">
+          <DefaultInput
+            :label="'Preço de custo'"
+            :type="'number'"
+            :field="'min'"
+            :value="store.payload.costPrice"
+            @change="store.onUpdatePayload({ costPrice: $event })"
+          >
             <template #prepend>
               <font-awesome-icon :icon="['fas', 'tag']" class="dark:text-zinc-50" />
             </template>
           </DefaultInput>
-          <DefaultInput :label="'Porcentagem de lucro'" :type="'number'" :field="'min'" :value="store.payload.profitPercents">
+          <DefaultInput
+            :label="'Porcentagem de lucro'"
+            :type="'number'"
+            :field="'min'"
+            :value="store.payload.profitPercents"
+            @change="store.onUpdatePayload({ profitPercents: $event })"
+          >
             <template #prepend>
               <font-awesome-icon :icon="['fas', 'percent']" class="dark:text-zinc-50" />
             </template>
           </DefaultInput>
-          <DefaultInput :label="'Desconto máximo'" :type="'number'" :field="'min'" :value="store.payload.maxDescount">
+          <DefaultInput
+            :label="'Desconto máximo'"
+            :type="'number'"
+            :field="'min'"
+            :value="store.payload.maxDescount"
+            @change="store.onUpdatePayload({ maxDescount: $event })"
+          >
             <template #prepend>
               <font-awesome-icon :icon="['fas', 'percent']" class="dark:text-zinc-50" />
             </template>
           </DefaultInput>
 
-          <DefaultInput :label="'Quantidade'" :type="'number'" :field="'min'" :value="store.payload.amount">
+          <DefaultInput
+            :label="'Quantidade'"
+            :type="'number'"
+            :field="'min'"
+            :value="store.payload.amount"
+            @change="store.onUpdatePayload({ amount: $event })"
+          >
             <template #prepend>
               <font-awesome-icon :icon="['fas', 'box-archive']" class="dark:text-zinc-50" />
             </template>
