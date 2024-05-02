@@ -79,7 +79,18 @@
   }
 
   function onRemove(index: number) {
+    const toRemove = files.value[index];
+    const nextImage = files.value[index + 1];
+
+    if(toRemove.url == renderBig.value && nextImage) {
+      renderBig.value = nextImage.url
+    }
+
     files.value.splice(index, 1);
+
+    if(files.value.length == 0) {
+      renderBig.value = '';
+    }
   }
 
   function onShowBig(index: number) {

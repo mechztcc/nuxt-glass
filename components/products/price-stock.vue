@@ -38,7 +38,7 @@
           </DefaultInput>
 
           <DefaultInput
-            :label="'Quantidade'"
+            :label="'Quantidade em estoque'"
             :type="'number'"
             :field="'min'"
             :value="store.payload.amount"

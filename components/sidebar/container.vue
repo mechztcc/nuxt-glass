@@ -4,7 +4,7 @@
     @mouseleave="isHide = true"
     :class="['flex justify-center items-center min-h-screen min-w-24 relative bg-zinc-900 shadow-xl trans', !isHide ? 'sidebar' : '']"
   >
-    <div class="flex flex-col mt-20 px-3 fixed top-0 left-0">
+    <div class="flex flex-col mt-20 px-3 fixed top-0 ">
       <div class="flex justify-center mb-10">
         <Logo :color="'text-zinc-50'" />
       </div>
