@@ -32,7 +32,7 @@ export const useCreateProduct = defineStore('createProduct', {
         saleValue: 0 as number,
         weight: 0 as number,
         dimensions: '' as string,
-        files: [] as File[],
+        files: [] as any[],
       },
     };
   },

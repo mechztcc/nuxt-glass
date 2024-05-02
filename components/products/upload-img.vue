@@ -34,7 +34,7 @@
         />
       </div>
 
-      <DefaultButton :label="'Avançar'" :fill="true" />
+      <DefaultButton :label="'Concluir'" :fill="true" @pressed="onSubmit()"/>
       <div class="flex justify-center mt-3">
         <span class="dark:text-zinc-50 hover:text-teal-400 cursor-pointer" @click="store.onPrev()">Voltar</span>
       </div>
@@ -107,6 +107,10 @@
       return;
     }
     inputFile.value!.click();
+  }
+
+  function onSubmit() {
+    store.payload.files = files.value.filter((file: FileWithRender) => file.file);
   }
 </script>
 
