@@ -1,6 +1,6 @@
 <template>
   <Form class="flex justify-center mt-10 mx-5" :validation-schema="schema" @submit="onSubmit" @invalid-submit="test">
-    <div class="grid grid-cols-2 gap-5 items-start">
+    <div class="grid grid-cols-2 gap-5 items-start" v-if="!pending">
       <div class="col-span-1">
         <span class="dark:text-zinc-50 font-bold">Nome</span>
       </div>
@@ -31,17 +31,9 @@
         <span class="dark:text-zinc-50 font-bold">Gênero</span>
       </div>
       <div class="col-span-1">
-        <div class="flex">
-          <input type="radio" :checked="store.onGetGender('masculino')" />
-          <span class="dark:text-zinc-50 mx-2">Masculino</span>
-        </div>
-        <div class="flex">
-          <input type="radio" :checked="store.onGetGender('feminino')" />
-          <span class="dark:text-zinc-50 mx-2">Feminino</span>
-        </div>
-        <div class="flex">
-          <input type="radio" :checked="store.onGetGender('unisex')" />
-          <span class="dark:text-zinc-50 mx-2">Unisex</span>
+        <div class="flex" v-for="(item, index) in data.glassGender" :key="index">
+          <Field name="gender" type="radio" :value="item.name" />
+          <span class="dark:text-zinc-50 mx-2">{{ item.name }} </span>
         </div>
       </div>
 
@@ -49,13 +41,9 @@
         <span class="dark:text-zinc-50 font-bold">Armação</span>
       </div>
       <div class="col-span-1">
-        <div class="flex">
-          <input type="radio" :checked="store.onGetGlassType('arredondada')" />
-          <span class="dark:text-zinc-50 mx-2">Arredondada</span>
-        </div>
-        <div class="flex">
-          <input type="radio" :checked="store.onGetGlassType('quadrada')" />
-          <span class="dark:text-zinc-50 mx-2">Quadrada</span>
+        <div class="flex" v-for="(item, index) in data.glassType" :key="index">
+          <Field name="glassType" type="radio" :value="item.name" />
+          <span class="dark:text-zinc-50 mx-2">{{ item.name }}</span>
         </div>
       </div>
 
@@ -182,14 +170,20 @@
   import * as zod from 'zod';
 
   const store = useCreateProduct();
+  const { data, pending } = useFetchAuth('orders/create-order-informations', {
+    immediate: true,
+    method: 'get',
+  });
+
+  console.log(data);
 
   const schema = toTypedSchema(
     zod.object({
       name: zod.string().min(10, { message: 'Nome muito curta' }),
       code: zod.string().min(6, { message: 'Código muito curta' }),
-      // gender: zod.string(),
+      gender: zod.string(),
       // color: zod.string(),
-      // glassType: zod.string(),
+      glassType: zod.string(),
       brand: zod.string(),
       material: zod.string(),
       weight: zod.string(),
@@ -197,7 +191,7 @@
       bridgeWithRim: zod.string(),
       horizontalRim: zod.string(),
       verticalRim: zod.string(),
-      description: zod.string().min(50, { message: 'Deve conter no mínimo 50 caracteres.'}),
+      description: zod.string().min(50, { message: 'Deve conter no mínimo 50 caracteres.' }),
     })
   );
 
@@ -207,7 +201,7 @@
       ...value,
     };
 
-    console.log(store.payload);
+    store.onNext();
   }
 
   function test(e: any) {

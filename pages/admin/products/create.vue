@@ -49,9 +49,11 @@
   });
 
   async function onSubmit() {
-    const { files } = store.payload;
+    console.log(form);
+    
+    const { files, ...payload } = store.payload;
 
-    form.append('data', JSON.stringify(store.payload));
+    form.append('data', JSON.stringify(payload));
     files.map((file) => form.append('files', file));
 
     await execute();

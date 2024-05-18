@@ -60,8 +60,8 @@
       ...store.payload,
       ...value,
     };
-
-    console.log(store.payload);
+    
+    store.onNext();
   }
 </script>
 
