@@ -6,7 +6,7 @@
       </div>
     </div>
     <font-awesome-icon :icon="['fas', 'trash']" class="mb-3 text-red-400 cursor-pointer" @click="remove()" />
-    <img :src="imageURL" alt="" :class="['w-full h-32 rounded-xl hover:opacity-55', selected ? ' shadow-lg' : '']"  @click="select()"/>
+    <img :src="imageURL" alt="" :class="['w-full h-32 rounded-xl hover:opacity-55', selected ? ' shadow-lg' : '']" @click="select()" />
   </div>
 </template>
 
@@ -38,4 +38,8 @@
   }
 </script>
 
-<style scoped></style>
+<style scoped>
+  img {
+    object-fit: cover;
+  }
+</style>

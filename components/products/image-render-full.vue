@@ -31,7 +31,6 @@
     };
 
     const container = document.getElementById('image');
-
   }
 </script>
 
@@ -41,5 +40,9 @@
   }
   .img:hover {
     transform: scale(150%);
+  }
+
+  img {
+    object-fit: cover;
   }
 </style>

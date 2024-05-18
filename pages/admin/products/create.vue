@@ -17,8 +17,8 @@
 
     <div class="grid grid-cols-3 mt-10">
       <div class="col-start-2 col-span-1">
-        <DefaultButton :label="'Concluir'" :fill="true" @pressed="onSubmit()" v-if="store.actualStep == 3"/>
-        <DefaultButton :label="'Avançar'" :fill="true" @pressed="store.onNext()" v-if="store.actualStep < 3"/>
+        <DefaultButton :label="'Concluir'" :fill="true" @pressed="onSubmit()" v-if="store.actualStep == 3" />
+        <DefaultButton :label="'Avançar'" :fill="true" @pressed="store.onNext()" v-if="store.actualStep < 3" />
 
         <div class="flex justify-center mt-3" v-if="store.actualStep > 1">
           <span class="dark:text-zinc-50 hover:text-teal-400 cursor-pointer" @click="store.onPrev()">Voltar</span>
@@ -38,7 +38,16 @@
   const store = useCreateProduct();
   const form = new FormData();
 
-  const { data, pending, execute } = useFetchAuth('products', { immediate: false, method: 'post', body: form });
+  const { data, pending, execute } = useFetchAuth('products', {
+    immediate: false,
+    method: 'post',
+    body: form,
+    successMsg: 'Produto criado com sucesso!',
+    redirect: '/admin/products',
+    cb: () => {
+      store.$reset();
+    }
+  });
 
   async function onSubmit() {
     const { files } = store.payload;

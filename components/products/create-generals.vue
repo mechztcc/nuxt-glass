@@ -133,7 +133,7 @@
               <font-awesome-icon :icon="['fas', 'ruler-combined']" class="dark:text-zinc-50" />
             </template>
             <template #append>
-              <span>cm</span>
+              <span class="dark:text-zinc-50">cm</span>
             </template>
           </DefaultInput>
 
@@ -148,7 +148,7 @@
               <font-awesome-icon :icon="['fas', 'ruler-combined']" class="dark:text-zinc-50" />
             </template>
             <template #append>
-              <span>cm</span>
+              <span class="dark:text-zinc-50">cm</span>
             </template>
           </DefaultInput>
 
@@ -163,7 +163,7 @@
               <font-awesome-icon :icon="['fas', 'ruler-combined']" class="dark:text-zinc-50" />
             </template>
             <template #append>
-              <span>cm</span>
+              <span class="dark:text-zinc-50">cm</span>
             </template>
           </DefaultInput>
 
@@ -178,7 +178,7 @@
               <font-awesome-icon :icon="['fas', 'ruler-combined']" class="dark:text-zinc-50" />
             </template>
             <template #append>
-              <span>cm</span>
+              <span class="dark:text-zinc-50">cm</span>
             </template>
           </DefaultInput>
         </div>
