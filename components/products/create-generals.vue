@@ -109,8 +109,7 @@
         </DefaultInput>
       </div>
 
-      <hr class="my-3 col-span-2">
-
+      <hr class="my-3 col-span-2" />
 
       <div class="col-span-1">
         <div class="flex items-center">
@@ -118,7 +117,6 @@
           <DefaultTooltip :tooltip="'Aqui vai uma mensagem de ajuda pro usuário.'" />
         </div>
       </div>
-
 
       <div class="col-span-1">
         <div class="flex flex-col">
@@ -184,11 +182,18 @@
         </div>
       </div>
 
-      <hr class="my-3 col-span-2">
+      <hr class="my-3 col-span-2" />
 
       <div class="col-span-2 mt-5">
         <span class="dark:text-zinc-50 font-bold">Descrição</span>
-        <textarea as="textarea" name="description" class="w-full dark:bg-zinc-900 mt-5 px-5 py-5" limit rows="10" @input="store.onUpdatePayload({ description: $event.target['value'] })" />
+        <textarea
+          as="textarea"
+          name="description"
+          class="w-full dark:bg-zinc-900 mt-5 px-5 py-5"
+          limit
+          rows="10"
+          @input="store.onUpdatePayload({ description: $event.target['value'] })"
+        />
         <div class="flex justify-end">
           <span class="dark:text-zinc-50"> {{ store.descSize }} / 1024</span>
         </div>
@@ -206,7 +211,7 @@
 
   const schema = toTypedSchema(
     zod.object({
-      email: zod.string().email({ message: 'E-mail inválido' }),
+      description: zod.string().min(10, { message: 'Descrição muito curta' }),
       password: zod.string().min(6, { message: 'Senha é obrigatório' }),
     })
   );
