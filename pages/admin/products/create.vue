@@ -18,7 +18,6 @@
     <div class="grid grid-cols-3 mt-10">
       <div class="col-start-2 col-span-1">
         <DefaultButton :label="'Concluir'" :fill="true" @pressed="onSubmit()" v-if="store.actualStep == 3" />
-        <DefaultButton :label="'Avançar'" :fill="true" @pressed="store.onNext()" v-if="store.actualStep < 3" />
 
         <div class="flex justify-center mt-3" v-if="store.actualStep > 1">
           <span class="dark:text-zinc-50 hover:text-teal-400 cursor-pointer" @click="store.onPrev()">Voltar</span>

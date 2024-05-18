@@ -1,11 +1,11 @@
 <template>
-  <Form class="flex justify-center mt-10 mx-5" :validation-schema="schema">
+  <Form class="flex justify-center mt-10 mx-5" :validation-schema="schema" @submit="onSubmit" @invalid-submit="test">
     <div class="grid grid-cols-2 gap-5 items-start">
       <div class="col-span-1">
         <span class="dark:text-zinc-50 font-bold">Nome</span>
       </div>
       <div class="col-span-1">
-        <DefaultInput :type="'text'" :field="'name'" :value="store.payload.name" @change="store.onUpdatePayload({ name: $event })">
+        <DefaultInput :type="'text'" :field="'name'" :value="store.payload.name">
           <template #prepend>
             <font-awesome-icon :icon="['fas', 'pen']" class="dark:text-zinc-50" />
           </template>
@@ -20,7 +20,7 @@
       </div>
 
       <div class="col-span-1">
-        <DefaultInput :field="'code'" :type="'text'" :value="store.payload.code" @change="store.onUpdatePayload({ code: $event })">
+        <DefaultInput :field="'code'" :type="'text'" :value="store.payload.code">
           <template #prepend>
             <font-awesome-icon :icon="['fas', 'hashtag']" class="dark:text-zinc-50" />
           </template>
@@ -32,15 +32,15 @@
       </div>
       <div class="col-span-1">
         <div class="flex">
-          <input type="radio" :checked="store.onGetGender('masculino')" @change="store.onUpdatePayload({ gender: 'masculino' })" />
+          <input type="radio" :checked="store.onGetGender('masculino')" />
           <span class="dark:text-zinc-50 mx-2">Masculino</span>
         </div>
         <div class="flex">
-          <input type="radio" :checked="store.onGetGender('feminino')" @change="store.onUpdatePayload({ gender: 'feminino' })" />
+          <input type="radio" :checked="store.onGetGender('feminino')" />
           <span class="dark:text-zinc-50 mx-2">Feminino</span>
         </div>
         <div class="flex">
-          <input type="radio" :checked="store.onGetGender('unisex')" @change="store.onUpdatePayload({ gender: 'unisex' })" />
+          <input type="radio" :checked="store.onGetGender('unisex')" />
           <span class="dark:text-zinc-50 mx-2">Unisex</span>
         </div>
       </div>
@@ -50,11 +50,11 @@
       </div>
       <div class="col-span-1">
         <div class="flex">
-          <input type="radio" :checked="store.onGetGlassType('arredondada')" @change="store.onUpdatePayload({ glassType: 'arredondada' })" />
+          <input type="radio" :checked="store.onGetGlassType('arredondada')" />
           <span class="dark:text-zinc-50 mx-2">Arredondada</span>
         </div>
         <div class="flex">
-          <input type="radio" :checked="store.onGetGlassType('quadrada')" @change="store.onUpdatePayload({ glassType: 'quadrada' })" />
+          <input type="radio" :checked="store.onGetGlassType('quadrada')" />
           <span class="dark:text-zinc-50 mx-2">Quadrada</span>
         </div>
       </div>
@@ -72,7 +72,7 @@
       </div>
 
       <div class="col-span-1">
-        <DefaultInput :field="'brand'" :type="'text'" :value="store.payload.brand" @change="store.onUpdatePayload({ brand: $event })">
+        <DefaultInput :field="'brand'" :type="'text'" :value="store.payload.brand">
           <template #prepend>
             <font-awesome-icon :icon="['fas', 'tag']" class="dark:text-zinc-50" />
           </template>
@@ -84,7 +84,7 @@
       </div>
 
       <div class="col-span-1">
-        <DefaultInput :field="'material'" :type="'text'" :value="store.payload.material" @change="store.onUpdatePayload({ material: $event })">
+        <DefaultInput :field="'material'" :type="'text'" :value="store.payload.material">
           <template #prepend>
             <font-awesome-icon :icon="['fas', 'glasses']" class="dark:text-zinc-50" />
           </template>
@@ -99,7 +99,7 @@
       </div>
 
       <div class="col-span-1">
-        <DefaultInput :field="'weight'" :type="'text'" :value="store.payload.weight" @change="store.onUpdatePayload({ weight: $event })">
+        <DefaultInput :field="'weight'" :type="'text'" :value="store.payload.weight">
           <template #prepend>
             <font-awesome-icon :icon="['fas', 'scale-balanced']" class="dark:text-zinc-50" />
           </template>
@@ -120,13 +120,7 @@
 
       <div class="col-span-1">
         <div class="flex flex-col">
-          <DefaultInput
-            :field="'dimensions'"
-            :label="'Aro vertical'"
-            :type="'text'"
-            :value="store.payload.dimensions"
-            @change="store.onUpdatePayload({ dimensions: $event })"
-          >
+          <DefaultInput :field="'verticalRim'" :label="'Aro vertical'" :type="'text'">
             <template #prepend>
               <font-awesome-icon :icon="['fas', 'ruler-combined']" class="dark:text-zinc-50" />
             </template>
@@ -135,13 +129,7 @@
             </template>
           </DefaultInput>
 
-          <DefaultInput
-            :field="'dimensions'"
-            :label="'Aro Horizontal'"
-            :type="'text'"
-            :value="store.payload.dimensions"
-            @change="store.onUpdatePayload({ dimensions: $event })"
-          >
+          <DefaultInput :field="'horizontalRim'" :label="'Aro Horizontal'" :type="'text'">
             <template #prepend>
               <font-awesome-icon :icon="['fas', 'ruler-combined']" class="dark:text-zinc-50" />
             </template>
@@ -150,13 +138,7 @@
             </template>
           </DefaultInput>
 
-          <DefaultInput
-            :field="'dimensions'"
-            :label="'Ponte'"
-            :type="'text'"
-            :value="store.payload.dimensions"
-            @change="store.onUpdatePayload({ dimensions: $event })"
-          >
+          <DefaultInput :field="'bridge'" :label="'Ponte'" :type="'text'">
             <template #prepend>
               <font-awesome-icon :icon="['fas', 'ruler-combined']" class="dark:text-zinc-50" />
             </template>
@@ -165,13 +147,7 @@
             </template>
           </DefaultInput>
 
-          <DefaultInput
-            :field="'dimensions'"
-            :label="'Ponte + Aro'"
-            :type="'text'"
-            :value="store.payload.dimensions"
-            @change="store.onUpdatePayload({ dimensions: $event })"
-          >
+          <DefaultInput :field="'bridgeWithRim'" :label="'Ponte + Aro'" :type="'text'">
             <template #prepend>
               <font-awesome-icon :icon="['fas', 'ruler-combined']" class="dark:text-zinc-50" />
             </template>
@@ -186,17 +162,15 @@
 
       <div class="col-span-2 mt-5">
         <span class="dark:text-zinc-50 font-bold">Descrição</span>
-        <textarea
-          as="textarea"
-          name="description"
-          class="w-full dark:bg-zinc-900 mt-5 px-5 py-5"
-          limit
-          rows="10"
-          @input="store.onUpdatePayload({ description: $event.target['value'] })"
-        />
+        <Field as="textarea" name="description" class="w-full dark:bg-zinc-900 mt-5 px-5 py-5" limit rows="10" />
         <div class="flex justify-end">
           <span class="dark:text-zinc-50"> {{ store.descSize }} / 1024</span>
         </div>
+        <ErrorMessage name="description" class="mx-2 bg-red-200 rounded-full px-2 mt-2 text-red-600 justify-center flex items-center" />
+      </div>
+
+      <div class="col-span-2 mt-10">
+        <DefaultButton :type="'submit'" :label="'Avançar'" :fill="true" />
       </div>
     </div>
   </Form>
@@ -204,17 +178,41 @@
 
 <script setup lang="ts">
   import { toTypedSchema } from '@vee-validate/zod';
-  import { Field, Form } from 'vee-validate';
+  import { Field, Form, ErrorMessage } from 'vee-validate';
   import * as zod from 'zod';
 
   const store = useCreateProduct();
 
   const schema = toTypedSchema(
     zod.object({
-      description: zod.string().min(10, { message: 'Descrição muito curta' }),
-      password: zod.string().min(6, { message: 'Senha é obrigatório' }),
+      name: zod.string().min(10, { message: 'Nome muito curta' }),
+      code: zod.string().min(6, { message: 'Código muito curta' }),
+      // gender: zod.string(),
+      // color: zod.string(),
+      // glassType: zod.string(),
+      brand: zod.string(),
+      material: zod.string(),
+      weight: zod.string(),
+      bridge: zod.string(),
+      bridgeWithRim: zod.string(),
+      horizontalRim: zod.string(),
+      verticalRim: zod.string(),
+      description: zod.string().min(50, { message: 'Deve conter no mínimo 50 caracteres.'}),
     })
   );
+
+  function onSubmit(value: any) {
+    store.payload = {
+      ...store.payload,
+      ...value,
+    };
+
+    console.log(store.payload);
+  }
+
+  function test(e: any) {
+    console.log(e);
+  }
 </script>
 
 <style scoped></style>

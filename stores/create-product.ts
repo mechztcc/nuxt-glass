@@ -31,7 +31,10 @@ export const useCreateProduct = defineStore('createProduct', {
         amount: 0 as number,
         saleValue: 0 as number,
         weight: 0 as number,
-        dimensions: '' as string,
+        bridge: '' as string,
+        bridgeWithRim: '' as string,
+        horizontalRim: '' as string,
+        verticalRim: '' as string,
         files: [] as any[],
       },
     };
