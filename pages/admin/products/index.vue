@@ -22,13 +22,12 @@
           <DefaultButton :to="'/admin/products/create'">
             <font-awesome-icon :icon="['fas', 'plus']" />
           </DefaultButton>
-
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-5 mt-10">
-        <div class="col-span-2" v-for="(item, index) in 6" :key="index">
-          <ProductCard />
+      <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-5 mt-10" v-if="!pending">
+        <div class="col-span-2" v-for="(item, index) in data" :key="index">
+          <ProductCard :product="item" />
         </div>
       </div>
 
@@ -53,6 +52,14 @@
   </NuxtLayout>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  const { data, pending, execute } = useFetchAuth('products', {
+    immediate: true,
+    method: 'get',
+  });
+
+  console.log(data.value);
+  
+</script>
 
 <style lang="scss" scoped></style>

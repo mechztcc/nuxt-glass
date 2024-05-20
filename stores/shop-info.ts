@@ -8,7 +8,6 @@ export const useCreateShop = defineStore('createShop', {
   actions: {
     onHandleForm() {
       this.showCreateForm = !this.showCreateForm;
-      console.log(this.showCreateForm);
     },
   },
 });

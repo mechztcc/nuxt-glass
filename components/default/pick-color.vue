@@ -154,7 +154,6 @@ onMounted(() => {
   }
 
   function updateHueCursor(y: number) {
-    console.log("cursor y", y);
     hueCursor.style.top = `${y}px`;
   }
 
@@ -217,9 +216,9 @@ onMounted(() => {
     window.addEventListener('mouseup', endGetHueColor);
   };
 
-  function getHueColor(e) {
+  function getHueColor(e: any) {
     e.preventDefault();
-    const x = e.pageX - hueRect.left; // Utilisez la coordonnée X au lieu de la coordonnée Y
+    let x = e.pageX - hueRect.left; // Utilisez la coordonnée X au lieu de la coordonnée Y
     if (x > hueRect.width) {
       x = hueRect.width
     }

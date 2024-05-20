@@ -4,12 +4,12 @@
       <Form @submit="onSubmit" :validation-schema="schema">
         <div class="flex flex-col">
           <div class="grid grid-cols-2 gap-5">
-            <DefaultInput :label="'Preço de custo'" :type="'number'" :field="'costPrice'" :value="store.payload.costPrice">
+            <DefaultInput :label="'Preço de custo'" :type="'number'" :field="'costPrice'" :value="store.payload.priceCost">
               <template #prepend>
                 <font-awesome-icon :icon="['fas', 'tag']" class="dark:text-zinc-50" />
               </template>
             </DefaultInput>
-            <DefaultInput :label="'Porcentagem de lucro'" :type="'number'" :field="'profitPercents'" :value="store.payload.profitPercents">
+            <DefaultInput :label="'Porcentagem de lucro'" :type="'number'" :field="'profitPercents'" :value="store.payload.profit">
               <template #prepend>
                 <font-awesome-icon :icon="['fas', 'percent']" class="dark:text-zinc-50" />
               </template>
@@ -59,6 +59,7 @@
     store.payload = {
       ...store.payload,
       ...value,
+      totalPrice: store.expectedPrice
     };
     
     store.onNext();

@@ -25,11 +25,11 @@ export const useCreateProduct = defineStore('createProduct', {
         material: '' as string,
         code: '' as string,
         description: '' as string,
-        costPrice: 0 as number,
-        profitPercents: 0 as number,
+        priceCost: 0 as number,
+        profit: 0 as number,
         maxDescount: 0 as number,
         amount: 0 as number,
-        saleValue: 0 as number,
+        totalPrice: 0 as number,
         weight: 0 as number,
         bridge: '' as string,
         bridgeWithRim: '' as string,
@@ -82,8 +82,8 @@ export const useCreateProduct = defineStore('createProduct', {
   getters: {
     descSize: (state) => state.payload.description.length,
     expectedPrice: (state) => {
-      const cost = state.payload.costPrice;
-      const profitPercents = state.payload.profitPercents;
+      const cost = state.payload.priceCost;
+      const profitPercents = state.payload.profit;
       const descont = state.payload.maxDescount;
 
       const totalProfit = cost + cost * (profitPercents / 100);

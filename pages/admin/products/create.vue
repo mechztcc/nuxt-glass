@@ -49,8 +49,6 @@
   });
 
   async function onSubmit() {
-    console.log(form);
-    
     const { files, ...payload } = store.payload;
 
     form.append('data', JSON.stringify(payload));
