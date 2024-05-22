@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-1" v-if="store.hasShop && !store.showCreateForm">
+  <div class="grid grid-cols-1">
     <div class="col-span-1">
       <div class="flex flex-col justify-center items-center min-h-screen">
         <font-awesome-icon :icon="['fas', 'store-slash']" :size="'2xl'" />
@@ -12,12 +12,7 @@
 
 <script setup lang="ts">
   import { useCreateShop } from '~/stores/shop-info';
-
   const store = useCreateShop();
-  const { data, pending } = useFetchAuth('store', { immediate: true, method: 'get', cb: () => {
-    store.hasShop = data.value.length > 0
-  } });
-  
 </script>
 
 <style scoped></style>
