@@ -4,22 +4,33 @@
       <img src="~assets/imgs/banner2.jpg" alt="" class="w-full" />
     </div>
 
-    <div class="flex flex-col">
-      <span class="text-3xl font-bold">VENDAS E CIA LTDA</span>
-      <div class="flex items-center">
-        <font-awesome-icon :icon="['fas', 'location-dot']" />
-        <span class="mx-1 text-xl">Recife - PE</span>
-      </div>
-      <div class="flex items-center">
-        <font-awesome-icon :icon="['fas', 'star']" />
-        <span class="mx-1 text-xl">4.5</span>
-      </div>
+    <div class="col-span-2 md:col-span-2">
+      <DefaultDropFile />
+    </div>
 
-      <div class="flex items-center">
-        <font-awesome-icon :icon="['fas', 'calendar']" />
-        <span class="mx-1">Membro desde setembro de 2019</span>
+    <div class="col-span-1" style="max-height: 200px">
+      <DefaultFileUploaded />
+      <DefaultFileUploaded />
+    </div>
+
+    <div class="col-span-2 md:col-span-3 mt-20">
+      <div class="flex flex-col">
+        <span class="text-3xl font-bold">VENDAS E CIA LTDA</span>
+        <div class="flex items-center">
+          <font-awesome-icon :icon="['fas', 'location-dot']" />
+          <span class="mx-1 text-xl">Recife - PE</span>
+        </div>
+        <div class="flex items-center">
+          <font-awesome-icon :icon="['fas', 'star']" />
+          <span class="mx-1 text-xl">4.5</span>
+        </div>
+
+        <div class="flex items-center">
+          <font-awesome-icon :icon="['fas', 'calendar']" />
+          <span class="mx-1">Membro desde setembro de 2019</span>
+        </div>
+        <span>899 vendas realizadas</span>
       </div>
-      <span>899 vendas realizadas</span>
     </div>
 
     <div class="col-span-2 md:col-span-3 text-center my-10">
@@ -40,10 +51,6 @@
 
     <div class="col-span-2 md:col-span-3">
       <DefaultPaginator :items="allProducts" :per-page="5" @pagination="onPaginated" />
-    </div>
-
-    <div class="col-span-2 md:col-span-3">
-      <img src="~assets/imgs/banner3.jpg" alt="" class="w-full" />
     </div>
 
     <div class="col-span-2 md:col-span-3 text-center my-10">
