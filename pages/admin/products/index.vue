@@ -26,40 +26,27 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-5 mt-10" v-if="!pending">
-        <div class="col-span-2" v-for="(item, index) in data" :key="index">
+        <div class="col-span-2" v-for="(item, index) in products" :key="index">
           <ProductCard :product="item" />
         </div>
       </div>
 
-      <div class="flex justify-end py-2 mt-5">
-        <DefaultButton>
-          <font-awesome-icon :icon="['fas', 'angle-left']" />
-        </DefaultButton>
-        <DefaultButton class="bg-zinc-900 text-white">
-          <font-awesome-icon :icon="['fas', '1']" :fill="true" />
-        </DefaultButton>
-        <DefaultButton class="text-zinc-500">
-          <font-awesome-icon :icon="['fas', '2']" />
-        </DefaultButton>
-        <DefaultButton class="text-zinc-500">
-          <font-awesome-icon :icon="['fas', '3']" />
-        </DefaultButton>
-        <DefaultButton class="text-zinc-500">
-          <font-awesome-icon :icon="['fas', 'angle-right']" />
-        </DefaultButton>
-      </div>
+      <DefaultPaginator v-if="!pending" :items="data" :per-page="5" @pagination="onPaginated" />
     </div>
   </NuxtLayout>
 </template>
 
 <script setup lang="ts">
-  const { data, pending, execute } = useFetchAuth('products', {
+  const { data, pending, error } = useFetchAuth('products', {
     immediate: true,
     method: 'get',
   });
 
-  console.log(data.value);
-  
+  const products = ref([]);
+
+  function onPaginated({ items }: any) {
+    products.value = items
+  }
 </script>
 
 <style lang="scss" scoped></style>
