@@ -1,7 +1,7 @@
 <template>
   <div class="grid grid-cols-2 mb-5 gap-2">
     <div class="col-span-1">
-      <!-- <img :src="product.images[0]?.url" alt="" /> -->
+      <img :src="product.images[0]?.url" alt="" class="h-full" />
     </div>
     <div class="col-span-1">
       <div class="flex flex-col justify-between">
@@ -58,7 +58,7 @@
 
 <style lang="css" scoped>
   img {
-    max-height: 200px;
+    max-height: 100%;
     min-width: 100%;
     object-fit: cover;
   }

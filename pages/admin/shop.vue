@@ -1,6 +1,7 @@
 <template>
   <NuxtLayout :name="'admin'">
     <template v-if="!pending">
+      <ShopDetails />
       <ShopNotFound v-if="!store.showCreateForm && data.length == 0"/>
       <CreateAccountShop v-if="store.showCreateForm" />
     </template>
