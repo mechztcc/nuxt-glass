@@ -4,7 +4,7 @@
       <img :src="product.images[0]?.url" alt="" :class="['h-full']" />
     </div>
     <div class="col-span-1">
-      <div class="flex flex-col justify-between">
+      <div class="flex flex-col justify-between h-full">
         <span class="text-2xl font-semibold">{{ product.name }}</span>
         <span class="text-xl font-semibold text-teal-400 mt-2">R$ {{ product.productValues?.totalPrice ?? '00.0' }}</span>
         <div class="flex mt-2 mb-3">

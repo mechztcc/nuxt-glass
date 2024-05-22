@@ -4,6 +4,24 @@
       <img src="~assets/imgs/banner2.jpg" alt="" class="w-full" />
     </div>
 
+    <div class="flex flex-col">
+      <span class="text-3xl font-bold">VENDAS E CIA LTDA</span>
+      <div class="flex items-center">
+        <font-awesome-icon :icon="['fas', 'location-dot']" />
+        <span class="mx-1 text-xl">Recife - PE</span>
+      </div>
+      <div class="flex items-center">
+        <font-awesome-icon :icon="['fas', 'star']" />
+        <span class="mx-1 text-xl">4.5</span>
+      </div>
+
+      <div class="flex items-center">
+        <font-awesome-icon :icon="['fas', 'calendar']" />
+        <span class="mx-1">Membro desde setembro de 2019</span>
+      </div>
+      <span>899 vendas realizadas</span>
+    </div>
+
     <div class="col-span-2 md:col-span-3 text-center my-10">
       <h1 class="text-5xl font-extrabold">Produtos populares da loja</h1>
     </div>
