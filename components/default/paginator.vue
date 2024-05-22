@@ -5,7 +5,7 @@
     </DefaultButton>
 
     <DefaultButton
-      class="text-zinc-500"
+      class="text-zinc-500 mx-1"
       :fill="selected == index + 1"
       v-for="(item, index) in totalPages"
       :key="index"
@@ -23,7 +23,7 @@
 <script setup lang="ts">
   import { toRaw } from 'vue';
   const props = defineProps({
-    items: { type: Array<Number>, required: true, default: [] },
+    items: { type: Array, required: true, default: [] },
     perPage: { type: Number, default: 0 },
   });
 

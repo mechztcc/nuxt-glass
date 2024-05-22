@@ -1,7 +1,7 @@
 <template>
   <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
     <div class="col-span-2 md:col-span-3">
-      <img src="~assets/imgs/banner.jpg" alt="" class="w-full" />
+      <img src="~assets/imgs/banner2.jpg" alt="" class="w-full" />
     </div>
 
     <div class="col-span-2 md:col-span-3 text-center my-10">
@@ -11,6 +11,31 @@
     <div class="col-span-1 md:col-span-1" v-for="(item, index) in populars" :key="index">
       <ProductCard :product="item" />
     </div>
+
+    <div class="col-span-2 md:col-span-3 text-center my-10">
+      <h1 class="text-5xl font-extrabold">Todos produtos</h1>
+    </div>
+
+    <div class="col-span-1 md:col-span-1" v-for="(item, index) in paginated" :key="index">
+      <ProductCard :product="item" />
+    </div>
+
+    <div class="col-span-2 md:col-span-3">
+      <DefaultPaginator :items="allProducts" :per-page="5" @pagination="onPaginated" />
+    </div>
+
+    <div class="col-span-2 md:col-span-3">
+      <img src="~assets/imgs/banner3.jpg" alt="" class="w-full" />
+    </div>
+
+    <div class="col-span-2 md:col-span-3 text-center my-10">
+      <h1 class="text-5xl font-extrabold">Opinião dos nossos clientes</h1>
+    </div>
+
+    <ProductReview />
+    <ProductReview />
+    <ProductReview />
+    <ProductReview />
   </div>
 </template>
 
@@ -109,6 +134,13 @@
       },
     },
   ];
+
+  const allProducts = [...populars, ...populars, ...populars, ...populars];
+  const paginated = ref([]);
+
+  function onPaginated(data: any) {
+    paginated.value = data.items;
+  }
 </script>
 
 <style scoped>

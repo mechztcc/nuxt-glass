@@ -1,7 +1,7 @@
 <template>
   <div class="grid grid-cols-2 mb-5 gap-2">
-    <div class="col-span-1">
-      <img :src="product.images[0]?.url" alt="" class="h-full" />
+    <div :class="['col-span-1' ]">
+      <img :src="product.images[0]?.url" alt="" :class="['h-full']" />
     </div>
     <div class="col-span-1">
       <div class="flex flex-col justify-between">
@@ -23,7 +23,7 @@
         </div>
         <div class="col-span-1 text-start">
           <div class="flex">
-            <div class="flex flex-col justify-start items-start ">
+            <div class="flex flex-col justify-start items-start">
               <span class="font-semibold">Formato</span>
               <span>Não informado</span>
             </div>
@@ -46,6 +46,7 @@
     product: { type: Object as PropType<IProduct>, required: true },
   });
 
+
   const color = computed(() => {
     return `text-${props.product.color ?? 'zinc-600'}`;
   });
@@ -53,7 +54,6 @@
   const gender = computed(() => {
     return props.product.gender[0]?.toUpperCase();
   });
-
 </script>
 
 <style lang="css" scoped>
