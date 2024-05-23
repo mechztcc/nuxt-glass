@@ -2,8 +2,7 @@
   <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
     <div class="col-span-1 md:col-span-2" ref="dropZoneRef">
       <div
-        class="flex flex-col justify-center items-center border-2 border-dashed hover:border-teal-400 rounded-xl mt-5 cursor-pointer"
-        style="height: 200px"
+        class="flex flex-col justify-center items-center border-2 border-dashed hover:border-teal-400 dark:bg-zinc-900 dark:text-zinc-50 rounded-xl mt-5 cursor-pointer py-5 px-3"
         @click="onHandleFile()"
       >
         <font-awesome-icon :icon="['fas', 'cloud-arrow-up']" :size="'2xl'" class="text-teal-400" />

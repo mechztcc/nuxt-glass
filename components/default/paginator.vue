@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-end py-2 mt-5">
-    <DefaultButton @pressed="onChange('prev')">
+    <DefaultButton @pressed="onChange('prev')" class="dark:text-zinc-50" >
       <font-awesome-icon :icon="['fas', 'angle-left']" />
     </DefaultButton>
 
@@ -14,7 +14,7 @@
       {{ item }}
     </DefaultButton>
 
-    <DefaultButton class="text-zinc-500" @pressed="onChange('next')">
+    <DefaultButton class="text-zinc-500 dark:text-zinc-50" @pressed="onChange('next')">
       <font-awesome-icon :icon="['fas', 'angle-right']" />
     </DefaultButton>
   </div>

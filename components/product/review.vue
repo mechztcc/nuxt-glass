@@ -1,7 +1,7 @@
 <template>
-  <div class="grid grid-cols-2 md:grid-cols-3">
+  <div class="grid grid-cols-2 md:grid-cols-3 dark:text-zinc-50 dark:bg-zinc-900">
     <div class="col-span-2 md:col-span-3">
-      <div class="flex border-2  rounded-xl px-3 py-3">
+      <div class="flex border-2 dark:border-none rounded-xl px-3 py-3">
         <img src="~assets/imgs/glass1.jpg" alt="" class="rounded-full h-20 w-20" />
         <div class="flex flex-col mx-3">
           <span class="text-xl">Carlos Lima</span>

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center rounded-xl border-2 px-3 py-3 mt-5">
+  <div class="flex items-center rounded-xl border-2 px-3 py-3 mt-5 dark:bg-zinc-900 dark:text-zinc-50 dark:border-none">
     <font-awesome-icon :icon="['fas', 'image']" :size="'lg'" class="h-5 w-5 py-2 px-2 rounded-full bg-teal-400 text-white" />
     <div class="flex flex-col w-full">
       <div class="flex justify-between items-center">
