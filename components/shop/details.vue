@@ -4,13 +4,8 @@
       <img src="~assets/imgs/banner2.jpg" alt="" class="w-full" />
     </div>
 
-    <div class="col-span-2 md:col-span-2">
+    <div class="col-span-2 md:col-span-3">
       <DefaultDropFile />
-    </div>
-
-    <div class="col-span-1" style="max-height: 200px">
-      <DefaultFileUploaded />
-      <DefaultFileUploaded />
     </div>
 
     <div class="col-span-2 md:col-span-3 mt-20">
