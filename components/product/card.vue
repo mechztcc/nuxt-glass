@@ -1,9 +1,9 @@
 <template>
-  <div class="grid grid-cols-2 mb-5 gap-2 dark:text-zinc-50 dark:bg-zinc-900 dark:rounded-xl">
-    <div :class="['col-span-1' ]">
+  <div class="grid grid-cols-2 md:col-span-2 mb-5 gap-2 dark:text-zinc-50 dark:bg-zinc-900 dark:rounded-xl">
+    <div :class="['col-span-2 md:col-span1']">
       <img :src="product.images[0]?.url" alt="" :class="['h-full']" />
     </div>
-    <div class="col-span-1">
+    <div class="col-span-2">
       <div class="flex flex-col justify-between h-full py-3 px-2">
         <span class="text-2xl font-semibold">{{ product.name }}</span>
         <span class="text-xl font-semibold text-teal-400 mt-2">R$ {{ product.productValues?.totalPrice ?? '00.0' }}</span>

@@ -35,10 +35,10 @@
       <h1 class="text-5xl font-extrabold">Opinião dos nossos clientes</h1>
     </div>
 
-    <ProductReview />
-    <ProductReview />
-    <ProductReview />
-    <ProductReview />
+    <div class="col-span-2 md:col-span-1" v-for="(item, index) in 4" :key="index">
+      <ProductReview />
+    </div>
+
   </div>
 </template>
 

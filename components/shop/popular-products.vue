@@ -3,7 +3,7 @@
     <h1 class="text-5xl font-extrabold">Produtos populares da loja</h1>
   </div>
 
-  <div class="col-span-1 md:col-span-1" v-for="(item, index) in populars" :key="index">
+  <div class="col-span-2 md:col-span-1" v-for="(item, index) in populars" :key="index">
     <ProductCard :product="item" />
   </div>
 </template>
