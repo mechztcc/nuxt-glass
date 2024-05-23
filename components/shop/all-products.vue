@@ -1,11 +1,15 @@
 <template>
-  <div class="col-span-2 md:col-span-3 text-center my-10 dark:text-zinc-50">
-    <h1 class="text-5xl font-extrabold">Todos produtos</h1>
+  <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+    <div class="col-span-2 md:col-span-2 lg:col-span-3 text-center my-10 dark:text-zinc-50">
+      <h1 class="text-5xl font-extrabold">Todos produtos</h1>
+    </div>
+
+    <div class="col-span-1 md:col-span-1 lg:col-span-1" v-for="(item, index) in paginated" :key="index">
+      <ProductCard :product="item" />
+    </div>
   </div>
 
-  <div class="col-span-2 md:col-span-1" v-for="(item, index) in paginated" :key="index">
-    <ProductCard :product="item" />
-  </div>
 
   <div class="col-span-2 md:col-span-3">
     <DefaultPaginator :items="allProducts" :per-page="5" @pagination="onPaginated" />

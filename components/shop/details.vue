@@ -28,9 +28,6 @@
       </div>
     </div>
 
-    <ShopPopularProducts />
-    <ShopAllProducts />
-
     <div class="col-span-2 md:col-span-3 text-center my-10 dark:text-zinc-50">
       <h1 class="text-5xl font-extrabold">Opinião dos nossos clientes</h1>
     </div>
@@ -38,8 +35,10 @@
     <div class="col-span-2 md:col-span-1" v-for="(item, index) in 4" :key="index">
       <ProductReview />
     </div>
-
   </div>
+
+  <ShopPopularProducts />
+  <ShopAllProducts />
 </template>
 
 <script setup lang="ts"></script>

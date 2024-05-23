@@ -1,10 +1,13 @@
 <template>
-  <div class="col-span-2 md:col-span-3 text-center my-10 dark:text-zinc-50">
-    <h1 class="text-5xl font-extrabold">Produtos populares da loja</h1>
-  </div>
+  <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
 
-  <div class="col-span-2 md:col-span-1" v-for="(item, index) in populars" :key="index">
-    <ProductCard :product="item" />
+    <div class="col-span-2 md:col-span-2 lg:col-span-3 text-center my-10 dark:text-zinc-50">
+      <h1 class="text-5xl font-extrabold">Produtos populares da loja</h1>
+    </div>
+  
+    <div class="col-span-1 md:col-span-1 lg:col-span-1" v-for="(item, index) in populars" :key="index">
+      <ProductCard :product="item" />
+    </div>
   </div>
 </template>
 
