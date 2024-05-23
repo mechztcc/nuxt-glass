@@ -1,7 +1,7 @@
 <template>
   <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
     <div class="col-span-2 md:col-span-3">
-      <img src="~assets/imgs/banner2.jpg" alt="" class="w-full" />
+      <DefaultCaroulsel />
     </div>
 
     <div class="col-span-2 md:col-span-3">
