@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout :name="'admin'">
-    <div class="bg-zinc-50 p-5">
+    <div class="bg-zinc-50 dark:bg-zinc-800 dark:text-zinc-50 p-5">
       <div class="flex justify-between border-b-2 py-3">
         <span class="text-xl font-semibold">Meu Catálogo</span>
         <div class="flex">

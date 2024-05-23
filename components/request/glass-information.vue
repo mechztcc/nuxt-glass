@@ -35,7 +35,7 @@
         <div class="flex items-center">
           <span class="text-zinc-700 dark:text-zinc-50 text-lg"> Alguma Preferencia de Lentes? </span>
           <font-awesome-icon :icon="['fas', 'circle-check']" class="mx-2 text-teal-400" v-if="hasLensType" />
-          <font-awesome-icon :icon="['fas', 'circle-xmark']" class="text-red-400 mx-2" v-if="!hasLensType"/>
+          <font-awesome-icon :icon="['fas', 'circle-xmark']" class="text-red-400 mx-2" v-if="!hasLensType" />
         </div>
       </div>
       <div class="col-span-1" v-for="item of store.orderInformations.glassLensType">
@@ -49,27 +49,31 @@
       </div>
     </div>
 
-    <RequestDragRecipe />
+    <div class="flex items-center mt-5">
+      <span class="text-zinc-700 dark:text-zinc-50 text-lg"> Envie uma foto do seu Exame de vista </span>
+      <font-awesome-icon :icon="['fas', 'circle-check']" class="mx-2 text-teal-400" />
+      <font-awesome-icon :icon="['fas', 'circle-xmark']" class="text-red-400" />
+    </div>
+    <DefaultDropFile :title="'Arraste os arquivos ou clique aqui para adicionar seu exame'" :limit="1" />
+
   </div>
 </template>
 
 <script setup lang="ts">
-import { useNewAuctionRequest } from '~/stores/new-auction-request';
-const store = useNewAuctionRequest();
+  import { useNewAuctionRequest } from '~/stores/new-auction-request';
+  const store = useNewAuctionRequest();
 
-const hasLensType = computed(() => {
-  return store.payload.glassLensType.length > 0
-})
+  const hasLensType = computed(() => {
+    return store.payload.glassLensType.length > 0;
+  });
 
-const hasGender = computed(() => {
-  return store.payload.glassGender.length > 0
-})
+  const hasGender = computed(() => {
+    return store.payload.glassGender.length > 0;
+  });
 
-const hasFrame = computed(() => {
-  return store.payload.glassFrame.length > 0
-})
-
-
+  const hasFrame = computed(() => {
+    return store.payload.glassFrame.length > 0;
+  });
 </script>
 
 <style lang="scss" scoped></style>

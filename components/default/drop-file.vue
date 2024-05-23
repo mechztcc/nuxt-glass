@@ -2,14 +2,16 @@
   <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
     <div class="col-span-1 md:col-span-2" ref="dropZoneRef">
       <div
-        class="flex flex-col justify-center items-center border-2 border-dashed hover:border-teal-400 dark:bg-zinc-900 dark:text-zinc-50 rounded-xl mt-5 cursor-pointer py-5 px-3"
+        class="flex flex-col justify-center items-center border-2 border-dashed hover:border-teal-400 dark:bg-zinc-900 dark:text-zinc-50 dark:border-zinc-600 rounded-xl mt-5 cursor-pointer py-5 px-3"
         @click="onHandleFile()"
       >
         <font-awesome-icon :icon="['fas', 'cloud-arrow-up']" :size="'2xl'" class="text-teal-400" />
-        <span class="mt-2 text-xl">Arraste os arquivos ou clique aqui para definir o banner superior</span>
+        <span class="mt-2 text-xl">{{ title }}</span>
         <div class="flex flex-col text-center">
-          <span> Formatos aceitos: <b>JPG /</b> <b> WEBP</b></span>
-          <span class="text-sm"> Limite de arquivos aceitos: <b>4</b></span>
+          <span> Formatos aceitos: <b>JPG /</b> <b> WEBP</b> /<b> PNG</b></span>
+          <span class="text-sm">
+            Limite de arquivos aceitos: <b>{{ limit }}</b></span
+          >
         </div>
 
         <div class="mt-2" v-if="files.length > 0">
@@ -33,6 +35,11 @@
   const dropZoneRef = ref<HTMLDivElement>();
   const files = ref<File[]>([]);
 
+  const props = defineProps({
+    title: { type: String, required: true },
+    limit: { type: Number, required: false, default: 1 },
+  });
+
   const emit = defineEmits(['change']);
 
   watch(files.value, (n) => {
@@ -45,7 +52,7 @@
   });
 
   function onDrop(drops: File[] | null) {
-    if (files.value.length + (drops?.length || 0) > 2) {
+    if (files.value.length + (drops?.length || 0) > props.limit) {
       return;
     }
     drops?.map((file) => {
@@ -54,7 +61,7 @@
   }
 
   function onHandleFile() {
-    if (files.value.length > 2) {
+    if (files.value.length > props.limit) {
       return;
     }
     inputFile.value!.click();
@@ -63,7 +70,7 @@
   function onUploadImage(data: any) {
     const file = data.files[0] as File;
 
-    if (files.value.length + 1 > 2) {
+    if (files.value.length + 1 > props.limit) {
       return;
     }
 

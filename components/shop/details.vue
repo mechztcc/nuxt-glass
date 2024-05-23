@@ -5,7 +5,7 @@
     </div>
 
     <div class="col-span-2 md:col-span-3">
-      <DefaultDropFile />
+      <DefaultDropFile :title="'Arraste os arquivos ou clique aqui para adicionar um banner'" :limit="2"/>
     </div>
 
     <div class="col-span-2 md:col-span-3 mt-20 dark:text-zinc-50">
