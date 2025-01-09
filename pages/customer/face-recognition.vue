@@ -29,8 +29,15 @@
 
   const video = ref(null);
   const canvas = ref(null);
-  let videoStream = null;
   const distanceCm = ref(0);
+
+  let videoStream = null;
+
+  const defaultColor = '#2dd4bf';
+  const errorColor = '#f43f5e';
+  const successColor = '#22c55e';
+
+  let hasCenteredError = false;
 
   const initCamera = async () => {
     videoStream = await navigator.mediaDevices.getUserMedia({ video: true });
@@ -52,27 +59,75 @@
     const canvasEl = canvas.value;
 
     const displaySize = {
-      width: videoEl.videoWidth,
-      height: videoEl.videoHeight,
+      width: videoEl?.videoWidth,
+      height: videoEl?.videoHeight,
     };
     faceapi.matchDimensions(canvasEl, displaySize);
+
+    // Limpa o canvas
+    const ctx = canvasEl.getContext('2d');
+    ctx.clearRect(0, 0, canvasEl.width, canvasEl.height);
+
+    // Desenha o círculo oval no centro
+    drawOval(ctx, displaySize);
 
     const detections = await faceapi
       .detectSingleFace(videoElement, new faceapi.TinyFaceDetectorOptions())
       .withFaceLandmarks();
 
-      if (detections) {
-        const resizedDetections = faceapi.resizeResults(detections, displaySize);
+    if (detections) {
+      const resizedDetections = faceapi.resizeResults(detections, displaySize);
 
-        // Limpa o canvas antes de desenhar
-        const ctx = canvasEl.getContext('2d');
-        ctx.clearRect(0, 0, canvasEl.width, canvasEl.height);
+      // Limpa o canvas antes de desenhar
+      const ctx = canvasEl.getContext('2d');
+      ctx.clearRect(0, 0, canvasEl.width, canvasEl.height);
 
-        // Desenha as landmarks no canvas
-        faceapi.draw.drawFaceLandmarks(canvasEl, resizedDetections);
+      // Desenha as landmarks no canvas
+      faceapi.draw.drawFaceLandmarks(canvasEl, resizedDetections);
+
+      const landmarks = resizedDetections.landmarks.positions;
+      const outsidePoints = checkLandmarksOutsideOval(landmarks, displaySize);
+
+      let message = '';
+      if (outsidePoints.length > 0) {
+        message = 'Rosto fora do alinhamento';
+        drawMessage(ctx, message, displaySize, errorColor);
+        hasCenteredError = true;
+      } else {
+        message = 'Rosto dentro do alinhamento';
+        drawMessage(ctx, message, displaySize, defaultColor);
+        hasCenteredError = false;
       }
+    }
 
     return detections?.landmarks;
+  };
+
+  const checkLandmarksOutsideOval = (landmarks, displaySize) => {
+    const { width, height } = displaySize;
+
+    const centerX = width / 2;
+    const centerY = height / 2;
+    const radiusX = width * 0.25;
+    const radiusY = height * 0.35;
+
+    // Filtra landmarks que estão fora do oval
+    return landmarks.filter(({ x, y }) => {
+      const normalizedX = (x - centerX) ** 2 / radiusX ** 2;
+      const normalizedY = (y - centerY) ** 2 / radiusY ** 2;
+      return normalizedX + normalizedY > 1; // Fora do oval
+    });
+  };
+
+  const drawMessage = (ctx, message, displaySize, color) => {
+    const { width, height } = displaySize;
+
+    if (message) {
+      ctx.font = '20px Arial';
+      ctx.fillStyle = color; // Cor do texto
+      ctx.textAlign = 'center'; // Centraliza o texto horizontalmente
+      ctx.fillText(message, width / 2, height - 30); // Exibe a mensagem no rodapé
+    }
   };
 
   const calculateDistance = (landmarks) => {
@@ -120,13 +175,34 @@
     }
   };
 
+  const drawOval = (ctx, displaySize) => {
+    const { width, height } = displaySize;
+
+    const centerX = width / 2;
+    const centerY = height / 2;
+    const radiusX = width * 0.25;
+    const radiusY = height * 0.45;
+
+    ctx.beginPath();
+    ctx.ellipse(centerX, centerY, radiusX, radiusY, 0, 0, 2 * Math.PI);
+    ctx.strokeStyle = hasCenteredError ? errorColor : defaultColor;
+    ctx.lineWidth = 3;
+    ctx.stroke();
+  };
+
   onMounted(() => {
     loadModels();
     initCamera();
 
     setInterval(() => {
       measureDistance();
-    }, 200);
+    }, 50);
+  });
+
+  onBeforeUnmount(() => {
+    if (videoStream) {
+      videoStream.getTracks().forEach((track) => track.stop());
+    }
   });
 </script>
 
