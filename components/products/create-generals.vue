@@ -175,6 +175,7 @@
     method: 'get',
   });
 
+
   const schema = toTypedSchema(
     zod.object({
       name: zod.string().min(10, { message: 'Nome muito curta' }),
@@ -202,8 +203,7 @@
     store.onNext();
   }
 
-  function test(e: any) {
-  }
+  function test(e: any) {}
 </script>
 
 <style scoped></style>

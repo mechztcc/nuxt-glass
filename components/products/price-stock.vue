@@ -4,7 +4,7 @@
       <Form @submit="onSubmit" :validation-schema="schema">
         <div class="flex flex-col">
           <div class="grid grid-cols-2 gap-5">
-            <DefaultInput :label="'Preço de custo'" :type="'number'" :field="'costPrice'" :value="store.payload.priceCost">
+            <DefaultInput :label="'Preço de custo'" :type="'number'" :field="'costPrice'" :mask="'currency'" :value="store.payload.priceCost">
               <template #prepend>
                 <font-awesome-icon :icon="['fas', 'tag']" class="dark:text-zinc-50" />
               </template>
@@ -63,6 +63,12 @@
     };
     
     store.onNext();
+  }
+
+  const vFocus = {
+    mounted: (el: any) => {
+      console.log(el);
+    }
   }
 </script>
 
