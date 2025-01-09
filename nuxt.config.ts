@@ -14,7 +14,8 @@ export default defineNuxtConfig({
     },
   },
   plugins: [
-    '~/plugins/directives.js'
+    '~/plugins/directives.js',
+    '~/plugins/face-api.client.js'
   ],
   build: {
     transpile: ['@fortawesome/vue-fontawesome'],
