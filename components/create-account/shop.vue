@@ -7,12 +7,20 @@
       <h1 class="text-3xl text-center">Bem vindo!</h1>
       <span class="text-lg text-zinc-700 text-center"> Preencha o formulário abaixo com os detalhes da sua loja. </span>
 
+      <small class="mt-10">Loja</small>
       <DefaultInput :label="'Nome da Loja'" :type="'text'" :field="'name'" />
 
       <div class="grid grid-cols-1">
         <div class="flex flex-col">
           <DefaultInput :label="'CPF / CNPJ'" :type="'text'" :field="'document'" />
         </div>
+      </div>
+
+
+      <small class="mt-10">Endereço</small>
+
+      <div class="flex justify-center items-center my-5">
+        <GeolocationButton />
       </div>
 
       <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
@@ -51,6 +59,7 @@
   import { Form } from 'vee-validate';
   import * as zod from 'zod';
   import { useCreateShop } from '~/stores/shop-info';
+import DefaultButton from '../default-button.vue';
 
   const store = useCreateShop();
   const states = ['PE', 'AL', 'CE', 'SE', 'SC'];
