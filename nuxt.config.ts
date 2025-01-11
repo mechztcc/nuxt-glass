@@ -29,15 +29,12 @@ export default defineNuxtConfig({
       },
     },
   },
-  modules: [
-    '@pinia/nuxt',
-    [
-      '@nuxtjs/google-fonts',
-      {
-        families: {
-          Rajdhani: true,
-        },
+  modules: ['@pinia/nuxt', [
+    '@nuxtjs/google-fonts',
+    {
+      families: {
+        Rajdhani: true,
       },
-    ],
-  ],
+    },
+  ], '@nuxtjs/leaflet'],
 });

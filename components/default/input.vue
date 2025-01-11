@@ -1,5 +1,6 @@
 <template>
-  <label for="" class="mb-2 mt-3 font-semibold dark:text-zinc-50">{{ label }}</label>
+  <div class="z-10">
+    <label for="" class="mb-2 mt-3 font-semibold dark:text-zinc-50">{{ label }}</label>
   <div
     :class="[
       'flex items-center px-5 w-full  border-zinc-300  dark:bg-zinc-900 bg-white rounded',
@@ -24,6 +25,7 @@
     <slot name="append"></slot>
   </div>
   <ErrorMessage :name="field" class="mx-2 bg-red-200 rounded-full px-2 mt-2 text-red-600 justify-center flex items-center" />
+  </div>
 </template>
 
 <script setup lang="ts">
